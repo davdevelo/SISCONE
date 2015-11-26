@@ -6,6 +6,117 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
 
-    <TextView android:text="Hello World!" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <TextView android:text="LOGIN" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="40dp"
+        android:textStyle="normal|bold|italic"
+        android:id="@+id/textView"
+        android:layout_gravity="top" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="61dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cédula"
+        android:id="@+id/textCedula"
+        android:textSize="30dp"
+        android:layout_alignBottom="@+id/editText"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="82dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:layout_below="@+id/textView"
+        android:layout_toEndOf="@+id/textTipo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contraseña"
+        android:id="@+id/textContrasena"
+        android:textSize="30dp"
+        android:layout_below="@+id/editText"
+        android:layout_alignStart="@+id/textCedula" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/editText2"
+        android:layout_above="@+id/textTipo"
+        android:layout_alignStart="@+id/editText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tipo de Usuario"
+        android:id="@+id/textTipo"
+        android:textSize="30dp"
+        android:layout_below="@+id/textContrasena"
+        android:layout_alignStart="@+id/textContrasena" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/comboBoxTipoUSR"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/textTipo"
+        android:layout_toEndOf="@+id/buttonLimpiar" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INGRESAR"
+        android:id="@+id/buttonIngresar"
+        android:layout_centerVertical="true"
+        android:layout_alignEnd="@+id/textContrasena" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LIMPIAR"
+        android:id="@+id/buttonLimpiar"
+        android:layout_alignTop="@+id/buttonIngresar"
+        android:layout_alignStart="@+id/textView" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SALIR"
+        android:id="@+id/buttonSalir"
+        android:layout_alignTop="@+id/buttonLimpiar"
+        android:layout_toStartOf="@+id/buttonCrearCuenta" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿No esta registrado? Cree su cuenta"
+        android:id="@+id/textRegistro"
+        android:textSize="20dp"
+        android:layout_alignBottom="@+id/buttonCrearCuenta"
+        android:layout_toEndOf="@+id/buttonIngresar" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CREAR"
+        android:id="@+id/buttonCrearCuenta"
+        android:layout_below="@+id/buttonSalir"
+        android:layout_toStartOf="@+id/imageView"
+        android:layout_marginEnd="56dp"
+        android:layout_marginTop="36dp" />
+
 </RelativeLayout>
