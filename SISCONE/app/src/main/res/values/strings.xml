@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">SISCONE</string>
+
+    <string-array name="tipoUsuario">
+        <item> Profesor </item>
+        <item> Representante </item>
+    </string-array>
+
+
 </resources>
