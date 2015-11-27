@@ -5,6 +5,6 @@ package Controladores;
  */
 public class LoginControler
 {
-    private nombreRepe
+    //private nombreRepe
 
 }
