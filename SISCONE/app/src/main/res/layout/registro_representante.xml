@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cédula :"
+        android:id="@+id/textView11"
+        android:layout_x="317dp"
+        android:layout_y="68dp"
+        android:textSize="25dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editCedulaRepr"
+        android:layout_x="453dp"
+        android:layout_y="56dp" />
+
+    <TextView
+        android:layout_width="495dp"
+        android:layout_height="wrap_content"
+        android:text="FORMULARIO REGISTRO"
+        android:id="@+id/textView12"
+        android:layout_x="212dp"
+        android:layout_y="12dp"
+        android:textSize="30dp"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apellido :"
+        android:id="@+id/textView13"
+        android:layout_x="315dp"
+        android:layout_y="161dp"
+        android:textSize="25dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre :"
+        android:id="@+id/textView14"
+        android:layout_x="304dp"
+        android:layout_y="109dp"
+        android:textSize="25dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editCedulaRepr"
+        android:layout_x="453dp"
+        android:layout_y="104dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editApellidoRepr"
+        android:layout_x="456dp"
+        android:layout_y="145dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Correo :"
+        android:id="@+id/textView15"
+        android:layout_x="317dp"
+        android:layout_y="205dp"
+        android:textSize="25dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/editCorreoRepr"
+        android:layout_x="459dp"
+        android:layout_y="200dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REGISTRARSE"
+        android:id="@+id/buttonRegistrarRepr"
+        android:layout_x="225dp"
+        android:layout_y="365dp"
+        android:textSize="24dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LIMPIAR"
+        android:id="@+id/buttonLimpiarForRegisRepr"
+        android:layout_x="426dp"
+        android:layout_y="367dp"
+        android:textSize="24dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REGRESAR MENU"
+        android:id="@+id/buttonRegresarMenuProf"
+        android:layout_x="568dp"
+        android:layout_y="372dp"
+        android:textSize="24dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alumno :"
+        android:id="@+id/textView16"
+        android:layout_x="310dp"
+        android:layout_y="252dp"
+        android:textSize="25dp" />
+</AbsoluteLayout>

@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.menu_login);
 
         sistemas =(Spinner) findViewById(R.id.comboBoxTipoUSR);
         ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.tipoUsuario,android.R.layout.simple_spinner_item);
