@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigationModel
+  ns = "http://schemas.android.com?import=com.android.tools.idea.editors.navigation.model.*">
+  <locations  
+    class = "java.util.ArrayList">
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.example.davdevelo.siscone.RegistroRepresentante"/>
+      <point      
+        x = "2104"      
+        y = "63"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.example.davdevelo.siscone.MenuProfesor"/>
+      <point      
+        x = "4095"      
+        y = "70"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.example.davdevelo.siscone.RegistroProfesor"/>
+      <point      
+        x = "6072"      
+        y = "63"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.example.davdevelo.siscone.MainActivity"/>
+      <point      
+        x = "56"      
+        y = "56"/>
+    </statePointEntry>
+  </locations>
+</navigationModel>

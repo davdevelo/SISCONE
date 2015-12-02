@@ -9,76 +9,76 @@
         android:layout_alignParentStart="true">
 
         <TextView
-            android:layout_width="201dp"
+            android:layout_width="500dp"
             android:layout_height="wrap_content"
             android:text="LOGIN"
             android:id="@+id/textEncabezado"
-            android:layout_x="324dp"
-            android:layout_y="29dp"
+            android:layout_x="200dp"
+            android:layout_y="35dp"
             android:textSize="30dp"
             android:textStyle="bold"
             android:textColor="#58adcf"
             android:textAlignment="center" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:text="Cédula :"
             android:id="@+id/textView"
-            android:layout_x="300dp"
-            android:layout_y="96dp"
+            android:layout_x="180dp"
+            android:layout_y="90dp"
             android:textSize="25dp" />
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/editCedula"
-            android:layout_x="506dp"
-            android:layout_y="84dp" />
+            android:layout_x="500dp"
+            android:layout_y="80dp" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:text="Contraseña :"
             android:id="@+id/textView2"
-            android:layout_x="295dp"
-            android:layout_y="150dp"
+            android:layout_x="180dp"
+            android:layout_y="130dp"
             android:textSize="25dp" />
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:ems="10"
             android:id="@+id/editContraseña"
-            android:layout_x="508dp"
-            android:layout_y="146dp" />
+            android:layout_x="500dp"
+            android:layout_y="120dp" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:text="Tipo de Usuario :"
             android:id="@+id/textView3"
-            android:layout_x="299dp"
-            android:layout_y="195dp"
+            android:layout_x="180dp"
+            android:layout_y="170dp"
             android:textSize="25dp" />
 
         <Spinner
-            android:layout_width="236dp"
+            android:layout_width="250dp"
             android:layout_height="39dp"
             android:id="@+id/comboBoxTipoUSR"
-            android:layout_x="508dp"
-            android:layout_y="195dp" />
+            android:layout_x="500dp"
+            android:layout_y="170dp" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="INGRESAR"
             android:id="@+id/buttonIngresar"
-            android:layout_x="292dp"
-            android:layout_y="280dp"
+            android:layout_x="180dp"
+            android:layout_y="250dp"
             android:textSize="24dp" />
 
         <Button
@@ -86,17 +86,17 @@
             android:layout_height="wrap_content"
             android:text="LIMPIAR"
             android:id="@+id/buttonLimpiar"
-            android:layout_x="464dp"
-            android:layout_y="282dp"
+            android:layout_x="411dp"
+            android:layout_y="250dp"
             android:textSize="24dp" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:text="SALIR"
             android:id="@+id/buttonSalir"
             android:layout_x="630dp"
-            android:layout_y="282dp"
+            android:layout_y="250dp"
             android:textSize="24dp" />
 
         <TextView
@@ -104,8 +104,8 @@
             android:layout_height="wrap_content"
             android:text="No esta registrado ? Cree su cuenta"
             android:id="@+id/textRegistro"
-            android:layout_x="310dp"
-            android:layout_y="350dp"
+            android:layout_x="260dp"
+            android:layout_y="320dp"
             android:textSize="25dp" />
 
         <Button
@@ -113,8 +113,8 @@
             android:layout_height="wrap_content"
             android:text="CREAR CUENTA"
             android:id="@+id/buttonCrearCuenta"
-            android:layout_x="433dp"
-            android:layout_y="392dp"
+            android:layout_x="370dp"
+            android:layout_y="370dp"
             android:textSize="24dp" />
 
     </AbsoluteLayout>
