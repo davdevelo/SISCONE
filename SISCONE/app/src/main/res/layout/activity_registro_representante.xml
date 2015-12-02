@@ -28,7 +28,8 @@
         android:layout_x="200dp"
         android:layout_y="35dp"
         android:textSize="30dp"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textColor="#58adcf" />
 
     <TextView
         android:layout_width="260dp"
@@ -137,4 +138,12 @@
         android:layout_y="240dp"
         android:textColor="#eef0f5"
         android:background="#8592f6" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_x="788dp"
+        android:layout_y="29dp"
+        android:background="@mipmap/logo" />
 </AbsoluteLayout>
