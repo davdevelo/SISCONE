@@ -2,6 +2,7 @@
     <string name="app_name">SISCONE</string>
 
     <string-array name="tipoUsuario">
+        <item> Seleccione el Tipo </item>
         <item> Profesor </item>
         <item> Representante </item>
     </string-array>

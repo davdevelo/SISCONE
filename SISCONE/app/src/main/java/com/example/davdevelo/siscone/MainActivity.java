@@ -42,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
 
         EditText cedula = (EditText) findViewById(R.id.editCedula);
         EditText contrasena = (EditText) findViewById(R.id.editContraseña);
+        sistemas.setSelection(0);
+
 
         cedula.setText("");
         contrasena.setText("");

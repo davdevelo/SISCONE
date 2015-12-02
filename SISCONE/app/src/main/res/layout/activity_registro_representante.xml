@@ -7,8 +7,8 @@
         android:layout_height="wrap_content"
         android:text="Cédula :"
         android:id="@+id/textView11"
-        android:layout_x="180dp"
-        android:layout_y="80dp"
+        android:layout_x="269dp"
+        android:layout_y="85dp"
         android:textSize="25dp" />
 
     <EditText
@@ -17,16 +17,16 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/editCedulaRepresentante"
-        android:layout_x="450dp"
-        android:layout_y="70dp" />
+        android:layout_x="539dp"
+        android:layout_y="76dp" />
 
     <TextView
         android:layout_width="500dp"
         android:layout_height="wrap_content"
         android:text="FORMULARIO REGISTRO"
         android:id="@+id/textView12"
-        android:layout_x="200dp"
-        android:layout_y="35dp"
+        android:layout_x="289dp"
+        android:layout_y="42dp"
         android:textSize="30dp"
         android:textAlignment="center"
         android:textColor="#58adcf" />
@@ -36,8 +36,8 @@
         android:layout_height="wrap_content"
         android:text="Apellido :"
         android:id="@+id/textView13"
-        android:layout_x="180dp"
-        android:layout_y="160dp"
+        android:layout_x="269dp"
+        android:layout_y="166dp"
         android:textSize="25dp" />
 
     <TextView
@@ -45,8 +45,8 @@
         android:layout_height="wrap_content"
         android:text="Nombre :"
         android:id="@+id/textView14"
-        android:layout_x="180dp"
-        android:layout_y="120dp"
+        android:layout_x="269dp"
+        android:layout_y="124dp"
         android:textSize="25dp" />
 
     <EditText
@@ -55,8 +55,8 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/editNombreRepresentante"
-        android:layout_x="450dp"
-        android:layout_y="110dp" />
+        android:layout_x="539dp"
+        android:layout_y="115dp" />
 
     <EditText
         android:layout_width="250dp"
@@ -64,16 +64,16 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/editApellidoRepr"
-        android:layout_x="450dp"
-        android:layout_y="150dp" />
+        android:layout_x="539dp"
+        android:layout_y="156dp" />
 
     <TextView
         android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:text="Correo :"
         android:id="@+id/textView15"
-        android:layout_x="180dp"
-        android:layout_y="200dp"
+        android:layout_x="269dp"
+        android:layout_y="205dp"
         android:textSize="25dp" />
 
     <EditText
@@ -82,16 +82,16 @@
         android:inputType="textEmailAddress"
         android:ems="10"
         android:id="@+id/editCorreoRepr"
-        android:layout_x="450dp"
-        android:layout_y="190dp" />
+        android:layout_x="539dp"
+        android:layout_y="195dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="REGISTRAR"
         android:id="@+id/buttonRegistrarRepr"
-        android:layout_x="175dp"
-        android:layout_y="338dp"
+        android:layout_x="264dp"
+        android:layout_y="343dp"
         android:textSize="24dp" />
 
     <Button
@@ -99,8 +99,8 @@
         android:layout_height="wrap_content"
         android:text="LIMPIAR"
         android:id="@+id/buttonLimpiarForRegisRepr"
-        android:layout_x="390dp"
-        android:layout_y="338dp"
+        android:layout_x="478dp"
+        android:layout_y="343dp"
         android:textSize="24dp" />
 
     <Button
@@ -108,8 +108,8 @@
         android:layout_height="wrap_content"
         android:text="REGRESAR MENU"
         android:id="@+id/buttonRegresarMenuProf"
-        android:layout_x="540dp"
-        android:layout_y="340dp"
+        android:layout_x="629dp"
+        android:layout_y="346dp"
         android:textSize="24dp" />
 
     <TextView
@@ -117,16 +117,16 @@
         android:layout_height="wrap_content"
         android:text="Alumnos :"
         android:id="@+id/textView16"
-        android:layout_x="180dp"
-        android:layout_y="240dp"
+        android:layout_x="269dp"
+        android:layout_y="246dp"
         android:textSize="25dp" />
 
     <ListView
         android:layout_width="250dp"
         android:layout_height="66dp"
         android:id="@+id/listView"
-        android:layout_x="450dp"
-        android:layout_y="245dp" />
+        android:layout_x="539dp"
+        android:layout_y="251dp" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -134,16 +134,17 @@
         android:layout_height="33dp"
         android:text="agregar +"
         android:id="@+id/buttonAgregarAlumno"
-        android:layout_x="700dp"
-        android:layout_y="240dp"
+        android:layout_x="789dp"
+        android:layout_y="246dp"
         android:textColor="#eef0f5"
         android:background="#8592f6" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="173dp"
+        android:layout_height="204dp"
         android:id="@+id/imageView"
-        android:layout_x="788dp"
-        android:layout_y="29dp"
+        android:layout_x="41dp"
+        android:layout_y="129dp"
         android:background="@mipmap/logo" />
+
 </AbsoluteLayout>
