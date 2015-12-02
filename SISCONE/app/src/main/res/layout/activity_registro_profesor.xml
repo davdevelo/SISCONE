@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/editTextCedulaProf"
+        android:id="@+id/editCedulaProf"
         android:layout_x="576dp"
         android:layout_y="88dp" />
 
@@ -81,7 +81,7 @@
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/editEmail"
+        android:id="@+id/editCorreoProf"
         android:layout_x="576dp"
         android:layout_y="209dp" />
 
