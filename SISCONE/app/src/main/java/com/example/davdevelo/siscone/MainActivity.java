@@ -8,7 +8,19 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import momentario.Listas;
+
 public class MainActivity extends AppCompatActivity {
+
+    EditText cedula;
+    EditText contrasena;
+
+    public void buscarElemntos()
+    {
+        cedula = (EditText) findViewById(R.id.editCedulaLogin);
+        contrasena = (EditText) findViewById(R.id.editContraseñaLogin);
+    }
+
 
 
     Spinner sistemas;
@@ -29,19 +41,35 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         findViewById(R.id.buttonLimpiar).setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
+                buscarElemntos();
                 limpiar();
+            }
+        });
+
+        findViewById(R.id.buttonIngresar).setOnClickListener(new View.OnClickListener() {
+            @Override
+
+            public void onClick(View v) {
+                buscarElemntos();
+               if (Listas.Profesores.get(0).getCedula()==cedula.getText().toString())
+                {
+                    startActivity(new Intent(MainActivity.this, MenuProfesor.class));
+
+                }
+
+
             }
         });
     }
 
     public void limpiar(){
 
-        EditText cedula = (EditText) findViewById(R.id.editCedula);
-        EditText contrasena = (EditText) findViewById(R.id.editContraseña);
+
         sistemas.setSelection(0);
 
 

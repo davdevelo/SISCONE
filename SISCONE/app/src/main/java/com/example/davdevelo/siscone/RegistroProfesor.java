@@ -35,6 +35,7 @@ public class RegistroProfesor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 registrarProfesor();
+
             }
         });
         findViewById(R.id.buttonLimpiarForRegisProf).setOnClickListener(new View.OnClickListener() {
@@ -47,7 +48,7 @@ public class RegistroProfesor extends AppCompatActivity {
 
     public void buscarElementos()
     {
-        cedulaProf= (EditText) findViewById(R.id.editTextCedulaProf);
+        cedulaProf= (EditText) findViewById(R.id.editCedulaProf);
         nombreProf= (EditText) findViewById(R.id.editNombreProf);
         apellidoProf= (EditText) findViewById(R.id.editApellidoProf);
         correoProf= (EditText) findViewById(R.id.editCorreoProf);
