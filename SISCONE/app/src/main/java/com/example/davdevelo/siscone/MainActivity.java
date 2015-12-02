@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,6 +28,23 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        findViewById(R.id.buttonLimpiar).setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                limpiar();
+            }
+        });
+    }
+
+    public void limpiar(){
+
+        EditText cedula = (EditText) findViewById(R.id.editCedula);
+        EditText contrasena = (EditText) findViewById(R.id.editContraseña);
+
+        cedula.setText("");
+        contrasena.setText("");
     }
 
 
