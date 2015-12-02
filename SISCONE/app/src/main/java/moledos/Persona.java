@@ -10,11 +10,12 @@ public class Persona {
     private String apellido;
     private String correo;
     private String contrasena;
+    private String tipo;
 
     public Persona() {
     }
 
-    public Persona(String cedula, String nombre, String apellido, String correo, String contrasena) {
+    public Persona(String cedula, String nombre, String apellido, String correo, String contrasena, String tipo) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -60,5 +61,13 @@ public class Persona {
 
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 }
