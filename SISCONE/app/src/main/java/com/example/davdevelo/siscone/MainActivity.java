@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import moledos.Login;
 import momentario.Listas;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,23 +24,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_login);
 
-        sistemas = (Spinner) findViewById(R.id.comboBoxTipoUSR);
+        buscarElemntos();
+
         ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.tipoUsuario, android.R.layout.simple_spinner_item);
         sistemas.setAdapter(adapter);
+
         findViewById(R.id.buttonCrearCuenta).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, RegistroProfesor.class);
-                startActivity(intent);
+                startActivity(new Intent(MainActivity.this, RegistroProfesor.class));
             }
         });
 
-
         findViewById(R.id.buttonLimpiar).setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
-                buscarElemntos();
                 limpiar();
             }
         });
@@ -51,30 +51,38 @@ public class MainActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.buttonIngresar).setOnClickListener(new View.OnClickListener() {
+
             @Override
-
             public void onClick(View v) {
-                buscarElemntos();
-                Log.i("cedula ", Listas.Profesores.get(0).getCedula());
-                Log.i("cedula ", cedula.getText().toString());
-                if (Listas.Profesores.get(0).getCedula().equals(cedula.getText().toString())) {
-                    startActivity(new Intent(MainActivity.this, MenuProfesor.class));
-
-                }
-
+               logearse();
             }
         });
     }
 
-    public void limpiar() {
+    private void limpiar() {
         sistemas.setSelection(0);
         cedula.setText("");
         contrasena.setText("");
     }
 
-    public void buscarElemntos() {
+    private void buscarElemntos() {
         cedula = (EditText) findViewById(R.id.editCedulaLogin);
         contrasena = (EditText) findViewById(R.id.editContraseñaLogin);
+        sistemas = (Spinner) findViewById(R.id.comboBoxTipoUSR);
+    }
+
+    private void logearse(){
+        Login login = new Login(cedula.getText().toString(),
+                contrasena.getText().toString(),
+                sistemas.getSelectedItem().toString());
+
+        if(Listas.registrados.contains(login)) {
+            startActivity(new Intent(MainActivity.this, MenuProfesor.class));
+        }else{
+            Toast toast = Toast.makeText(getApplicationContext(), "No exite el usuraio \n O los campos estan llenados incorectamente ", Toast.LENGTH_SHORT);
+            toast.show();
+        }
+
     }
 
 

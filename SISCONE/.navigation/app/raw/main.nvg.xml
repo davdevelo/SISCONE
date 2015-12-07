@@ -6,10 +6,26 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.example.davdevelo.siscone.MainActivity"/>
+      <point      
+        x = "56"      
+        y = "56"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.example.davdevelo.siscone.RegistroProfesor"/>
+      <point      
+        x = "2028"      
+        y = "52"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
         className = "com.example.davdevelo.siscone.RegistroRepresentante"/>
       <point      
-        x = "2104"      
-        y = "63"/>
+        x = "6092"      
+        y = "68"/>
     </statePointEntry>
     <statePointEntry>
       <state      
@@ -18,22 +34,6 @@
       <point      
         x = "4095"      
         y = "70"/>
-    </statePointEntry>
-    <statePointEntry>
-      <state      
-        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "com.example.davdevelo.siscone.RegistroProfesor"/>
-      <point      
-        x = "6072"      
-        y = "63"/>
-    </statePointEntry>
-    <statePointEntry>
-      <state      
-        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "com.example.davdevelo.siscone.MainActivity"/>
-      <point      
-        x = "56"      
-        y = "56"/>
     </statePointEntry>
   </locations>
 </navigationModel>

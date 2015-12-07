@@ -1,61 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.davdevelo.siscone.MenuProfesor">
+    android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="500dp"
-        android:layout_height="wrap_content"
-        android:text="MENU "
-        android:id="@+id/textMenuProfesorEncabezado"
-        android:layout_x="180dp"
-        android:layout_y="35dp"
-        android:textSize="30dp"
-        android:gravity="center" />
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollMenuProfesor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-    <Button
-        android:layout_width="240dp"
-        android:layout_height="wrap_content"
-        android:text="comunicados"
-        android:id="@+id/buttonComunicados"
-        android:layout_x="500dp"
-        android:layout_y="120dp" />
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/verticalScrollMenuProfesor" >
 
-    <Button
-        android:layout_width="240dp"
-        android:layout_height="wrap_content"
-        android:text="Registrar Notas"
-        android:id="@+id/buttonRegistrarNotas"
-        android:layout_x="110dp"
-        android:layout_y="220dp" />
+            <AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                tools:context="com.example.davdevelo.siscone.MenuProfesor">
 
-    <Button
-        android:layout_width="240dp"
-        android:layout_height="wrap_content"
-        android:text="Administrar representante"
-        android:id="@+id/buttonAdministrarRepresentante"
-        android:layout_x="500dp"
-        android:layout_y="220dp" />
+                <TextView
+                    android:id="@+id/textMenuProfesorEncabezado"
+                    android:layout_width="500dp"
+                    android:layout_height="wrap_content"
+                    android:layout_x="180dp"
+                    android:layout_y="35dp"
+                    android:gravity="center"
+                    android:text="MENU "
+                    android:textSize="30dp" />
 
-    <Button
-        android:layout_width="240dp"
-        android:layout_height="wrap_content"
-        android:text="Envío de Tareas"
-        android:id="@+id/buttonEnvioTareas"
-        android:layout_x="110dp"
-        android:layout_y="120dp" />
+                <Button
+                    android:id="@+id/buttonComunicados"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_x="500dp"
+                    android:layout_y="120dp"
+                    android:text="comunicados" />
 
-    <Button
-        android:layout_width="240dp"
-        android:layout_height="wrap_content"
-        android:text="Salir"
-        android:id="@+id/buttonMenuProfesorSalir"
-        android:layout_x="300dp"
-        android:layout_y="300dp" />
-</AbsoluteLayout>
+                <Button
+                    android:id="@+id/buttonRegistrarNotas"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_x="110dp"
+                    android:layout_y="220dp"
+                    android:text="Registrar Notas" />
+
+                <Button
+                    android:id="@+id/buttonAdministrarRepresentante"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_x="500dp"
+                    android:layout_y="220dp"
+                    android:text="Administrar representante" />
+
+                <Button
+                    android:id="@+id/buttonEnvioTareas"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_x="110dp"
+                    android:layout_y="120dp"
+                    android:text="Envío de Tareas" />
+
+                <Button
+                    android:id="@+id/buttonMenuProfesorSalir"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_x="300dp"
+                    android:layout_y="300dp"
+                    android:text="Salir" />
+
+            </AbsoluteLayout>
+        </ScrollView>
+    </HorizontalScrollView>
+
+</RelativeLayout>
+

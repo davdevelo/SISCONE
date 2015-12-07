@@ -1,150 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:text="Cédula :"
-        android:id="@+id/textView11"
-        android:layout_x="269dp"
-        android:layout_y="85dp"
-        android:textSize="25dp" />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-    <EditText
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/editCedulaRepresentante"
-        android:layout_x="539dp"
-        android:layout_y="76dp" />
-
-    <TextView
-        android:layout_width="500dp"
-        android:layout_height="wrap_content"
-        android:text="FORMULARIO REGISTRO"
-        android:id="@+id/textView12"
-        android:layout_x="289dp"
-        android:layout_y="42dp"
-        android:textSize="30dp"
-        android:textAlignment="center"
-        android:textColor="#58adcf" />
-
-    <TextView
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:text="Apellido :"
-        android:id="@+id/textView13"
-        android:layout_x="269dp"
-        android:layout_y="166dp"
-        android:textSize="25dp" />
-
-    <TextView
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:text="Nombre :"
-        android:id="@+id/textView14"
-        android:layout_x="269dp"
-        android:layout_y="124dp"
-        android:textSize="25dp" />
-
-    <EditText
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/editNombreRepresentante"
-        android:layout_x="539dp"
-        android:layout_y="115dp" />
-
-    <EditText
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/editApellidoRepr"
-        android:layout_x="539dp"
-        android:layout_y="156dp" />
-
-    <TextView
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:text="Correo :"
-        android:id="@+id/textView15"
-        android:layout_x="269dp"
-        android:layout_y="205dp"
-        android:textSize="25dp" />
-
-    <EditText
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/editCorreoRepr"
-        android:layout_x="539dp"
-        android:layout_y="195dp" />
-
-    <Button
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="REGISTRAR"
-        android:id="@+id/buttonRegistrarRepr"
-        android:layout_x="264dp"
-        android:layout_y="343dp"
-        android:textSize="24dp" />
+        android:layout_height="wrap_content">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="LIMPIAR"
-        android:id="@+id/buttonLimpiarForRegisRepr"
-        android:layout_x="478dp"
-        android:layout_y="343dp"
-        android:textSize="24dp" />
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView2" >
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="REGRESAR MENU"
-        android:id="@+id/buttonRegresarMenuProf"
-        android:layout_x="629dp"
-        android:layout_y="346dp"
-        android:textSize="24dp" />
+            <AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:text="Alumnos :"
-        android:id="@+id/textView16"
-        android:layout_x="269dp"
-        android:layout_y="246dp"
-        android:textSize="25dp" />
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:layout_x="269dp"
+                    android:layout_y="85dp"
+                    android:text="Cédula :"
+                    android:textSize="25dp" />
 
-    <ListView
-        android:layout_width="250dp"
-        android:layout_height="66dp"
-        android:id="@+id/listView"
-        android:layout_x="539dp"
-        android:layout_y="251dp" />
+                <EditText
+                    android:id="@+id/editCedulaRepresentante"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_x="540dp"
+                    android:layout_y="76dp"
+                    android:ems="10"
+                    android:inputType="number" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="88dp"
-        android:layout_height="33dp"
-        android:text="agregar +"
-        android:id="@+id/buttonAgregarAlumno"
-        android:layout_x="789dp"
-        android:layout_y="246dp"
-        android:textColor="#eef0f5"
-        android:background="#8592f6" />
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="500dp"
+                    android:layout_height="wrap_content"
+                    android:layout_x="289dp"
+                    android:layout_y="42dp"
+                    android:text="FORMULARIO REGISTRO"
+                    android:textAlignment="center"
+                    android:textColor="#58adcf"
+                    android:textSize="30dp" />
 
-    <ImageView
-        android:layout_width="173dp"
-        android:layout_height="204dp"
-        android:id="@+id/imageView"
-        android:layout_x="41dp"
-        android:layout_y="129dp"
-        android:background="@mipmap/logo" />
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:layout_x="269dp"
+                    android:layout_y="166dp"
+                    android:text="Apellido :"
+                    android:textSize="25dp" />
 
-</AbsoluteLayout>
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:layout_x="269dp"
+                    android:layout_y="124dp"
+                    android:text="Nombre :"
+                    android:textSize="25dp" />
+
+                <EditText
+                    android:id="@+id/editNombreRepresentante"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_x="540dp"
+                    android:layout_y="115dp"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/editApellidoRepresentante"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_x="540dp"
+                    android:layout_y="156dp"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:layout_x="269dp"
+                    android:layout_y="205dp"
+                    android:text="Correo :"
+                    android:textSize="25dp" />
+
+                <EditText
+                    android:id="@+id/editCorreoRepresentante"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_x="540dp"
+                    android:layout_y="195dp"
+                    android:ems="10"
+                    android:inputType="textEmailAddress" />
+
+                <Button
+                    android:id="@+id/buttonRegistrarRepr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_x="264dp"
+                    android:layout_y="400dp"
+                    android:text="REGISTRAR"
+                    android:textSize="24dp" />
+
+                <Button
+                    android:id="@+id/buttonLimpiarForRegisRepr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_x="478dp"
+                    android:layout_y="400dp"
+                    android:text="LIMPIAR"
+                    android:textSize="24dp" />
+
+                <Button
+                    android:id="@+id/buttonRegresarMenuProf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_x="629dp"
+                    android:layout_y="400dp"
+                    android:text="REGRESAR MENU"
+                    android:textSize="24dp" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:layout_x="269dp"
+                    android:layout_y="246dp"
+                    android:text="Alumnos :"
+                    android:textSize="25dp" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_x="540dp"
+                    android:layout_y="240dp"
+                    android:weightSum="1">
+
+                    <EditText
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:ems="10"
+                        android:id="@+id/editNombreAlumno" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Lista de Alumnos"
+                        android:id="@+id/textView17"
+                        android:gravity="center" />
+
+                    <ListView
+                        android:id="@+id/listAlumnosRepresentante"
+                        android:layout_width="250dp"
+                        android:layout_height="0dp"
+                        android:layout_x="543dp"
+                        android:layout_y="276dp"
+                        android:choiceMode="singleChoice"
+                        android:layout_weight="0.90"
+                        android:headerDividersEnabled="false"
+                        android:footerDividersEnabled="true"
+                        android:scrollIndicators="top" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/buttonAgregarAlumno"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="88dp"
+                    android:layout_height="33dp"
+                    android:layout_x="801dp"
+                    android:layout_y="243dp"
+                    android:background="#8592f6"
+                    android:text="agregar +"
+                    android:textColor="#eef0f5" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="173dp"
+                    android:layout_height="204dp"
+                    android:layout_x="41dp"
+                    android:layout_y="129dp"
+                    android:background="@mipmap/logo" />
+
+            </AbsoluteLayout>
+        </ScrollView>
+    </HorizontalScrollView>
+
+</RelativeLayout>

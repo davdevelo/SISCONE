@@ -7,6 +7,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import moledos.Login;
 import moledos.Persona;
 import momentario.Listas;
 
@@ -19,12 +23,13 @@ public class RegistroProfesor extends AppCompatActivity {
     EditText contraseñaProf;
     EditText confContraseñaProf;
 
-
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_profesor);
+
+        buscarElementos();
+
         findViewById(R.id.buttonRegresarLoginProf).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,19 +51,18 @@ public class RegistroProfesor extends AppCompatActivity {
         });
     }
 
-    public void buscarElementos()
-    {
-        cedulaProf= (EditText) findViewById(R.id.editCedulaProf);
-        nombreProf= (EditText) findViewById(R.id.editNombreProf);
-        apellidoProf= (EditText) findViewById(R.id.editApellidoProf);
-        correoProf= (EditText) findViewById(R.id.editCorreoProf);
-        contraseñaProf= (EditText) findViewById(R.id.editContraseñaRegProf1);
-        confContraseñaProf= (EditText) findViewById(R.id.editContraseñaRegProf2);
+    private void buscarElementos() {
+        cedulaProf = (EditText) findViewById(R.id.editCedulaProf);
+        nombreProf = (EditText) findViewById(R.id.editNombreProf);
+        apellidoProf = (EditText) findViewById(R.id.editApellidoProf);
+        correoProf = (EditText) findViewById(R.id.editCorreoProf);
+        contraseñaProf = (EditText) findViewById(R.id.editContraseñaRegProf1);
+        confContraseñaProf = (EditText) findViewById(R.id.editContraseñaRegProf2);
+
     }
 
-    public void limpiarRegistroProf ()
-    {
-        buscarElementos();
+    private void limpiarRegistroProf() {
+
         cedulaProf.setText("");
         nombreProf.setText("");
         apellidoProf.setText("");
@@ -68,7 +72,8 @@ public class RegistroProfesor extends AppCompatActivity {
         confContraseñaProf.setText("");
     }
 
-    public void registrarProfesor(){
+    private Object[] recuperraDatos(){
+
         buscarElementos();
         Persona profesor = new Persona(
                 cedulaProf.getText().toString(),
@@ -78,21 +83,39 @@ public class RegistroProfesor extends AppCompatActivity {
                 contraseñaProf.getText().toString()
                 , "Profesor");
 
-        if(contraseñaProf.getText().toString().equals(confContraseñaProf.getText().toString())) {
-            Toast registroCorrecto = Toast.makeText(getApplicationContext(),"Usted se ha registrado correctamente",Toast.LENGTH_LONG);
+        Login login = new Login(
+                cedulaProf.getText().toString(),
+                contraseñaProf.getText().toString(),
+                "Profesor");
+
+        Object datos[] = new Object[]{profesor,login};
+        return datos;
+    }
+
+
+
+
+    public void registrarProfesor() {
+
+        Object datos[] = recuperraDatos();
+        Persona profesor = (Persona)datos[0];
+        Login login = (Login) datos[1];
+
+        if (contraseñaProf.getText().toString().equals(confContraseñaProf.getText().toString())) {
+            Toast registroCorrecto = Toast.makeText(getApplicationContext(), "Usted se ha registrado correctamente", Toast.LENGTH_LONG);
             registroCorrecto.show();
-            Listas.Profesores.add(profesor);
-            for(Persona p : Listas.Profesores){
-                System.out.println(p.getNombre());
-            }
+
+            Listas.registrados.add(login);
+            Listas.profesores.add(profesor);
+
             Intent intent = new Intent(RegistroProfesor.this, MainActivity.class);
             startActivity(intent);
-        }
-        else{
-            Toast registroIncorrecto = Toast.makeText(getApplicationContext(),"Las contrasenas deben ser iguales",Toast.LENGTH_LONG);
+
+        } else {
+            Toast registroIncorrecto = Toast.makeText(getApplicationContext(), "Las contrasenas deben ser iguales", Toast.LENGTH_LONG);
             registroIncorrecto.show();
         }
-        
+
     }
 
 }
