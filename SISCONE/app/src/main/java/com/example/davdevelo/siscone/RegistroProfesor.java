@@ -68,15 +68,6 @@ public class RegistroProfesor extends AppCompatActivity {
         for(EditText e : elementos){
             e.setText("");
         }
-        /*
-        cedulaProf.setText("");
-        nombreProf.setText("");
-        apellidoProf.setText("");
-        correoProf.setText("");
-        correoProf.setText("");
-        contraseñaProf.setText("");
-        confContraseñaProf.setText("");
-        */
     }
 
     private Object[] recuperraDatos(){
@@ -115,6 +106,7 @@ public class RegistroProfesor extends AppCompatActivity {
             Listas.registrados.add(login);
             Listas.profesores.add(profesor);
 
+            finish();
             Intent intent = new Intent(RegistroProfesor.this, MainActivity.class);
             startActivity(intent);
 

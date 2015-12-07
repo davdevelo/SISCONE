@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.buttonCrearCuenta).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
                 startActivity(new Intent(MainActivity.this, RegistroProfesor.class));
             }
         });
@@ -79,7 +80,12 @@ public class MainActivity extends AppCompatActivity {
                 contrasena.getText().toString(),
                 sistemas.getSelectedItem().toString());
 
+        for(Login l:Listas.registrados){
+            Log.i("Login",l.getCedula()+ "  " + l.getContrasena()+"  " + l.getTipo());
+        }
+
         if(Listas.registrados.contains(login)) {
+            finish();
             startActivity(new Intent(MainActivity.this, MenuProfesor.class));
         }else{
             Toast toast = Toast.makeText(getApplicationContext(), "No exite el usuraio \n O los campos estan llenados incorectamente ", Toast.LENGTH_SHORT);

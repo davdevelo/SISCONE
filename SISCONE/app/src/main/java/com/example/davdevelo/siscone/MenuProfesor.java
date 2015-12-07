@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import moledos.Login;
+
 public class MenuProfesor extends AppCompatActivity {
 
     @Override
@@ -22,6 +24,7 @@ public class MenuProfesor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+                startActivity(new Intent(MenuProfesor.this, MainActivity.class));
             }
         });
     }

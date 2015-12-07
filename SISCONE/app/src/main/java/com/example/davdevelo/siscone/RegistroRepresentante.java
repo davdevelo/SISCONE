@@ -42,6 +42,7 @@ public class RegistroRepresentante extends AppCompatActivity {
         findViewById(R.id.buttonRegresarMenuProf).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
                 startActivity(new Intent(RegistroRepresentante.this, MenuProfesor.class));
             }
         });
@@ -59,7 +60,12 @@ public class RegistroRepresentante extends AppCompatActivity {
                 limpiar();
             }
         });
-
+        findViewById(R.id.buttonRegistrarRepr).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                registrarRepresentante();
+            }
+        });
 
     }
 
@@ -95,12 +101,12 @@ public class RegistroRepresentante extends AppCompatActivity {
                 apellido.getText().toString(),
                 correo.getText().toString(),
                 "12345"
-                , "Profesor",alumnosRepresentante);
+                , "Representante",alumnosRepresentante);
 
         Login login = new Login(
                 cedula.getText().toString(),
                 "12345",
-                "Representate");
+                "Representante");
 
         Object datos[] = new Object[]{representante,login};
         return datos;
@@ -127,8 +133,5 @@ public class RegistroRepresentante extends AppCompatActivity {
         Listas.registrados.add(login);
         limpiar();
     }
-
-
-
 
 }
