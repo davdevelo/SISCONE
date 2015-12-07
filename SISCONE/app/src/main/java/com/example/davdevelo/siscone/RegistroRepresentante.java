@@ -15,6 +15,7 @@ import java.util.List;
 import moledos.Login;
 import moledos.Persona;
 import moledos.Representante;
+import momentario.Listas;
 
 public class RegistroRepresentante extends AppCompatActivity {
 
@@ -24,8 +25,10 @@ public class RegistroRepresentante extends AppCompatActivity {
     private EditText correo;
     private EditText alumno;
     private ListView alumnos;
+    private EditText elementos[];
     private ArrayAdapter adaptador;
     private List<String> listaAlumnos;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,7 @@ public class RegistroRepresentante extends AppCompatActivity {
         setContentView(R.layout.activity_registro_representante);
 
         buscarElementos();
+        elementos = new EditText[]{cedula,nombre,apellido,correo,alumno};
         listaAlumnos = new ArrayList<>();
 
         findViewById(R.id.buttonRegresarMenuProf).setOnClickListener(new View.OnClickListener() {
@@ -46,6 +50,13 @@ public class RegistroRepresentante extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 agregarAlumno();
+            }
+        });
+
+        findViewById(R.id.buttonLimpiarForRegisRepr).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                limpiar();
             }
         });
 
@@ -95,9 +106,29 @@ public class RegistroRepresentante extends AppCompatActivity {
         return datos;
     }
 
-    private void registrarRepresentante(){
+    private void limpiar() {
+        for (EditText e : elementos) {
+            e.setText("");
+        }
+        listaAlumnos = new ArrayList<>();
+        adaptador = new ArrayAdapter(
+                this,android.R.layout.simple_expandable_list_item_1, listaAlumnos
+        );
+        alumnos.setAdapter(adaptador);
 
     }
+
+    private void registrarRepresentante(){
+        Object datos [] = recuperrarDatos();
+        Representante representante = (Representante) datos[0];
+        Login login = (Login) datos[1];
+
+        Listas.representantes.add(representante);
+        Listas.registrados.add(login);
+        limpiar();
+    }
+
+
 
 
 }

@@ -22,6 +22,7 @@ public class RegistroProfesor extends AppCompatActivity {
     EditText correoProf;
     EditText contraseñaProf;
     EditText confContraseñaProf;
+    EditText elementos[];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,7 @@ public class RegistroProfesor extends AppCompatActivity {
         setContentView(R.layout.activity_registro_profesor);
 
         buscarElementos();
+        elementos = new EditText[]{cedulaProf,nombreProf,apellidoProf,correoProf,contraseñaProf,confContraseñaProf};
 
         findViewById(R.id.buttonRegresarLoginProf).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +65,10 @@ public class RegistroProfesor extends AppCompatActivity {
 
     private void limpiarRegistroProf() {
 
+        for(EditText e : elementos){
+            e.setText("");
+        }
+        /*
         cedulaProf.setText("");
         nombreProf.setText("");
         apellidoProf.setText("");
@@ -70,6 +76,7 @@ public class RegistroProfesor extends AppCompatActivity {
         correoProf.setText("");
         contraseñaProf.setText("");
         confContraseñaProf.setText("");
+        */
     }
 
     private Object[] recuperraDatos(){

@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     EditText cedula;
     EditText contrasena;
     Spinner sistemas;
+    private EditText elementos[];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.menu_login);
 
         buscarElemntos();
+        elementos = new EditText[]{cedula,contrasena};
 
         ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.tipoUsuario, android.R.layout.simple_spinner_item);
         sistemas.setAdapter(adapter);
@@ -61,8 +63,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void limpiar() {
         sistemas.setSelection(0);
-        cedula.setText("");
-        contrasena.setText("");
+        for(EditText e : elementos){
+            e.setText("");
+        }
     }
 
     private void buscarElemntos() {
