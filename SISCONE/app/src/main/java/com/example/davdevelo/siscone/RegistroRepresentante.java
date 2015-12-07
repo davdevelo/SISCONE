@@ -53,7 +53,6 @@ public class RegistroRepresentante extends AppCompatActivity {
     }
 
     private void buscarElementos(){
-
         cedula = (EditText) findViewById(R.id.editCedulaRepresentante);
         nombre = (EditText) findViewById(R.id.editNombreRepresentante);
         apellido = (EditText) findViewById(R.id.editApellidoRepresentante);
@@ -68,7 +67,7 @@ public class RegistroRepresentante extends AppCompatActivity {
                 this,android.R.layout.simple_expandable_list_item_1, listaAlumnos
         );
         alumnos.setAdapter(adaptador);
-        alumno.setTag("");
+        alumno.setText("");
     }
 
     private Object[] recuperrarDatos(){
@@ -97,7 +96,7 @@ public class RegistroRepresentante extends AppCompatActivity {
     }
 
     private void registrarRepresentante(){
-        
+
     }
 
 
