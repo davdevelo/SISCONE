@@ -104,29 +104,35 @@
                 <Button
                     android:id="@+id/buttonRegistrarRepr"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_x="264dp"
-                    android:layout_y="400dp"
+                    android:layout_height="72dp"
+                    android:layout_x="230dp"
+                    android:layout_y="367dp"
                     android:text="REGISTRAR"
-                    android:textSize="24dp" />
+                    android:textSize="18dp"
+                    android:background="@drawable/btn_cicle"
+                    android:drawableLeft="@mipmap/documents" />
 
                 <Button
                     android:id="@+id/buttonLimpiarForRegisRepr"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_x="478dp"
-                    android:layout_y="400dp"
+                    android:layout_height="72dp"
+                    android:layout_x="470dp"
+                    android:layout_y="367dp"
                     android:text="LIMPIAR"
-                    android:textSize="24dp" />
+                    android:textSize="18dp"
+                    android:background="@drawable/btn_cicle"
+                    android:drawableLeft="@mipmap/trash_empty" />
 
                 <Button
                     android:id="@+id/buttonRegresarMenuProf"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_x="629dp"
-                    android:layout_y="400dp"
+                    android:layout_height="72dp"
+                    android:layout_x="660dp"
+                    android:layout_y="367dp"
                     android:text="REGRESAR MENU"
-                    android:textSize="24dp" />
+                    android:textSize="18dp"
+                    android:background="@drawable/btn_cicle"
+                    android:drawableLeft="@mipmap/home" />
 
                 <TextView
                     android:id="@+id/textView16"

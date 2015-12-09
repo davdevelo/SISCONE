@@ -138,31 +138,36 @@
                     android:inputType="textPassword" />
 
                 <Button
-                    android:id="@+id/buttonIngresarRegProf"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_x="301dp"
-                    android:layout_y="358dp"
+                    android:layout_height="72dp"
+                    android:layout_x="230dp"
+                    android:layout_y="362dp"
                     android:text="REGISTRARSE"
-                    android:textSize="24dp" />
+                    android:textSize="18dp"
+                    android:drawableLeft="@mipmap/documents"
+                    android:background="@drawable/btn_cicle" />
 
                 <Button
                     android:id="@+id/buttonLimpiarForRegisProf"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_x="515dp"
-                    android:layout_y="358dp"
+                    android:layout_height="72dp"
+                    android:layout_x="470dp"
+                    android:layout_y="362dp"
                     android:text="LIMPIAR"
-                    android:textSize="24dp" />
+                    android:textSize="18dp"
+                    android:drawableLeft="@mipmap/trash_empty"
+                    android:background="@drawable/btn_cicle"/>
 
                 <Button
                     android:id="@+id/buttonRegresarLoginProf"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_x="665dp"
-                    android:layout_y="358dp"
+                    android:layout_height="72dp"
+                    android:layout_x="660dp"
+                    android:layout_y="362dp"
                     android:text="REGRESAR LOGIN"
-                    android:textSize="24dp" />
+                    android:textSize="18dp"
+                    android:drawableLeft="@mipmap/home"
+                    android:background="@drawable/btn_cicle"/>
 
                 <ImageView
                     android:id="@+id/imageView3"

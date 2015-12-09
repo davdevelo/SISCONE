@@ -28,7 +28,8 @@
                     android:textSize="30dp"
                     android:textStyle="bold"
                     android:textColor="#58adcf"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:clickable="false" />
 
                 <TextView
                     android:layout_width="260dp"
@@ -84,48 +85,58 @@
 
                 <Button
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="75dp"
                     android:text="INGRESAR"
                     android:id="@+id/buttonIngresar"
                     android:layout_x="313dp"
                     android:layout_y="253dp"
-                    android:textSize="24dp" />
+                    android:textSize="18dp"
+                    android:background="@drawable/btn_cicle"
+                    android:drawableLeft="@mipmap/folder_users" />
 
                 <Button
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="75dp"
                     android:text="LIMPIAR"
                     android:id="@+id/buttonLimpiar"
                     android:layout_x="544dp"
                     android:layout_y="253dp"
-                    android:textSize="24dp" />
+                    android:textSize="18dp"
+                    android:background="@drawable/btn_cicle"
+                    android:drawableLeft="@mipmap/trash_empty" />
 
                 <Button
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="164dp"
+                    android:layout_height="75dp"
                     android:text="SALIR"
                     android:id="@+id/buttonSalir"
                     android:layout_x="763dp"
                     android:layout_y="253dp"
-                    android:textSize="24dp" />
+                    android:textSize="18dp"
+                    android:background="@drawable/btn_cicle"
+                    android:drawableLeft="@mipmap/homedark"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No esta registrado ? Cree su cuenta"
                     android:id="@+id/textRegistro"
-                    android:layout_x="391dp"
-                    android:layout_y="324dp"
-                    android:textSize="25dp" />
+                    android:layout_x="280dp"
+                    android:layout_y="375dp"
+                    android:textSize="20dp"
+                    android:textColor="#f70b0b" />
 
                 <Button
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="65dp"
                     android:text="CREAR CUENTA"
                     android:id="@+id/buttonCrearCuenta"
-                    android:layout_x="503dp"
-                    android:layout_y="372dp"
-                    android:textSize="24dp" />
+                    android:layout_x="628dp"
+                    android:layout_y="363dp"
+                    android:textSize="16dp"
+                    android:background="@drawable/btn_cicle"
+                    android:drawableLeft="@mipmap/documents" />
 
                 <ImageView
                     android:layout_width="173dp"
