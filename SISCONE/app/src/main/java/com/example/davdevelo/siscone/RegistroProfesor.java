@@ -38,6 +38,7 @@ public class RegistroProfesor extends AppCompatActivity {
                 startActivity(new Intent(RegistroProfesor.this, MainActivity.class));
             }
         });
+
         findViewById(R.id.buttonIngresarRegProf).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView3" >
+
+            <AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="72dp"
+                    android:layout_x="477dp"
+                    android:layout_y="360dp"
+                    android:text="REGRESAR MENU"
+                    android:textSize="18dp"
+                    android:background="@drawable/btn_cicle"
+                    android:drawableLeft="@mipmap/home" />
+
+                <Button
+                    android:id="@+id/buttonGuardarMaterias"
+                    android:layout_width="wrap_content"
+                    android:layout_height="72dp"
+                    android:layout_x="232dp"
+                    android:layout_y="360dp"
+                    android:text="Guardar"
+                    android:textSize="18dp"
+                    android:background="@drawable/btn_cicle"
+                    android:drawableLeft="@mipmap/floppy" />
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="500dp"
+                    android:layout_height="wrap_content"
+                    android:layout_x="249dp"
+                    android:layout_y="50dp"
+                    android:text="FORMULARIO REGISTRO MATERIAS"
+                    android:textAlignment="center"
+                    android:textColor="#58adcf"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="217dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Lista de materias"
+                    android:id="@+id/textView20"
+                    android:gravity="center"
+                    android:layout_x="405dp"
+                    android:layout_y="103dp"
+                    android:textStyle="bold" />
+
+                <ListView
+                    android:id="@+id/listView"
+                    android:layout_width="260dp"
+                    android:layout_height="190dp"
+                    android:layout_x="367dp"
+                    android:layout_y="142dp"
+                    android:choiceMode="singleChoice"
+                    android:headerDividersEnabled="false"
+                    android:footerDividersEnabled="true"
+                    android:scrollIndicators="top" />
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:id="@+id/button3"
+                    android:layout_width="88dp"
+                    android:layout_height="33dp"
+                    android:layout_x="657dp"
+                    android:layout_y="157dp"
+                    android:background="#8592f6"
+                    android:text="agregar +"
+                    android:textColor="#eef0f5" />
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:id="@+id/button4"
+                    android:layout_width="88dp"
+                    android:layout_height="33dp"
+                    android:layout_x="659dp"
+                    android:layout_y="201dp"
+                    android:background="#f2263e"
+                    android:text="QUITAR"
+                    android:textColor="#eef0f5" />
+
+                <ImageView
+                    android:layout_width="173dp"
+                    android:layout_height="204dp"
+                    android:id="@+id/imageView5"
+                    android:layout_x="60dp"
+                    android:layout_y="110dp"
+                    android:background="@mipmap/logo" />
+
+            </AbsoluteLayout>
+    </ScrollView>
+    </HorizontalScrollView>
+
+    </RelativeLayout>

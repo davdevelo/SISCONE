@@ -145,7 +145,8 @@
                     android:text="REGISTRARSE"
                     android:textSize="18dp"
                     android:drawableLeft="@mipmap/documents"
-                    android:background="@drawable/btn_cicle" />
+                    android:background="@drawable/btn_cicle"
+                    android:id="@+id/buttonIngresarRegProf" />
 
                 <Button
                     android:id="@+id/buttonLimpiarForRegisProf"

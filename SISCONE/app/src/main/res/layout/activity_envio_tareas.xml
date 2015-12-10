@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollMenuProfesor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/verticalScrollMenuProfesor" >
+
+        <AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true">
+
+            <TextView
+                android:layout_width="500dp"
+                android:layout_height="wrap_content"
+                android:text="FORMULARIO ENVIO DE TAREAS"
+                android:id="@+id/textEncabezado"
+                android:layout_x="300dp"
+                android:layout_y="39dp"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:textColor="#58adcf"
+                android:textAlignment="center"
+                android:clickable="false" />
+
+            <ImageView
+                android:layout_width="173dp"
+                android:layout_height="204dp"
+                android:id="@+id/imageView2"
+                android:layout_x="33dp"
+                android:layout_y="110dp"
+                android:background="@mipmap/logo" />
+
+            <TextView
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:text="Materia :"
+                android:id="@+id/textView24"
+                android:layout_x="242dp"
+                android:layout_y="116dp"
+                android:textSize="25dp" />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinner3"
+                android:layout_x="356dp"
+                android:layout_y="109dp" />
+
+            <TextView
+                android:layout_width="221dp"
+                android:layout_height="wrap_content"
+                android:text="Fecha de entrega :"
+                android:id="@+id/textView25"
+                android:layout_x="504dp"
+                android:layout_y="118dp"
+                android:textSize="25dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:ems="10"
+                android:id="@+id/editText"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="95dp"
+                android:layout_x="722dp"
+                android:layout_y="113dp" />
+
+            <TextView
+                android:layout_width="620dp"
+                android:layout_height="166dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Large Text XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                android:id="@+id/textView26"
+                android:layout_x="240dp"
+                android:layout_y="195dp" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="wrap_content"
+                android:layout_height="72dp"
+                android:layout_x="550dp"
+                android:layout_y="380dp"
+                android:text="REGRESAR MENU"
+                android:textSize="18dp"
+                android:background="@drawable/btn_cicle"
+                android:drawableLeft="@mipmap/home"
+                android:layout_marginLeft="216dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="280dp" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="wrap_content"
+                android:layout_height="72dp"
+                android:layout_x="300dp"
+                android:layout_y="380dp"
+                android:text="Guardar"
+                android:textSize="18dp"
+                android:background="@drawable/btn_cicle"
+                android:drawableLeft="@mipmap/floppy"
+                android:layout_marginStart="113dp"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/button9" />
+
+        </AbsoluteLayout>
+
+
+    </ScrollView>
+    </HorizontalScrollView>
+
+</RelativeLayout>
+

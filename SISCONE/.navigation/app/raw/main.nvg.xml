@@ -8,32 +8,32 @@
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
         className = "com.example.davdevelo.siscone.MainActivity"/>
       <point      
-        x = "56"      
-        y = "56"/>
+        x = "2028"      
+        y = "-120"/>
     </statePointEntry>
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
         className = "com.example.davdevelo.siscone.RegistroProfesor"/>
       <point      
-        x = "2028"      
-        y = "52"/>
+        x = "-60"      
+        y = "820"/>
     </statePointEntry>
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
         className = "com.example.davdevelo.siscone.RegistroRepresentante"/>
       <point      
-        x = "6092"      
-        y = "68"/>
+        x = "3928"      
+        y = "1212"/>
     </statePointEntry>
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
         className = "com.example.davdevelo.siscone.MenuProfesor"/>
       <point      
-        x = "4095"      
-        y = "70"/>
+        x = "5756"      
+        y = "-156"/>
     </statePointEntry>
   </locations>
 </navigationModel>

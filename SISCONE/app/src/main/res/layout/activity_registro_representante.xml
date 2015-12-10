@@ -106,7 +106,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="72dp"
                     android:layout_x="230dp"
-                    android:layout_y="367dp"
+                    android:layout_y="385dp"
                     android:text="REGISTRAR"
                     android:textSize="18dp"
                     android:background="@drawable/btn_cicle"
@@ -117,7 +117,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="72dp"
                     android:layout_x="470dp"
-                    android:layout_y="367dp"
+                    android:layout_y="385dp"
                     android:text="LIMPIAR"
                     android:textSize="18dp"
                     android:background="@drawable/btn_cicle"
@@ -128,7 +128,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="72dp"
                     android:layout_x="660dp"
-                    android:layout_y="367dp"
+                    android:layout_y="385dp"
                     android:text="REGRESAR MENU"
                     android:textSize="18dp"
                     android:background="@drawable/btn_cicle"
@@ -197,6 +197,17 @@
                     android:layout_x="41dp"
                     android:layout_y="129dp"
                     android:background="@mipmap/logo" />
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:id="@+id/button5"
+                    android:layout_width="88dp"
+                    android:layout_height="33dp"
+                    android:layout_x="791dp"
+                    android:layout_y="312dp"
+                    android:background="#f2263e"
+                    android:text="QUITAR"
+                    android:textColor="#eef0f5" />
 
             </AbsoluteLayout>
         </ScrollView>

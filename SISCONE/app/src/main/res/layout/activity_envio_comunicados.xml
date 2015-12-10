@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView3" >
+
+            <AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="500dp"
+                    android:layout_height="wrap_content"
+                    android:layout_x="230dp"
+                    android:layout_y="28dp"
+                    android:text="FORMULARIO ENVIO DE COMUNICADOS"
+                    android:textAlignment="center"
+                    android:textColor="#58adcf"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="217dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Materia :"
+                    android:id="@+id/textView22"
+                    android:gravity="center"
+                    android:layout_x="189dp"
+                    android:layout_y="130dp"
+                    android:textStyle="bold"
+                    android:textSize="25dp" />
+
+                <Button
+                    android:id="@+id/button6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="72dp"
+                    android:layout_x="273dp"
+                    android:layout_y="380dp"
+                    android:text="Guardar"
+                    android:textSize="18dp"
+                    android:background="@drawable/btn_cicle"
+                    android:drawableLeft="@mipmap/floppy" />
+
+                <Button
+                    android:id="@+id/button7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="72dp"
+                    android:layout_x="525dp"
+                    android:layout_y="380dp"
+                    android:text="REGRESAR MENU"
+                    android:textSize="18dp"
+                    android:background="@drawable/btn_cicle"
+                    android:drawableLeft="@mipmap/home" />
+
+                <Spinner
+                    android:layout_width="335dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/spinner"
+                    android:layout_x="417dp"
+                    android:layout_y="130dp" />
+
+                <TextView
+                    android:layout_width="713dp"
+                    android:layout_height="138dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Large Text XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                    android:id="@+id/textView23"
+                    android:layout_x="190dp"
+                    android:layout_y="207dp" />
+
+                <ImageView
+                    android:layout_width="173dp"
+                    android:layout_height="204dp"
+                    android:id="@+id/imageView4"
+                    android:layout_x="12dp"
+                    android:layout_y="110dp"
+                    android:background="@mipmap/logo" />
+
+            </AbsoluteLayout>
+        </ScrollView>
+    </HorizontalScrollView>
+
+</RelativeLayout>
