@@ -6,34 +6,58 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.example.davdevelo.siscone.EnvioComunicados"/>
+      <point      
+        x = "5575"      
+        y = "2535"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.example.davdevelo.siscone.EnvioTareas"/>
+      <point      
+        x = "5721"      
+        y = "960"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.example.davdevelo.siscone.AdminMaterias"/>
+      <point      
+        x = "2406"      
+        y = "3671"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
         className = "com.example.davdevelo.siscone.MainActivity"/>
       <point      
-        x = "2028"      
-        y = "-120"/>
+        x = "2219"      
+        y = "-46"/>
     </statePointEntry>
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
         className = "com.example.davdevelo.siscone.RegistroProfesor"/>
       <point      
-        x = "-60"      
-        y = "820"/>
+        x = "111"      
+        y = "983"/>
     </statePointEntry>
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
         className = "com.example.davdevelo.siscone.RegistroRepresentante"/>
       <point      
-        x = "3928"      
-        y = "1212"/>
+        x = "4515"      
+        y = "70"/>
     </statePointEntry>
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
         className = "com.example.davdevelo.siscone.MenuProfesor"/>
       <point      
-        x = "5756"      
-        y = "-156"/>
+        x = "2166"      
+        y = "1833"/>
     </statePointEntry>
   </locations>
 </navigationModel>

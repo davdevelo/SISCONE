@@ -13,54 +13,60 @@ import android.widget.Toast;
 import moledos.Login;
 import momentario.Listas;
 
-public class MainActivity extends AppCompatActivity {
+    public class MainActivity extends AppCompatActivity {
 
     EditText cedula;
     EditText contrasena;
     Spinner sistemas;
     private EditText elementos[];
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.menu_login);
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.menu_login);
 
-        buscarElemntos();
-        elementos = new EditText[]{cedula,contrasena};
+            buscarElemntos();
+            elementos = new EditText[]{cedula, contrasena};
 
-        ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.tipoUsuario, android.R.layout.simple_spinner_item);
-        sistemas.setAdapter(adapter);
+            ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.tipoUsuario, android.R.layout.simple_spinner_item);
+            sistemas.setAdapter(adapter);
 
-        findViewById(R.id.buttonCrearCuenta).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-                startActivity(new Intent(MainActivity.this, RegistroProfesor.class));
-            }
-        });
+            findViewById(R.id.buttonCrearCuenta).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                    startActivity(new Intent(MainActivity.this, RegistroProfesor.class));
+                }
+            });
 
-        findViewById(R.id.buttonLimpiar).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                limpiar();
-            }
-        });
+            findViewById(R.id.buttonLimpiar).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    limpiar();
+                }
+            });
 
-        findViewById(R.id.buttonSalir).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+            findViewById(R.id.buttonSalir).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
 
-        findViewById(R.id.buttonIngresar).setOnClickListener(new View.OnClickListener() {
+            findViewById(R.id.buttonIngresar).setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-               logearse();
-            }
-        });
-    }
+                @Override
+                public void onClick(View v) {
+                    logearse();
+                }
+            });
+            findViewById(R.id.buttonCrearCuenta).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(MainActivity.this, RegistroProfesor.class));
+                }
+            });
+        }
 
     private void limpiar() {
         sistemas.setSelection(0);

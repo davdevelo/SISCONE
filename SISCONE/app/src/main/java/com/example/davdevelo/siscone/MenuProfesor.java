@@ -27,6 +27,30 @@ public class MenuProfesor extends AppCompatActivity {
                 startActivity(new Intent(MenuProfesor.this, MainActivity.class));
             }
         });
+        findViewById(R.id.buttonComunicados).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MenuProfesor.this, EnvioComunicados.class));
+            }
+        });
+        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MenuProfesor.this, AdminMaterias.class));
+            }
+        });
+        findViewById(R.id.buttonEnvioTareas).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MenuProfesor.this, EnvioTareas.class));
+            }
+        });
+        findViewById(R.id.buttonMenuProfesorSalir).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MenuProfesor.this, MainActivity.class));
+            }
+        });
     }
 }
 

@@ -36,7 +36,7 @@ public class RegistroRepresentante extends AppCompatActivity {
         setContentView(R.layout.activity_registro_representante);
 
         buscarElementos();
-        elementos = new EditText[]{cedula,nombre,apellido,correo,alumno};
+        elementos = new EditText[]{cedula, nombre, apellido, correo, alumno};
         listaAlumnos = new ArrayList<>();
 
         findViewById(R.id.buttonRegresarMenuProf).setOnClickListener(new View.OnClickListener() {
@@ -66,6 +66,13 @@ public class RegistroRepresentante extends AppCompatActivity {
                 registrarRepresentante();
             }
         });
+        findViewById(R.id.buttonRegresarMenuProf).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RegistroRepresentante.this, MenuProfesor.class));
+            }
+        });
+
 
     }
 
