@@ -1,5 +1,15 @@
 package moledos;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.HashMap;
+import java.util.Map;
+
+import crud.DBConnection;
+import crud.Sentencias;
+
 /**
  * Created by DANIEL on 02/12/2015.
  */
@@ -70,4 +80,60 @@ public class Persona {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+
+    public void registrarProfesor() {
+
+        Connection conexion = DBConnection.getInstace().getConnection();
+        Map<String, String> parametros = new HashMap<>();
+
+        parametros.put("cedula_profesor", this.cedula);
+        parametros.put("nombre_profesor", this.nombre);
+        parametros.put("apellido_profesor", this.apellido);
+        parametros.put("correo_profesor", this.correo);
+        parametros.put("contrasena_profesor", this.contrasena);
+
+        try {
+            Statement sentencia = conexion.createStatement();
+            ResultSet resultado = sentencia.executeQuery(
+                    Sentencias.registrar("profesor", parametros));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public ResultSet buscarCusroProfesor(Integer cedulaProfesor) {
+
+        ResultSet resultado = null;
+        Connection conexion = DBConnection.getInstace().getConnection();
+        Map<String, String> condiciones = new HashMap<>();
+        condiciones.put("cedula_Profesor", cedulaProfesor.toString());
+        try {
+            Statement sentencia = conexion.createStatement();
+            resultado = sentencia.executeQuery(
+                    Sentencias.consultar("curso", null, condiciones));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return resultado;
+    }
+
+    public ResultSet buscarProfesor(String cedulaProfesor) {
+
+        ResultSet resultado = null;
+        Connection conexion = DBConnection.getInstace().getConnection();
+        Map<String, String> condiciones = new HashMap<>();
+        condiciones.put("cedula_Profesor", cedulaProfesor);
+        try {
+            Statement sentencia = conexion.createStatement();
+            resultado = sentencia.executeQuery(
+                    Sentencias.consultar("profesor", null, condiciones));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return resultado;
+    }
+
+
 }

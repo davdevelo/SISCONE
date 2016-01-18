@@ -18,13 +18,14 @@ import java.sql.Statement;
 
 import crud.DBConnection;
 import moledos.Login;
+import moledos.Persona;
 import momentario.Listas;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText cedula;
-    EditText contrasena;
-    Spinner sistemas;
+    private EditText cedula;
+    private EditText contrasena;
+    private Spinner sistemas;
     private EditText elementos[];
 
     @Override
@@ -32,12 +33,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_login);
         iniciarEntorno();
-        new GetDBConnection().execute(1);
-
     }
 
-    private void iniciarEntorno(){
-
+    private void iniciarEntorno() {
         buscarElemntos();
         elementos = new EditText[]{cedula, contrasena};
 
@@ -100,11 +98,20 @@ public class MainActivity extends AppCompatActivity {
                 contrasena.getText().toString(),
                 sistemas.getSelectedItem().toString());
 
-        for (Login l : Listas.registrados) {
-            Log.i("Login", l.getCedula() + "  " + l.getContrasena() + "  " + l.getTipo());
+        Logeo logeo = new Logeo(login);
+        logeo.execute(1);
+
+        ResultSet profesor = logeo.getProfe();
+
+        try {
+            while(profesor.next()) {
+                Log.i("contrasena: ", profesor.getString("contrasena_profesor"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
-        if (Listas.registrados.contains(login)) {
+        if (logeo.getProfe() != null) {
             finish();
             startActivity(new Intent(MainActivity.this, MenuProfesor.class));
         } else {
@@ -112,25 +119,32 @@ public class MainActivity extends AppCompatActivity {
             toast.show();
         }
 
+
     }
 
-    private class GetDBConnection extends AsyncTask<Integer, Void, String> {
+    private class Logeo extends AsyncTask<Integer, Void, String> {
+        private Login login;
+        private ResultSet profe;
+
+        public Logeo(Login login) {
+            this.login = login;
+        }
+
+        public ResultSet getProfe() {
+            return profe;
+        }
 
         @Override
         protected String doInBackground(Integer... params) {
-            Connection con = DBConnection.getInstace().getConnection();
-            if (con != null) {
-                return "conectado";
-            } else {
-                return "Desconectado";
+            if (login.getTipo().equals("Profesor")) {
+                profe = null;
+                Persona profesor = new Persona();
+                profe = profesor.buscarProfesor(login.getCedula());
             }
+            return "Consultando profe";
+
         }
 
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            Log.i("Estado", s);
-        }
     }
 
 

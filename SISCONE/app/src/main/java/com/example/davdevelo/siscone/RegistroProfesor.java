@@ -1,15 +1,19 @@
 package com.example.davdevelo.siscone;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
+import crud.DBConnection;
 import moledos.Login;
 import moledos.Persona;
 import momentario.Listas;
@@ -30,7 +34,7 @@ public class RegistroProfesor extends AppCompatActivity {
         setContentView(R.layout.activity_registro_profesor);
 
         buscarElementos();
-        elementos = new EditText[]{cedulaProf,nombreProf,apellidoProf,correoProf,contraseñaProf,confContraseñaProf};
+        elementos = new EditText[]{cedulaProf, nombreProf, apellidoProf, correoProf, contraseñaProf, confContraseñaProf};
 
         findViewById(R.id.buttonRegresarLoginProf).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,12 +70,12 @@ public class RegistroProfesor extends AppCompatActivity {
 
     private void limpiarRegistroProf() {
 
-        for(EditText e : elementos){
+        for (EditText e : elementos) {
             e.setText("");
         }
     }
 
-    private Object[] recuperraDatos(){
+    private Object[] recuperraDatos() {
 
         buscarElementos();
         Persona profesor = new Persona(
@@ -87,25 +91,27 @@ public class RegistroProfesor extends AppCompatActivity {
                 contraseñaProf.getText().toString(),
                 "Profesor");
 
-        Object datos[] = new Object[]{profesor,login};
+        Object datos[] = new Object[]{profesor, login};
         return datos;
     }
-
-
 
 
     public void registrarProfesor() {
 
         Object datos[] = recuperraDatos();
-        Persona profesor = (Persona)datos[0];
+        Persona profesor = (Persona) datos[0];
         Login login = (Login) datos[1];
 
         if (contraseñaProf.getText().toString().equals(confContraseñaProf.getText().toString())) {
+
+            Consulta registrar = new Consulta(profesor);
+            registrar.execute(1);
+
             Toast registroCorrecto = Toast.makeText(getApplicationContext(), "Usted se ha registrado correctamente", Toast.LENGTH_LONG);
             registroCorrecto.show();
 
-            Listas.registrados.add(login);
-            Listas.profesores.add(profesor);
+            //Listas.registrados.add(login);
+            //Listas.profesores.add(profesor);
 
             finish();
             Intent intent = new Intent(RegistroProfesor.this, MainActivity.class);
@@ -116,6 +122,26 @@ public class RegistroProfesor extends AppCompatActivity {
             registroIncorrecto.show();
         }
 
+    }
+
+    private class Consulta extends AsyncTask<Integer, Void, String> {
+        private Persona profesor;
+
+        public Consulta(Persona profesor) {
+            this.profesor = profesor;
+        }
+
+        @Override
+        protected String doInBackground(Integer... params) {
+            profesor.registrarProfesor();
+            return "Correcto";
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            Log.i("Estado", s);
+        }
     }
 
 }
