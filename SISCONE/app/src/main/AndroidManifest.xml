@@ -28,6 +28,7 @@
         <activity android:name=".RegistroCurso" />
         <activity android:name=".MenuCurso" />
         <activity android:name=".MenuRepresentante" />
+        <activity android:name=".AdministracionRepresentantes"></activity>
     </application>
 
 </manifest>

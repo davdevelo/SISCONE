@@ -5,7 +5,6 @@ import java.util.List;
 
 import moledos.Login;
 import moledos.Persona;
-import moledos.Representante;
 
 
 /**
@@ -15,5 +14,5 @@ public class Listas {
 
     public static List<Login> registrados = new ArrayList<>();
     public static List<Persona> profesores = new ArrayList<>();
-    public static List<Representante> representantes = new ArrayList<>();
+
 }

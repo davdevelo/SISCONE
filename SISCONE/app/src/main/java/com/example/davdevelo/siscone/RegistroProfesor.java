@@ -82,8 +82,7 @@ public class RegistroProfesor extends AppCompatActivity {
                 nombreProf.getText().toString(),
                 apellidoProf.getText().toString(),
                 correoProf.getText().toString(),
-                contraseñaProf.getText().toString()
-                , "Profesor");
+                contraseñaProf.getText().toString());
 
         Login login = new Login(
                 cedulaProf.getText().toString(),

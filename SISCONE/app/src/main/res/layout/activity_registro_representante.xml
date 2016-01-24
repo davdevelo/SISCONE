@@ -105,8 +105,8 @@
                     android:id="@+id/buttonRegistrarRepr"
                     android:layout_width="wrap_content"
                     android:layout_height="72dp"
-                    android:layout_x="230dp"
-                    android:layout_y="385dp"
+                    android:layout_x="228dp"
+                    android:layout_y="267dp"
                     android:text="REGISTRAR"
                     android:textSize="18dp"
                     android:background="@drawable/btn_cicle"
@@ -116,8 +116,8 @@
                     android:id="@+id/buttonLimpiarForRegisRepr"
                     android:layout_width="wrap_content"
                     android:layout_height="72dp"
-                    android:layout_x="470dp"
-                    android:layout_y="385dp"
+                    android:layout_x="467dp"
+                    android:layout_y="267dp"
                     android:text="LIMPIAR"
                     android:textSize="18dp"
                     android:background="@drawable/btn_cicle"
@@ -127,87 +127,20 @@
                     android:id="@+id/buttonRegresarMenuProf"
                     android:layout_width="wrap_content"
                     android:layout_height="72dp"
-                    android:layout_x="660dp"
-                    android:layout_y="385dp"
+                    android:layout_x="657dp"
+                    android:layout_y="267dp"
                     android:text="REGRESAR MENU"
                     android:textSize="18dp"
                     android:background="@drawable/btn_cicle"
                     android:drawableLeft="@mipmap/home" />
 
-                <TextView
-                    android:id="@+id/textView16"
-                    android:layout_width="260dp"
-                    android:layout_height="wrap_content"
-                    android:layout_x="274dp"
-                    android:layout_y="236dp"
-                    android:text="Alumnos :"
-                    android:textSize="25dp" />
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="118dp"
-                    android:layout_x="542dp"
-                    android:layout_y="227dp"
-                    android:weightSum="1">
-
-                    <EditText
-                        android:layout_width="250dp"
-                        android:layout_height="32dp"
-                        android:inputType="textPersonName"
-                        android:ems="10"
-                        android:id="@+id/editNombreAlumno" />
-
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Lista de Alumnos"
-                        android:id="@+id/textView17"
-                        android:gravity="center" />
-
-                    <ListView
-                        android:id="@+id/listAlumnosRepresentante"
-                        android:layout_width="260dp"
-                        android:layout_height="104dp"
-                        android:layout_x="543dp"
-                        android:layout_y="276dp"
-                        android:choiceMode="singleChoice"
-                        android:headerDividersEnabled="false"
-                        android:footerDividersEnabled="true"
-                        android:scrollIndicators="top" />
-
-                </LinearLayout>
-
-                <Button
-                    android:id="@+id/buttonAgregarAlumno"
-                    style="?android:attr/buttonStyleSmall"
-                    android:layout_width="88dp"
-                    android:layout_height="33dp"
-                    android:layout_x="791dp"
-                    android:layout_y="272dp"
-                    android:background="#8592f6"
-                    android:text="agregar +"
-                    android:textColor="#eef0f5" />
-
                 <ImageView
                     android:id="@+id/imageView"
                     android:layout_width="173dp"
                     android:layout_height="204dp"
-                    android:layout_x="41dp"
-                    android:layout_y="129dp"
+                    android:layout_x="54dp"
+                    android:layout_y="65dp"
                     android:background="@mipmap/logo" />
-
-                <Button
-                    style="?android:attr/buttonStyleSmall"
-                    android:id="@+id/button5"
-                    android:layout_width="88dp"
-                    android:layout_height="33dp"
-                    android:layout_x="791dp"
-                    android:layout_y="312dp"
-                    android:background="#f2263e"
-                    android:text="QUITAR"
-                    android:textColor="#eef0f5" />
 
             </AbsoluteLayout>
         </ScrollView>

@@ -1,21 +1,20 @@
 package com.example.davdevelo.siscone;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import moledos.Login;
 import moledos.Persona;
-import moledos.Representante;
-import momentario.Listas;
 
 public class RegistroRepresentante extends AppCompatActivity {
 
@@ -23,12 +22,7 @@ public class RegistroRepresentante extends AppCompatActivity {
     private EditText nombre;
     private EditText apellido;
     private EditText correo;
-    private EditText alumno;
-    private ListView alumnos;
     private EditText elementos[];
-    private ArrayAdapter adaptador;
-    private List<String> listaAlumnos;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,21 +30,12 @@ public class RegistroRepresentante extends AppCompatActivity {
         setContentView(R.layout.activity_registro_representante);
 
         buscarElementos();
-        elementos = new EditText[]{cedula, nombre, apellido, correo, alumno};
-        listaAlumnos = new ArrayList<>();
-
+        elementos = new EditText[]{cedula, nombre, apellido, correo};
         findViewById(R.id.buttonRegresarMenuProf).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
                 startActivity(new Intent(RegistroRepresentante.this, MenuProfesor.class));
-            }
-        });
-
-        findViewById(R.id.buttonAgregarAlumno).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                agregarAlumno();
             }
         });
 
@@ -72,73 +57,74 @@ public class RegistroRepresentante extends AppCompatActivity {
                 startActivity(new Intent(RegistroRepresentante.this, MenuProfesor.class));
             }
         });
-
-
     }
 
-    private void buscarElementos(){
+    private void buscarElementos() {
         cedula = (EditText) findViewById(R.id.editCedulaRepresentante);
         nombre = (EditText) findViewById(R.id.editNombreRepresentante);
         apellido = (EditText) findViewById(R.id.editApellidoRepresentante);
         correo = (EditText) findViewById(R.id.editCorreoRepresentante);
-        alumno = (EditText) findViewById(R.id.editNombreAlumno);
-        alumnos = (ListView) findViewById(R.id.listAlumnosRepresentante);
     }
 
-    private void agregarAlumno(){
-        listaAlumnos.add(alumno.getText().toString());
-        adaptador = new ArrayAdapter(
-                this,android.R.layout.simple_expandable_list_item_1, listaAlumnos
-        );
-        alumnos.setAdapter(adaptador);
-        alumno.setText("");
-    }
-
-    private Object[] recuperrarDatos(){
-
-        List<String> alumnosRepresentante = new ArrayList<>();
-
-        for(int i=0; i<alumnos.getAdapter().getCount();i++){
-            alumnosRepresentante.add((alumnos.getAdapter().getItem(i).toString()));
-        }
-
-        Representante representante = new Representante(
+    private Persona recuperrarDatos() {
+        Persona representante = new Persona(
                 cedula.getText().toString(),
                 nombre.getText().toString(),
                 apellido.getText().toString(),
                 correo.getText().toString(),
-                "12345"
-                , "Representante",alumnosRepresentante);
-
-        Login login = new Login(
-                cedula.getText().toString(),
-                "12345",
-                "Representante");
-
-        Object datos[] = new Object[]{representante,login};
-        return datos;
+                "12345");
+        return representante;
     }
 
     private void limpiar() {
         for (EditText e : elementos) {
             e.setText("");
         }
-        listaAlumnos = new ArrayList<>();
-        adaptador = new ArrayAdapter(
-                this,android.R.layout.simple_expandable_list_item_1, listaAlumnos
-        );
-        alumnos.setAdapter(adaptador);
-
     }
 
-    private void registrarRepresentante(){
-        Object datos [] = recuperrarDatos();
-        Representante representante = (Representante) datos[0];
-        Login login = (Login) datos[1];
-
-        Listas.representantes.add(representante);
-        Listas.registrados.add(login);
+    private void registrarRepresentante() {
+        ConsultasRepresentante registrarNuevo = new ConsultasRepresentante(recuperrarDatos());
+        registrarNuevo.execute(1);
         limpiar();
     }
+
+    private class ConsultasRepresentante extends AsyncTask<Integer, Void, String> {
+        private Persona representante;
+
+        public ConsultasRepresentante(Persona representante) {
+            this.representante = representante;
+        }
+
+        @Override
+        protected String doInBackground(Integer... params) {
+            ResultSet resultado = representante.buscarPersona("Representante", representante.getCedula());
+            String nombre = "";
+            try {
+                while (resultado.next()) {
+                    nombre = resultado.getString("nombre_Representante");
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            if (nombre.equals("")) {
+                representante.registrarPersona("Representante");
+                return "Correcto";
+            } else {
+                Toast registroExiste = Toast.makeText(getApplicationContext(), "El Representante ya ha sido registrado anteriormente", Toast.LENGTH_LONG);
+                registroExiste.show();
+                return "Incorrecto";
+            }
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            if (s.equals("Correcto")) {
+                Toast registroCorrecto = Toast.makeText(getApplicationContext(), "Representante registrado correctamente", Toast.LENGTH_LONG);
+                registroCorrecto.show();
+            }
+        }
+    }
+
 
 }
