@@ -6,6 +6,9 @@
         <item> Profesor </item>
         <item> Representante </item>
     </string-array>
+    <string name="title_activity_administracion_representantes">AdministracionRepresentantes
+    </string>
+    <string name="title_activity_administacion_representantes">AdministacionRepresentantes</string>
 
 
 </resources>

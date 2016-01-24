@@ -27,7 +27,7 @@
         <activity android:name=".MenuProfesor" />
         <activity android:name=".RegistroCurso" />
         <activity android:name=".MenuCurso" />
-        <activity android:name=".MenuRepresentante"></activity>
+        <activity android:name=".MenuRepresentante" />
     </application>
 
 </manifest>

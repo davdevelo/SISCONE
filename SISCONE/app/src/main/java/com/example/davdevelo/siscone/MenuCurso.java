@@ -53,7 +53,7 @@ public class MenuCurso extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String nombreCurso = (String) cursos.getItemAtPosition(1);
+                String nombreCurso = (String) cursos.getItemAtPosition(position);
                 String cursoId = mapaCursos.get(nombreCurso);
                 Log.i("Curso",cursoId);
                 Intent intent = new Intent(MenuCurso.this, MenuProfesor.class);
