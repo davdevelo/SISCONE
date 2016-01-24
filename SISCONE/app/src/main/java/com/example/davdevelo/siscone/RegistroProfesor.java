@@ -69,7 +69,6 @@ public class RegistroProfesor extends AppCompatActivity {
     }
 
     private void limpiarRegistroProf() {
-
         for (EditText e : elementos) {
             e.setText("");
         }
@@ -95,7 +94,6 @@ public class RegistroProfesor extends AppCompatActivity {
         return datos;
     }
 
-
     public void registrarProfesor() {
 
         Object datos[] = recuperraDatos();
@@ -103,20 +101,8 @@ public class RegistroProfesor extends AppCompatActivity {
         Login login = (Login) datos[1];
 
         if (contraseñaProf.getText().toString().equals(confContraseñaProf.getText().toString())) {
-
             Consulta registrar = new Consulta(profesor);
             registrar.execute(1);
-
-            Toast registroCorrecto = Toast.makeText(getApplicationContext(), "Usted se ha registrado correctamente", Toast.LENGTH_LONG);
-            registroCorrecto.show();
-
-            //Listas.registrados.add(login);
-            //Listas.profesores.add(profesor);
-
-            finish();
-            Intent intent = new Intent(RegistroProfesor.this, MainActivity.class);
-            startActivity(intent);
-
         } else {
             Toast registroIncorrecto = Toast.makeText(getApplicationContext(), "Las contrasenas deben ser iguales", Toast.LENGTH_LONG);
             registroIncorrecto.show();
@@ -133,14 +119,20 @@ public class RegistroProfesor extends AppCompatActivity {
 
         @Override
         protected String doInBackground(Integer... params) {
-            profesor.registrarProfesor();
+            profesor.registrarPersona("Profesor");
             return "Correcto";
         }
 
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            Log.i("Estado", s);
+
+            finish();
+            Intent intent = new Intent(RegistroProfesor.this, MainActivity.class);
+            startActivity(intent);
+
+            Toast registroCorrecto = Toast.makeText(getApplicationContext(), "Usted se ha registrado correctamente", Toast.LENGTH_LONG);
+            registroCorrecto.show();
         }
     }
 

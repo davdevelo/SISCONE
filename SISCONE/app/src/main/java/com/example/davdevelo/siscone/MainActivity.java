@@ -11,15 +11,11 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
-import crud.DBConnection;
 import moledos.Login;
 import moledos.Persona;
-import momentario.Listas;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +23,11 @@ public class MainActivity extends AppCompatActivity {
     private EditText contrasena;
     private Spinner sistemas;
     private EditText elementos[];
+
+    private final String CONTRASENA_INVALIDA="La contraseña  no coincide";
+    private final String USUARIO_NO_REGISTRADO="No exite el usuraio";
+    private final String SElELECIONE_TIPO = "Debe seleccion el tipo de Usuario";
+    private final String TIPO="Seleccione el Tipo";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,54 +98,67 @@ public class MainActivity extends AppCompatActivity {
         Login login = new Login(cedula.getText().toString(),
                 contrasena.getText().toString(),
                 sistemas.getSelectedItem().toString());
-
-        Logeo logeo = new Logeo(login);
-        logeo.execute(1);
-
-        ResultSet profesor = logeo.getProfe();
-
-        try {
-            while(profesor.next()) {
-                Log.i("contrasena: ", profesor.getString("contrasena_profesor"));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        if (logeo.getProfe() != null) {
-            finish();
-            startActivity(new Intent(MainActivity.this, MenuProfesor.class));
-        } else {
-            Toast toast = Toast.makeText(getApplicationContext(), "No exite el usuraio \n O los campos estan llenados incorectamente ", Toast.LENGTH_SHORT);
+        if(login.getTipo().equals(TIPO)){
+            Toast toast = Toast.makeText(getApplicationContext(), SElELECIONE_TIPO, Toast.LENGTH_SHORT);
             toast.show();
+        }
+        else{
+            Logeo logeo = new Logeo(login);
+            logeo.execute(1);
         }
 
 
     }
 
-    private class Logeo extends AsyncTask<Integer, Void, String> {
+    private class Logeo extends AsyncTask<Integer, Void, ResultSet> {
         private Login login;
-        private ResultSet profe;
-
         public Logeo(Login login) {
             this.login = login;
         }
 
-        public ResultSet getProfe() {
-            return profe;
+        @Override
+        protected ResultSet doInBackground(Integer... params) {
+            ResultSet persona;
+            Persona profesor = new Persona();
+            if (login.getTipo().equals("Profesor")) {
+                persona = profesor.buscarPersona("Profesor", login.getCedula());
+            }else{
+                persona = profesor.buscarPersona("Representante", login.getCedula());
+            }
+            return persona;
         }
 
         @Override
-        protected String doInBackground(Integer... params) {
-            if (login.getTipo().equals("Profesor")) {
-                profe = null;
-                Persona profesor = new Persona();
-                profe = profesor.buscarProfesor(login.getCedula());
+        protected void onPostExecute(ResultSet persona) {
+            super.onPostExecute(persona);
+            String contrasena="";
+            try {
+                while(persona.next()) {
+                    contrasena=persona.getString("contrasena_"+login.getTipo());
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-            return "Consultando profe";
 
+            if (!contrasena.equals("")) {
+                if(login.getContrasena().trim().equals(contrasena.trim())){
+                    finish();
+                    if(login.getTipo().equals("Profesor")) {
+                        Intent intent = new Intent(MainActivity.this, MenuCurso.class);
+                        intent.putExtra("usuario", login.getCedula());
+                        startActivity(intent);
+                    }else{
+                        startActivity(new Intent(MainActivity.this, MenuRepresentante.class));
+                    }
+                }else {
+                    Toast toast = Toast.makeText(getApplicationContext(), CONTRASENA_INVALIDA, Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+            } else {
+                Toast toast = Toast.makeText(getApplicationContext(), USUARIO_NO_REGISTRADO, Toast.LENGTH_SHORT);
+                toast.show();
+            }
         }
-
     }
 
 

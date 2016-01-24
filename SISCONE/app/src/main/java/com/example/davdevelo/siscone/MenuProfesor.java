@@ -3,16 +3,22 @@ package com.example.davdevelo.siscone;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import moledos.Login;
 
 public class MenuProfesor extends AppCompatActivity {
 
+    private String curso;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_profesor);
+
+        recogerParametro();
+
         findViewById(R.id.buttonAdministrarRepresentante).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,6 +57,16 @@ public class MenuProfesor extends AppCompatActivity {
                 startActivity(new Intent(MenuProfesor.this, MainActivity.class));
             }
         });
+    }
+
+    private void recogerParametro() {
+        Intent intent = getIntent();
+        Bundle extra = intent.getExtras();
+        curso = "";
+        if (extra != null) {
+            curso = (String) extra.get("cursoID");
+            Log.i("CursoID", curso);
+        }
     }
 }
 

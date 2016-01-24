@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.davdevelo.siscone">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -23,8 +24,10 @@
         <activity android:name=".EnvioTareas" />
         <activity android:name=".EnvioComunicados" />
         <activity android:name=".AdminMaterias" />
-        <activity android:name=".MenuProfesor"></activity>
-        <activity android:name=".RegistroCurso"></activity>
+        <activity android:name=".MenuProfesor" />
+        <activity android:name=".RegistroCurso" />
+        <activity android:name=".MenuCurso" />
+        <activity android:name=".MenuRepresentante"></activity>
     </application>
 
 </manifest>

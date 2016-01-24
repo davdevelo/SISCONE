@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MenuCurso">
+
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollMenuProfesor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/verticalScrollMenuProfesor" >
+
+            <AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                tools:context="com.example.davdevelo.siscone.MenuProfesor"
+                android:layout_alignTop="@+id/horizontalScrollMenuProfesor"
+                android:layout_centerHorizontal="true">
+
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_x="140dp"
+                    android:layout_y="145dp"
+                    android:weightSum="1"
+                    android:id="@+id/linearLayout"
+                    android:layout_centerHorizontal="true">
+
+                    <ListView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/listViewCusros"
+                        android:choiceMode="singleChoice"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="605dp"
+                    android:layout_height="wrap_content"
+                    android:text="ADMINISTRACIÓN DE CUSROS"
+                    android:id="@+id/textViewCabeceraCurso"
+                    android:layout_below="@+id/horizontalScrollMenuProfesor"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="#58adcf"
+                    android:textSize="30dp"
+                    android:textAlignment="center"
+                    android:layout_x="10dp"
+                    android:layout_y="5dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:text="REGISTRAR CURSO"
+                    android:id="@+id/buttonRegistrarCurso"
+                    android:layout_below="@+id/horizontalScrollMenuProfesor"
+                    android:layout_centerHorizontal="true"
+                    android:layout_x="140dp"
+                    android:layout_y="45dp" />
+
+                <TextView
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:text="Lista de Cursos"
+                    android:id="@+id/textViewListaCursos"
+                    android:layout_x="140dp"
+                    android:layout_y="105dp"
+                    android:gravity="center_horizontal"
+                    android:textSize="20dp" />
+
+            </AbsoluteLayout>
+        </ScrollView>
+    </HorizontalScrollView>
+
+</RelativeLayout>

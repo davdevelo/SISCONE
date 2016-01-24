@@ -81,32 +81,32 @@ public class Persona {
         this.tipo = tipo;
     }
 
-    public void registrarProfesor() {
+    public void registrarPersona(String tabla) {
 
         Connection conexion = DBConnection.getInstace().getConnection();
         Map<String, String> parametros = new HashMap<>();
 
-        parametros.put("cedula_profesor", this.cedula);
-        parametros.put("nombre_profesor", this.nombre);
-        parametros.put("apellido_profesor", this.apellido);
-        parametros.put("correo_profesor", this.correo);
-        parametros.put("contrasena_profesor", this.contrasena);
+        parametros.put("cedula_"+tabla, this.cedula);
+        parametros.put("nombre_"+tabla, this.nombre);
+        parametros.put("apellido_"+tabla, this.apellido);
+        parametros.put("correo_"+tabla, this.correo);
+        parametros.put("contrasena_"+tabla, this.contrasena);
 
         try {
             Statement sentencia = conexion.createStatement();
             ResultSet resultado = sentencia.executeQuery(
-                    Sentencias.registrar("profesor", parametros));
+                    Sentencias.registrar(tabla, parametros));
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public ResultSet buscarCusroProfesor(Integer cedulaProfesor) {
+    public ResultSet buscarCursoProfesor(String cedulaProfesor) {
 
         ResultSet resultado = null;
         Connection conexion = DBConnection.getInstace().getConnection();
         Map<String, String> condiciones = new HashMap<>();
-        condiciones.put("cedula_Profesor", cedulaProfesor.toString());
+        condiciones.put("cedula_Profesor", cedulaProfesor);
         try {
             Statement sentencia = conexion.createStatement();
             resultado = sentencia.executeQuery(
@@ -118,16 +118,21 @@ public class Persona {
         return resultado;
     }
 
-    public ResultSet buscarProfesor(String cedulaProfesor) {
+    public ResultSet buscarPersona(String tabla,String cedula) {
 
         ResultSet resultado = null;
         Connection conexion = DBConnection.getInstace().getConnection();
         Map<String, String> condiciones = new HashMap<>();
-        condiciones.put("cedula_Profesor", cedulaProfesor);
+        if(tabla.equals("Profesor")) {
+            condiciones.put("cedula_Profesor", cedula);
+        }
+        else{
+            condiciones.put("cedula_Representante", cedula);
+        }
         try {
             Statement sentencia = conexion.createStatement();
             resultado = sentencia.executeQuery(
-                    Sentencias.consultar("profesor", null, condiciones));
+                    Sentencias.consultar(tabla, null, condiciones));
         } catch (SQLException e) {
             e.printStackTrace();
         }

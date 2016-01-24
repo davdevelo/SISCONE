@@ -83,25 +83,24 @@ public class Curso {
         this.nombreParalelo = nombreParalelo;
     }
 
-
     public void registrarCurso() {
 
         Connection conexion = DBConnection.getInstace().getConnection();
         Map <String,String> parametros = new HashMap<>();
 
-        parametros.put("id_Curso",this.idCurso.toString());
         parametros.put("cedula_Profesor",this.cedulaProfesor.toString());
-        parametros.put("nombre_Institución",this.nombreInstitución);
-        parametros.put("nombre_Cusro",this.nombreCusro);
-        parametros.put("nombreParalelo",this.nombreParalelo);
+        parametros.put("nombre_Institucion",this.nombreInstitución);
+        parametros.put("nombre_Curso",this.nombreCusro);
+        parametros.put("paralelo",this.nombreParalelo);
 
         try {
             Statement sentencia = conexion.createStatement();
-            sentencia.executeQuery(
-                    Sentencias.registrar("curso",parametros));
+            ResultSet resultado = sentencia.executeQuery(
+                    Sentencias.registrar("curso", parametros));
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
 
 }
