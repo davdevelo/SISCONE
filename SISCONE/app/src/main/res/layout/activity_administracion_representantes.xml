@@ -35,14 +35,14 @@
 
 
                 <TextView
-                    android:layout_width="605dp"
+                    android:layout_width="600dp"
                     android:layout_height="wrap_content"
                     android:text="ADMINISTRACIÓN REPRESENTANTES"
                     android:id="@+id/textViewCabeceraAdministracionRepresentantes"
                     android:layout_alignTop="@+id/horizontalScrollMenuProfesor"
                     android:layout_toRightOf="@+id/horizontalScrollMenuProfesor"
                     android:layout_toEndOf="@+id/horizontalScrollMenuProfesor"
-                    android:textSize="30dp"
+                    android:textSize="25dp"
                     android:textStyle="bold"
                     android:gravity="center_horizontal"
                     android:layout_x="10dp"
@@ -57,8 +57,8 @@
                     android:layout_below="@+id/horizontalScrollMenuProfesor"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
-                    android:layout_x="218dp"
-                    android:layout_y="155dp" />
+                    android:layout_x="210dp"
+                    android:layout_y="120dp" />
 
                 <Button
                     android:layout_width="152dp"
@@ -66,7 +66,7 @@
                     android:text="REGRESAR"
                     android:id="@+id/buttonRegresoFormularioAR"
                     android:layout_x="473dp"
-                    android:layout_y="220dp" />
+                    android:layout_y="200dp" />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -74,7 +74,7 @@
                     android:text="Registrar Nuevo "
                     android:id="@+id/buttonRegitrarNuevoRepresentante"
                     android:layout_x="65dp"
-                    android:layout_y="220dp" />
+                    android:layout_y="200dp" />
 
 
                 <TextView
@@ -82,45 +82,11 @@
                     android:layout_width="260dp"
                     android:layout_height="wrap_content"
                     android:layout_x="40dp"
-                    android:layout_y="45dp"
+                    android:layout_y="60dp"
                     android:text="Cedula Representante"
                     android:textSize="25dp" />
 
-                <TextView
-                    android:id="@+id/textViewParalelo"
-                    android:layout_width="260dp"
-                    android:layout_height="wrap_content"
-                    android:layout_x="40dp"
-                    android:layout_y="105dp"
-                    android:text="Apellido Estudiante"
-                    android:textSize="25dp" />
 
-                <TextView
-                    android:id="@+id/textViewNombreCusro"
-                    android:layout_width="260dp"
-                    android:layout_height="wrap_content"
-                    android:layout_x="40dp"
-                    android:layout_y="75dp"
-                    android:text="Nombre Estudiante"
-                    android:textSize="25dp" />
-
-                <EditText
-                    android:id="@+id/editTextApellidoEstudianteAR"
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:layout_x="320dp"
-                    android:layout_y="95dp"
-                    android:ems="10"
-                    android:inputType="textPersonName" />
-
-                <EditText
-                    android:id="@+id/editTextNombreEstudianteAR"
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:layout_x="320dp"
-                    android:layout_y="65dp"
-                    android:ems="10"
-                    android:inputType="textPersonName" />
 
                 <Button
                     android:layout_width="150dp"
@@ -128,7 +94,7 @@
                     android:text="LIMPIAR"
                     android:id="@+id/buttonLimpiarRegistroAR"
                     android:layout_x="262dp"
-                    android:layout_y="220dp" />
+                    android:layout_y="200dp" />
 
                 <EditText
                     android:layout_width="250dp"
@@ -137,7 +103,7 @@
                     android:ems="10"
                     android:id="@+id/editTextCedulaRepresentanteAR"
                     android:layout_x="320dp"
-                    android:layout_y="35dp" />
+                    android:layout_y="50dp" />
 
             </AbsoluteLayout>
         </ScrollView>

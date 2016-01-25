@@ -35,7 +35,7 @@ public class RegistroRepresentante extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
-                startActivity(new Intent(RegistroRepresentante.this, MenuProfesor.class));
+                startActivity(new Intent(RegistroRepresentante.this, AdministracionRepresentantes.class));
             }
         });
 
@@ -49,12 +49,6 @@ public class RegistroRepresentante extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 registrarRepresentante();
-            }
-        });
-        findViewById(R.id.buttonRegresarMenuProf).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(RegistroRepresentante.this, MenuProfesor.class));
             }
         });
     }

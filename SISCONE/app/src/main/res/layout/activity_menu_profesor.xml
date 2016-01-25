@@ -93,7 +93,7 @@
                     android:background="@drawable/btn_cicle" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/buttonAdministracionMaterias"
                     android:layout_width="204dp"
                     android:layout_height="wrap_content"
                     android:layout_x="190dp"

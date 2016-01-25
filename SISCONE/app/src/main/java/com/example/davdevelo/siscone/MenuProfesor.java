@@ -22,7 +22,9 @@ public class MenuProfesor extends AppCompatActivity {
         findViewById(R.id.buttonAdministrarRepresentante).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MenuProfesor.this, RegistroRepresentante.class));
+                Intent intent = new Intent(MenuProfesor.this, AdministracionRepresentantes.class);
+                intent.putExtra("cursoID", curso);
+                startActivity(intent);
             }
         });
 
@@ -39,10 +41,12 @@ public class MenuProfesor extends AppCompatActivity {
                 startActivity(new Intent(MenuProfesor.this, EnvioComunicados.class));
             }
         });
-        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.buttonAdministracionMaterias).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MenuProfesor.this, AdminMaterias.class));
+                Intent intent = new Intent(MenuProfesor.this, AdminMaterias.class);
+                intent.putExtra("cursoID", curso);
+                startActivity(intent);
             }
         });
         findViewById(R.id.buttonEnvioTareas).setOnClickListener(new View.OnClickListener() {
