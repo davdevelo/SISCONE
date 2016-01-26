@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
                 if(login.getContrasena().trim().equals(contrasena.trim())){
                     finish();
                     if(login.getTipo().equals("Profesor")) {
-                        Intent intent = new Intent(MainActivity.this, MenuCurso.class);
+                        Intent intent = new Intent(MainActivity.this, MenuPrincipalProfesor.class);
                         intent.putExtra("usuario", login.getCedula());
                         startActivity(intent);
                     }else{
