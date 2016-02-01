@@ -97,9 +97,8 @@ public class AdministracionRepresentantes extends AppCompatActivity {
                 e.printStackTrace();
             }
             if (parametro.equals("")) {
-                Toast mensajeError = Toast.makeText(getApplicationContext(), "El Representante no esta registrado  \n Debe registralo en el sistema primero ", Toast.LENGTH_LONG);
-                mensajeError.show();
-                return "Incorrecto";
+
+                return "Incorrecto1";
 
             } else {
                 resultado = p.buscarRepresentateInscrito(curso, cedula);
@@ -111,9 +110,8 @@ public class AdministracionRepresentantes extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 if (parametro.equals("")) {
-                    Toast mensajeError = Toast.makeText(getApplicationContext(), "El Representante ya esta registrado en este curso", Toast.LENGTH_LONG);
-                    mensajeError.show();
-                    return "Incorrecto";
+
+                    return "Incorrecto2";
                 }
                 return "Correcto";
 
@@ -153,6 +151,14 @@ public class AdministracionRepresentantes extends AppCompatActivity {
                 intent.putExtra("cursoID", curso);
                 intent.putExtra("representante", cedula);
                 startActivity(intent);
+            }
+            if(s.equals("Incorrecto1")){
+                Toast mensajeError = Toast.makeText(getApplicationContext(), "El Representante no esta registrado  \n Debe registralo en el sistema primero ", Toast.LENGTH_LONG);
+                mensajeError.show();
+            }
+            if(s.equals("Incorrecto2")){
+                Toast mensajeError = Toast.makeText(getApplicationContext(), "El Representante ya esta registrado en este curso", Toast.LENGTH_LONG);
+                mensajeError.show();
             }
         }
     }

@@ -53,20 +53,20 @@
                     android:textSize="25dp" />
 
                 <EditText
-                    android:id="@+id/editTextApellidoEstudianteAR"
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:layout_x="320dp"
-                    android:layout_y="70dp"
-                    android:ems="10"
-                    android:inputType="textPersonName" />
-
-                <EditText
                     android:id="@+id/editTextNombreEstudianteAR"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_x="320dp"
                     android:layout_y="40dp"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/editTextApellidoEstudianteAR"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_x="320dp"
+                    android:layout_y="70dp"
                     android:ems="10"
                     android:inputType="textPersonName" />
 

@@ -32,6 +32,7 @@ public class RegistroRepresentante extends AppCompatActivity {
         setContentView(R.layout.activity_registro_representante);
 
         buscarElementos();
+        recogerParametro();
         elementos = new EditText[]{cedula, nombre, apellido, correo};
         findViewById(R.id.buttonRegresarMenuProf).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,6 +116,7 @@ public class RegistroRepresentante extends AppCompatActivity {
             }
             if (nombre.equals("")) {
                 representante.registrarPersona("Representante");
+                representante.registrarBuzon();
                 return "Correcto";
             } else {
                 Toast registroExiste = Toast.makeText(getApplicationContext(), "El Representante ya ha sido registrado anteriormente", Toast.LENGTH_LONG);

@@ -38,7 +38,9 @@ public class MenuProfesor extends AppCompatActivity {
         findViewById(R.id.buttonComunicados).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MenuProfesor.this, EnvioComunicados.class));
+                Intent intent = new Intent(MenuProfesor.this, EnvioComunicados.class);
+                intent.putExtra("cursoID", curso);
+                startActivity(intent);
             }
         });
         findViewById(R.id.buttonAdministracionMaterias).setOnClickListener(new View.OnClickListener() {

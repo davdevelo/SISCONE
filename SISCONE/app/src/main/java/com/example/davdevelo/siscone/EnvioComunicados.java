@@ -89,6 +89,7 @@ public class EnvioComunicados extends AppCompatActivity {
         @Override
         protected String doInBackground(Integer... params) {
             aviso.registrarAviso();
+            GestionAviso.enviarAvisos(aviso.getIdCurso(), aviso.getTitulo());
             return "Correcto";
 
         }
@@ -97,7 +98,6 @@ public class EnvioComunicados extends AppCompatActivity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             if (s.equals("Correcto")) {
-                GestionAviso.enviarAvisos(aviso.getIdCurso(), aviso.getTitulo());
                 Toast registroCorrecto = Toast.makeText(getApplicationContext(), "EL aviso ha sido registrado", Toast.LENGTH_LONG);
                 registroCorrecto.show();
             }

@@ -41,7 +41,7 @@ public class GestionAviso {
 
     private static String buscarAviso(String idCurso,String titulo) {
 
-        String idAviso = null;
+        String idAviso = "";
         ResultSet resultado = null;
         Connection conexion = DBConnection.getInstace().getConnection();
         Map<String, String> condiciones = new HashMap<>();
