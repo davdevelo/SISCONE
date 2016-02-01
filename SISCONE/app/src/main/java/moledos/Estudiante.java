@@ -14,6 +14,7 @@ import crud.Sentencias;
  * Created by user on 24/01/2016.
  */
 public class Estudiante {
+
     private String idCurso;
     private String cedulaRepresentante;
     private String nombreEstudiante;

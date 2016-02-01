@@ -45,7 +45,7 @@
                     android:textSize="25dp"
                     android:textStyle="bold"
                     android:gravity="center_horizontal"
-                    android:layout_x="10dp"
+                    android:layout_x="0dp"
                     android:layout_y="5dp"
                     android:textColor="#58adcf" />
 
@@ -65,7 +65,7 @@
                     android:layout_height="wrap_content"
                     android:text="REGRESAR"
                     android:id="@+id/buttonRegresoFormularioAR"
-                    android:layout_x="473dp"
+                    android:layout_x="435dp"
                     android:layout_y="200dp" />
 
                 <Button
@@ -73,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:text="Registrar Nuevo "
                     android:id="@+id/buttonRegitrarNuevoRepresentante"
-                    android:layout_x="65dp"
+                    android:layout_x="25dp"
                     android:layout_y="200dp" />
 
 
@@ -93,7 +93,7 @@
                     android:layout_height="wrap_content"
                     android:text="LIMPIAR"
                     android:id="@+id/buttonLimpiarRegistroAR"
-                    android:layout_x="262dp"
+                    android:layout_x="230dp"
                     android:layout_y="200dp" />
 
                 <EditText

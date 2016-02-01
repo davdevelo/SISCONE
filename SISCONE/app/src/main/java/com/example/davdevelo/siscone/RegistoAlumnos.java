@@ -40,6 +40,7 @@ public class RegistoAlumnos extends AppCompatActivity {
     }
 
     private void iniciarEntorno() {
+
         buscarElementos();
         recogerParametro();
         alumnos = new ArrayList<>();

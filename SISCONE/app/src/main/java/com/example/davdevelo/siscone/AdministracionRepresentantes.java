@@ -32,7 +32,7 @@ public class AdministracionRepresentantes extends AppCompatActivity {
         iniciarEntrono();
     }
 
-    private void iniciarEntrono(){
+    private void iniciarEntrono() {
         recogerParametro();
         buscarElementos();
 
@@ -60,7 +60,8 @@ public class AdministracionRepresentantes extends AppCompatActivity {
             }
         });
     }
-    private void buscarElementos(){
+
+    private void buscarElementos() {
         cedulaRepresentante = (EditText) findViewById(R.id.editTextCedulaRepresentanteAR);
     }
 
@@ -77,6 +78,7 @@ public class AdministracionRepresentantes extends AppCompatActivity {
     private class ConsultasBase extends AsyncTask<Integer, Void, String> {
 
         private String cedula;
+
         public ConsultasBase(String cedula) {
             this.cedula = cedula;
         }
@@ -85,22 +87,62 @@ public class AdministracionRepresentantes extends AppCompatActivity {
         protected String doInBackground(Integer... params) {
             Persona p = new Persona();
             ResultSet resultado = p.buscarPersona("Representante", cedula);
-            String nombre = "";
+            String parametro = "";
+
             try {
                 while (resultado.next()) {
-                    nombre = resultado.getString("nombre_Representante");
+                    parametro = resultado.getString("nombre_Representante");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            if (nombre.equals("")) {
-                Toast mnesajeError = Toast.makeText(getApplicationContext(), "El Representante no esta registrado  \n Debe registralo en el sistema primero ", Toast.LENGTH_LONG);
-                mnesajeError.show();
+            if (parametro.equals("")) {
+                Toast mensajeError = Toast.makeText(getApplicationContext(), "El Representante no esta registrado  \n Debe registralo en el sistema primero ", Toast.LENGTH_LONG);
+                mensajeError.show();
                 return "Incorrecto";
 
             } else {
+                resultado = p.buscarRepresentateInscrito(curso, cedula);
+                try {
+                    while (resultado.next()) {
+                        parametro = resultado.getString("nombre_Representante");
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                if (parametro.equals("")) {
+                    Toast mensajeError = Toast.makeText(getApplicationContext(), "El Representante ya esta registrado en este curso", Toast.LENGTH_LONG);
+                    mensajeError.show();
+                    return "Incorrecto";
+                }
                 return "Correcto";
+
             }
+            /*
+            try {
+                while (resultado.next()) {
+                    parametro = resultado.getString("nombre_Representante");
+                    ResultSet resultado2 = p.buscarRepresentateInscrito(curso, cedula);
+                    while (resultado2.next()) {
+                        parametro = resultado2.getString("cedula_Representante");
+                    }
+                    if (parametro.equals("")){
+                        Toast mensajeError = Toast.makeText(getApplicationContext(), "El Representante ya esta registrado en este curso", Toast.LENGTH_LONG);
+                        mensajeError.show();
+                        return "Incorrecto";
+                    }else{
+                        return "Correcto";
+                    }
+
+                }
+            } catch (SQLException e) {
+                Toast mensajeError = Toast.makeText(getApplicationContext(), "El Representante no esta registrado  \n Debe registralo en el sistema primero ", Toast.LENGTH_LONG);
+                mensajeError.show();
+                return "Incorrecto";
+            }
+
+            return "Incorrecto";
+            */
         }
 
         @Override
@@ -109,7 +151,7 @@ public class AdministracionRepresentantes extends AppCompatActivity {
             if (s.equals("Correcto")) {
                 Intent intent = new Intent(AdministracionRepresentantes.this, RegistoAlumnos.class);
                 intent.putExtra("cursoID", curso);
-                intent.putExtra("representante",cedula);
+                intent.putExtra("representante", cedula);
                 startActivity(intent);
             }
         }

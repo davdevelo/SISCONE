@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -23,6 +24,7 @@ public class RegistroRepresentante extends AppCompatActivity {
     private EditText apellido;
     private EditText correo;
     private EditText elementos[];
+    private String curso;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +36,10 @@ public class RegistroRepresentante extends AppCompatActivity {
         findViewById(R.id.buttonRegresarMenuProf).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(new Intent(RegistroRepresentante.this, AdministracionRepresentantes.class));
+                intent.putExtra("cursoID", curso);
+                startActivity(intent);
                 finish();
-                startActivity(new Intent(RegistroRepresentante.this, AdministracionRepresentantes.class));
             }
         });
 
@@ -60,7 +64,7 @@ public class RegistroRepresentante extends AppCompatActivity {
         correo = (EditText) findViewById(R.id.editCorreoRepresentante);
     }
 
-    private Persona recuperrarDatos() {
+    private Persona recuperarDatos() {
         Persona representante = new Persona(
                 cedula.getText().toString(),
                 nombre.getText().toString(),
@@ -70,6 +74,15 @@ public class RegistroRepresentante extends AppCompatActivity {
         return representante;
     }
 
+    private void recogerParametro() {
+        Intent intent = getIntent();
+        Bundle extra = intent.getExtras();
+        curso = "";
+        if (extra != null) {
+            curso = (String) extra.get("cursoID");
+        }
+    }
+
     private void limpiar() {
         for (EditText e : elementos) {
             e.setText("");
@@ -77,7 +90,7 @@ public class RegistroRepresentante extends AppCompatActivity {
     }
 
     private void registrarRepresentante() {
-        ConsultasRepresentante registrarNuevo = new ConsultasRepresentante(recuperrarDatos());
+        ConsultasRepresentante registrarNuevo = new ConsultasRepresentante(recuperarDatos());
         registrarNuevo.execute(1);
         limpiar();
     }

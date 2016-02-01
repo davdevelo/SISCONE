@@ -96,6 +96,9 @@ public class Persona {
             Statement sentencia = conexion.createStatement();
             ResultSet resultado = sentencia.executeQuery(
                     Sentencias.registrar(tabla, parametros));
+            if(tabla.equals("Representante")){
+                registrarBuzon();
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -139,6 +142,40 @@ public class Persona {
 
         return resultado;
     }
+
+    public void registrarBuzon() {
+
+        Connection conexion = DBConnection.getInstace().getConnection();
+        Map<String, String> parametros = new HashMap<>();
+
+        parametros.put("cedula_Representante", this.cedula);
+        try {
+            Statement sentencia = conexion.createStatement();
+            ResultSet resultado = sentencia.executeQuery(
+                    Sentencias.registrar("Buzon", parametros));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public ResultSet buscarRepresentateInscrito(String idCurso,String cedulaRepresentante) {
+
+        ResultSet resultado = null;
+        Connection conexion = DBConnection.getInstace().getConnection();
+        Map<String, String> condiciones = new HashMap<>();
+        condiciones.put("id_curso", idCurso);
+        condiciones.put("cedula_representante", cedulaRepresentante);
+        try {
+            Statement sentencia = conexion.createStatement();
+            resultado = sentencia.executeQuery(
+                    Sentencias.consultar("curso_representantes", null, condiciones));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return resultado;
+    }
+
 
 
 }

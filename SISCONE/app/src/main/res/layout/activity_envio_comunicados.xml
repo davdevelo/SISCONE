@@ -47,7 +47,7 @@
                     android:drawableLeft="@mipmap/floppy" />
 
                 <Button
-                    android:id="@+id/button7"
+                    android:id="@+id/buttonRegresarEnvioComunicados"
                     android:layout_width="wrap_content"
                     android:layout_height="72dp"
                     android:layout_x="316dp"
@@ -77,7 +77,7 @@
                 <EditText
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText2"
+                    android:id="@+id/editTextTituloComunicado"
                     android:layout_x="380dp"
                     android:layout_y="30dp"
                     android:maxLines="1"
@@ -97,7 +97,7 @@
                 <EditText
                     android:layout_width="440dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText3"
+                    android:id="@+id/editTextDescripcionComunicado"
                     android:layout_x="140dp"
                     android:layout_y="100dp"
                     android:maxLength="500" />

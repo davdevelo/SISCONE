@@ -24,7 +24,6 @@ public class Sentencias {
             sentencia.append("from ").append(tabla);
         }
 
-
         if (condiciones == null || condiciones.isEmpty()){
             Log.i("sentencia", sentencia.toString());
             return sentencia.toString();
