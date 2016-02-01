@@ -14,6 +14,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import apoyo.GestionAviso;
+import apoyo.OnClickEvent;
 import moledos.Aviso;
 import moledos.Persona;
 
@@ -31,17 +32,29 @@ public class EnvioComunicados extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_envio_comunicados);
+
+        iniciarEntorno();
+
         findViewById(R.id.buttonRegresarEnvioComunicados).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(EnvioComunicados.this, MenuProfesor.class));
+                Intent intent = new Intent(EnvioComunicados.this, MenuProfesor.class);
+                intent.putExtra("cursoID", curso);
+                startActivity(intent);
             }
         });
 
+        findViewById(R.id.buttonGuardarComunicado).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                registrarAviso();
+            }
+        });
     }
 
     private void iniciarEntorno() {
         recogerParametro();
+        buscarElementos();
     }
 
 
@@ -84,7 +97,7 @@ public class EnvioComunicados extends AppCompatActivity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             if (s.equals("Correcto")) {
-                GestionAviso.enviarAvisos(aviso.getIdCurso(),aviso.getTitulo());
+                GestionAviso.enviarAvisos(aviso.getIdCurso(), aviso.getTitulo());
                 Toast registroCorrecto = Toast.makeText(getApplicationContext(), "EL aviso ha sido registrado", Toast.LENGTH_LONG);
                 registroCorrecto.show();
             }

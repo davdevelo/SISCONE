@@ -65,7 +65,10 @@ public class RegistoAlumnos extends AppCompatActivity {
         findViewById(R.id.buttonCancelarRegistroAlumnos).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(RegistoAlumnos.this, AdministracionRepresentantes.class);
+                intent.putExtra("cursoID", curso);
+                startActivity(intent);
+                finish();
             }
         });
 

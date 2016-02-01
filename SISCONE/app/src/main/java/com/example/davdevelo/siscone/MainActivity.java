@@ -148,7 +148,9 @@ public class MainActivity extends AppCompatActivity {
                         intent.putExtra("usuario", login.getCedula());
                         startActivity(intent);
                     }else{
-                        startActivity(new Intent(MainActivity.this, MenuRepresentante.class));
+                        Intent intent = new Intent(MainActivity.this, MenuRepresentante.class);
+                        intent.putExtra("usuario", login.getCedula());
+                        startActivity(intent);
                     }
                 }else {
                     Toast toast = Toast.makeText(getApplicationContext(), CONTRASENA_INVALIDA, Toast.LENGTH_SHORT);

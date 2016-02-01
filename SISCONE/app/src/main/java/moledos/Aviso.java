@@ -4,7 +4,9 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import crud.DBConnection;
@@ -70,21 +72,78 @@ public class Aviso {
         }
     }
 
-    public ResultSet buscarAvisosBuzon(String idBuzon) {
 
+    public List<Aviso> buscarAvisos(String cedula) {
+
+        ResultSet resultado = null;
+        Aviso aviso;
+
+        List<Aviso> avisos = new ArrayList<>();
+        List<String> idAvisos = buscarAvisosBuzon(cedula);
+
+        Connection conexion = DBConnection.getInstace().getConnection();
+        Map<String, String> condiciones = new HashMap<>();
+
+        for (String id:idAvisos) {
+
+            condiciones.put("id_aviso",id);
+            try {
+                Statement sentencia = conexion.createStatement();
+                resultado = sentencia.executeQuery(
+                        Sentencias.consultar("Lista_Avisos", null, condiciones));
+                while (resultado.next()) {
+                    aviso = new Aviso(resultado.getString("id_curso"),
+                            "titulo",
+                            "descripcion_aviso");
+                    avisos.add(aviso);
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return avisos;
+    }
+
+    private List<String> buscarAvisosBuzon(String cedula) {
+        List<String> avisos = new ArrayList<>();
         ResultSet resultado = null;
         Connection conexion = DBConnection.getInstace().getConnection();
         Map<String, String> condiciones = new HashMap<>();
-        condiciones.put("id_buzon", idBuzon);
+        condiciones.put("id_buzon", buscarBuzones(cedula));
         try {
             Statement sentencia = conexion.createStatement();
             resultado = sentencia.executeQuery(
                     Sentencias.consultar("Lista_Avisos", null, condiciones));
+            while (resultado.next()) {
+                avisos.add(resultado.getString("id_aviso"));
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return resultado;
+        return avisos;
+    }
+
+    private String buscarBuzones(String cedula) {
+        ResultSet resultado = null;
+        String idBuzon = "";
+        Connection conexion = DBConnection.getInstace().getConnection();
+        Map<String, String> condiciones = new HashMap<>();
+
+        condiciones.put("cedula_representante", cedula);
+        try {
+            Statement sentencia = conexion.createStatement();
+            resultado = sentencia.executeQuery(
+                    Sentencias.consultar("buzon", null, condiciones));
+            while (resultado.next()) {
+                idBuzon = resultado.getString("id_buzon");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return idBuzon;
     }
 
 }

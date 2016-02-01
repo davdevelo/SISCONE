@@ -28,7 +28,7 @@
                     android:layout_width="600dp"
                     android:layout_height="wrap_content"
                     android:layout_x="0dp"
-                    android:layout_y="2dp"
+                    android:layout_y="10dp"
                     android:text="FORMULARIO ENVIO DE COMUNICADOS"
                     android:textAlignment="center"
                     android:textColor="#58adcf"
@@ -36,11 +36,11 @@
                     android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/button6"
+                    android:id="@+id/buttonGuardarComunicado"
                     android:layout_width="wrap_content"
                     android:layout_height="72dp"
                     android:layout_x="74dp"
-                    android:layout_y="240dp"
+                    android:layout_y="260dp"
                     android:text="Guardar"
                     android:textSize="18dp"
                     android:background="@drawable/btn_cicle"
@@ -51,7 +51,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="72dp"
                     android:layout_x="316dp"
-                    android:layout_y="240dp"
+                    android:layout_y="260dp"
                     android:text="REGRESAR MENU"
                     android:textSize="18dp"
                     android:background="@drawable/btn_cicle"
@@ -62,7 +62,7 @@
                     android:layout_height="103dp"
                     android:id="@+id/imageView4"
                     android:layout_x="10dp"
-                    android:layout_y="40dp"
+                    android:layout_y="50dp"
                     android:background="@mipmap/logo" />
 
                 <TextView
@@ -71,7 +71,7 @@
                     android:text="Titulo Comunicado:"
                     android:id="@+id/textView16"
                     android:layout_x="140dp"
-                    android:layout_y="40dp"
+                    android:layout_y="50dp"
                     android:textSize="25dp" />
 
                 <EditText
@@ -79,11 +79,13 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/editTextTituloComunicado"
                     android:layout_x="380dp"
-                    android:layout_y="30dp"
+                    android:layout_y="40dp"
                     android:maxLines="1"
                     android:maxLength="50"
                     android:minLines="1"
-                    android:maxHeight="1dp" />
+                    android:maxHeight="1dp"
+                    android:maxWidth="20dp"
+                    android:singleLine="true" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -91,7 +93,7 @@
                     android:text="Descripción"
                     android:id="@+id/textView17"
                     android:layout_x="140dp"
-                    android:layout_y="70dp"
+                    android:layout_y="80dp"
                     android:textSize="25dp" />
 
                 <EditText
@@ -99,7 +101,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/editTextDescripcionComunicado"
                     android:layout_x="140dp"
-                    android:layout_y="100dp"
+                    android:layout_y="110dp"
                     android:maxLength="500" />
 
             </AbsoluteLayout>
