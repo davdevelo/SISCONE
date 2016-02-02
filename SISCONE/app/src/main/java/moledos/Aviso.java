@@ -90,11 +90,11 @@ public class Aviso {
             try {
                 Statement sentencia = conexion.createStatement();
                 resultado = sentencia.executeQuery(
-                        Sentencias.consultar("Lista_Avisos", null, condiciones));
+                        Sentencias.consultar("aviso", null, condiciones));
                 while (resultado.next()) {
                     aviso = new Aviso(resultado.getString("id_curso"),
-                            "titulo",
-                            "descripcion_aviso");
+                            resultado.getString("titulo"),
+                            resultado.getString("descripcion_aviso"));
                     avisos.add(aviso);
                 }
             } catch (SQLException e) {

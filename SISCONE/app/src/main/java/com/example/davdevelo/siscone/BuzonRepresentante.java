@@ -33,12 +33,11 @@ public class BuzonRepresentante extends AppCompatActivity {
 
     private void iniciarEntorno(){
         recogerParametro();
-
         avisos = new ArrayList<>();
         titulos = new ArrayList<>();
         listaAvisos = (ListView) findViewById(R.id.listViewAvisosBuzon);
         listaAvisos.setOnTouchListener(new OnTouchEvent());
-
+        consultar();
     }
 
     private void recogerParametro() {
@@ -51,6 +50,11 @@ public class BuzonRepresentante extends AppCompatActivity {
         }
     }
 
+    private void consultar(){
+        ConsultarAvisos consulta = new ConsultarAvisos();
+        consulta.execute(1);
+    }
+
 
     private class ConsultarAvisos extends AsyncTask<Integer, Void, String> {
 
@@ -61,8 +65,6 @@ public class BuzonRepresentante extends AppCompatActivity {
         protected String doInBackground(Integer... params) {
             Aviso aviso = new Aviso();
             avisos = aviso.buscarAvisos(representante);
-
-
             return "nada";
         }
 
