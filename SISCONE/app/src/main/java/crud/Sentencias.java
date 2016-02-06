@@ -29,7 +29,6 @@ public class Sentencias {
             return sentencia.toString();
         }
         else{
-
             sentencia.append(" where ");
             for (String  condicion : condiciones.keySet()) {
                 sentencia.append(condicion).append("='").

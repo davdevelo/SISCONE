@@ -40,7 +40,12 @@ public class RegistroCurso extends AppCompatActivity {
         findViewById(R.id.buttonRegistroCusrso).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                registrarCurso();
+                /*if(nombreInstitucion.getText().toString().equals("") ooo  )
+                        //toast
+                else
+                {
+                    registrarCurso();
+                }*/
             }
         });
 
