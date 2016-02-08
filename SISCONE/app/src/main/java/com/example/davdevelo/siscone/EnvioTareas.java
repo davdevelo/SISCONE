@@ -37,10 +37,11 @@ public class EnvioTareas extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_envio_tareas);
+
         iniciarEntorno();
         elementos = new EditText[]{titulo, descripcion,fechaEntrega};
 
-        setContentView(R.layout.activity_envio_tareas);
         findViewById(R.id.buttonRegresarMenuEnvioTareas).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,7 +63,6 @@ public class EnvioTareas extends AppCompatActivity {
     private void iniciarEntorno() {
         recogerParametro();
         buscarElementos();
-
         ConsultasMaterias consultasMaterias = new ConsultasMaterias(curso);
         consultasMaterias.execute(1);
     }
@@ -175,10 +175,10 @@ public class EnvioTareas extends AppCompatActivity {
                 nombresMateria.add("Seleccione una Materia");
                 for (Materia materia : materias){
                     nombresMateria.add(materia.getNombreMateria());
+                    Log.i("nombre materia",materia.getNombreMateria());
                 }
                 ArrayAdapter adapter = new ArrayAdapter(EnvioTareas.this, android.R.layout.simple_spinner_item, nombresMateria);
                 listaMateria.setAdapter(adapter);
-
             }
         }
     }

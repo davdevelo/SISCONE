@@ -72,7 +72,7 @@ public class Materia {
 
             while (resultado.next()) {
                 materias.add(new Materia(resultado.getString("nombre_materia"),
-                        resultado.getString("id_cuso"),
+                        resultado.getString("id_curso"),
                         resultado.getString("id_materia")));
             }
         } catch (SQLException e) {
