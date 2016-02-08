@@ -48,6 +48,8 @@ public class EnvioComunicados extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 registrarAviso();
+                titulo.setText("");
+                descripcion.setText("");
             }
         });
     }

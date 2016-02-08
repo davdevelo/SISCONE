@@ -7,7 +7,8 @@
     <HorizontalScrollView
         android:id="@+id/horizontalScrollMenuProfesor"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
 
     <ScrollView
         android:layout_width="wrap_content"
@@ -15,9 +16,9 @@
         android:id="@+id/verticalScrollMenuProfesor" >
 
         <AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true">
+            >
 
             <TextView
                 android:layout_width="500dp"
@@ -72,22 +73,13 @@
                 android:ems="10"
                 android:id="@+id/editText"
                 android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
+
                 android:layout_marginTop="95dp"
                 android:layout_x="722dp"
                 android:layout_y="113dp" />
 
-            <TextView
-                android:layout_width="620dp"
-                android:layout_height="166dp"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Large Text XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-                android:id="@+id/textView26"
-                android:layout_x="240dp"
-                android:layout_y="195dp" />
-
             <Button
-                android:id="@+id/button9"
+                android:id="@+id/buttonRegresarMenuEnvioTareas"
                 android:layout_width="wrap_content"
                 android:layout_height="72dp"
                 android:layout_x="550dp"
@@ -98,11 +90,11 @@
                 android:drawableLeft="@mipmap/home"
                 android:layout_marginLeft="216dp"
                 android:layout_alignParentTop="true"
-                android:layout_alignParentStart="true"
+
                 android:layout_marginStart="280dp" />
 
             <Button
-                android:id="@+id/button8"
+                android:id="@+id/buttonGuardarTarea"
                 android:layout_width="wrap_content"
                 android:layout_height="72dp"
                 android:layout_x="300dp"
@@ -111,9 +103,16 @@
                 android:textSize="18dp"
                 android:background="@drawable/btn_cicle"
                 android:drawableLeft="@mipmap/floppy"
-                android:layout_marginStart="113dp"
+
                 android:layout_alignParentTop="true"
-                android:layout_toEndOf="@+id/button9" />
+                 />
+
+            <EditText
+                android:layout_width="641dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/editTextDescripcionTarea"
+                android:layout_x="243dp"
+                android:layout_y="231dp" />
 
         </AbsoluteLayout>
 
