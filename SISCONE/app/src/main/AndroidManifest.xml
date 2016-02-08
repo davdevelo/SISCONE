@@ -32,7 +32,8 @@
         <activity android:name=".RegistoAlumnos" />
         <activity android:name=".MenuPrincipalProfesor" />
         <activity android:name=".CuentaRepresentante" />
-        <activity android:name=".BuzonRepresentante"></activity>
+        <activity android:name=".BuzonRepresentante" />
+        <activity android:name=".CuentaProfesor"></activity>
     </application>
 
 </manifest>

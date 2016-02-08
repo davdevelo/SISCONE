@@ -82,7 +82,10 @@
                     android:layout_x="315dp"
                     android:layout_y="60dp"
                     android:ems="10"
-                    android:inputType="textPersonName" />
+                    android:singleLine="true"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:maxLength="50" />
 
                 <EditText
                     android:id="@+id/editTextParallelo"
@@ -91,7 +94,10 @@
                     android:layout_x="315dp"
                     android:layout_y="90dp"
                     android:ems="10"
-                    android:inputType="textPersonName" />
+                    android:singleLine="true"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:maxLength="50" />
 
                 <Button
                     android:layout_width="150dp"
@@ -127,7 +133,10 @@
                     android:ems="10"
                     android:id="@+id/editTextNombreInstitucion"
                     android:layout_x="315dp"
-                    android:layout_y="30dp" />
+                    android:layout_y="30dp"
+                    android:maxLength="50"
+                    android:maxLines="1"
+                    android:singleLine="true" />
 
             </AbsoluteLayout>
         </ScrollView>

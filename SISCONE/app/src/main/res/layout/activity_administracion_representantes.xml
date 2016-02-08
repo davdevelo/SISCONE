@@ -103,7 +103,9 @@
                     android:ems="10"
                     android:id="@+id/editTextCedulaRepresentanteAR"
                     android:layout_x="320dp"
-                    android:layout_y="50dp" />
+                    android:layout_y="50dp"
+                    android:singleLine="true"
+                    android:maxLength="10" />
 
             </AbsoluteLayout>
         </ScrollView>

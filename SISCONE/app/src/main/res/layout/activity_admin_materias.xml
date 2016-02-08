@@ -116,7 +116,10 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/editTextNombreMateria"
                     android:layout_x="120dp"
-                    android:layout_y="80dp" />
+                    android:layout_y="80dp"
+                    android:maxLength="45"
+                    android:maxLines="1"
+                    android:singleLine="true" />
 
                 <ListView
                     android:id="@+id/listViewMaterias"

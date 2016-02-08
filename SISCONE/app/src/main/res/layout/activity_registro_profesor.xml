@@ -73,7 +73,9 @@
                     android:layout_x="576dp"
                     android:layout_y="129dp"
                     android:ems="10"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:maxLines="1"
+                    android:maxLength="50" />
 
                 <EditText
                     android:id="@+id/editApellidoProf"
@@ -82,7 +84,9 @@
                     android:layout_x="576dp"
                     android:layout_y="168dp"
                     android:ems="10"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:maxLength="50"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/textView8"
@@ -100,7 +104,9 @@
                     android:layout_x="576dp"
                     android:layout_y="209dp"
                     android:ems="10"
-                    android:inputType="textEmailAddress" />
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:maxLength="50" />
 
                 <TextView
                     android:id="@+id/textView9"

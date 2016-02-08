@@ -103,7 +103,8 @@
                 android:layout_x="15dp"
                 android:layout_y="174dp"
                 android:inputType="textMultiLine|textImeMultiLine"
-                android:maxLength="500" />
+                android:maxLength="500"
+                android:maxLines="4" />
 
             <EditText
                 android:layout_width="200dp"
@@ -130,7 +131,11 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/editTextTituloDeTarea"
                 android:layout_x="350dp"
-                android:layout_y="95dp" />
+                android:layout_y="95dp"
+                android:maxLines="1"
+                android:maxLength="50"
+                android:maxHeight="1dp"
+                android:singleLine="true" />
 
             <TextView
                 android:layout_width="wrap_content"

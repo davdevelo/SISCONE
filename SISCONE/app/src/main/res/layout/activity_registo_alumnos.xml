@@ -59,7 +59,10 @@
                     android:layout_x="320dp"
                     android:layout_y="40dp"
                     android:ems="10"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:maxLength="45"
+                    android:maxLines="1"
+                    android:singleLine="true" />
 
                 <EditText
                     android:id="@+id/editTextApellidoEstudianteAR"
@@ -68,7 +71,10 @@
                     android:layout_x="320dp"
                     android:layout_y="70dp"
                     android:ems="10"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:maxLength="45" />
 
                 <TextView
                     android:layout_width="600dp"
