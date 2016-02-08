@@ -106,4 +106,21 @@ public class GestionAviso {
         return buzones;
     }
 
+    public static ResultSet buscarRepresentantesCurso(String idCurso) {
+
+        List<String> cedulas = new ArrayList<>();
+        ResultSet resultado = null;
+        Connection conexion = DBConnection.getInstace().getConnection();
+        Map<String, String> condiciones = new HashMap<>();
+        condiciones.put("id_curso", idCurso);
+        try {
+            Statement sentencia = conexion.createStatement();
+            resultado = sentencia.executeQuery(
+                    Sentencias.consultar("curso_representantes", null, condiciones));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultado;
+    }
+
 }

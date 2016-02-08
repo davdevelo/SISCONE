@@ -48,8 +48,6 @@ public class EnvioComunicados extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 registrarAviso();
-                titulo.setText("");
-                descripcion.setText("");
             }
         });
     }
@@ -58,7 +56,6 @@ public class EnvioComunicados extends AppCompatActivity {
         recogerParametro();
         buscarElementos();
     }
-
 
     private void recogerParametro() {
         Intent intent = getIntent();
@@ -76,9 +73,47 @@ public class EnvioComunicados extends AppCompatActivity {
     }
 
     private void registrarAviso() {
-        Aviso aviso = new Aviso(curso, titulo.getText().toString(), descripcion.getText().toString());
-        ConsultasAviso registrarNuevo = new ConsultasAviso(aviso);
-        registrarNuevo.execute(1);
+        ConsultasCursoR consultasCursoR = new ConsultasCursoR(curso,
+                titulo.getText().toString(),descripcion.getText().toString());
+        consultasCursoR.execute(1);
+    }
+
+    private class ConsultasCursoR extends AsyncTask<Integer, Void, String> {
+        private String curso;
+        private String titulo;
+        private String descripcion;
+
+        public ConsultasCursoR(String curso, String titulo, String descripcion) {
+            this.curso = curso;
+            this.titulo = titulo;
+            this.descripcion = descripcion;
+        }
+
+        @Override
+        protected String doInBackground(Integer... params) {
+
+            String idCurso;
+            ResultSet resultado;
+            resultado = GestionAviso.buscarRepresentantesCurso(curso);
+            try {
+                while(resultado.next()){
+                    idCurso = resultado.getString("id_curso");
+                }
+            } catch (SQLException e) {
+                return "Incorrecto";
+            }
+
+            return "Correcto";
+        }
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            if (s.equals("Correcto")) {
+                Aviso aviso = new Aviso(curso, titulo, descripcion);
+                ConsultasAviso registrarNuevo = new ConsultasAviso(aviso);
+                registrarNuevo.execute(1);
+            }
+        }
     }
 
     private class ConsultasAviso extends AsyncTask<Integer, Void, String> {
@@ -95,11 +130,12 @@ public class EnvioComunicados extends AppCompatActivity {
             return "Correcto";
 
         }
-
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             if (s.equals("Correcto")) {
+                titulo.setText("");
+                descripcion.setText("");
                 Toast registroCorrecto = Toast.makeText(getApplicationContext(), "EL aviso ha sido registrado", Toast.LENGTH_LONG);
                 registroCorrecto.show();
             }

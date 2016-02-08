@@ -11,8 +11,15 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import apoyo.GestionAviso;
 import moledos.Aviso;
@@ -33,6 +40,7 @@ public class EnvioTareas extends AppCompatActivity {
     private EditText elementos[];
     private List<Materia> materias;
     private List<String> nombresMateria;
+    private Map<String, Materia> mapaMaterias;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,12 +101,14 @@ public class EnvioTareas extends AppCompatActivity {
 
     private void registrarAviso() {
 
+        int index = listaMateria.getSelectedItemPosition();
+
         if(titulo.getText().toString().equals("") || fechaEntrega.getText().toString().equals("")){
             Toast mensaje = Toast.makeText(getApplicationContext(), "Debe llenar los campos obligatorios", Toast.LENGTH_LONG);
             mensaje.show();
         }
         else {
-            if(listaMateria.getSelectedItem().toString().equals("Seleccione una Materia")){
+            if(listaMateria.getSelectedItem().toString().equals("Seleccione una Materia") || index<0 ){
                 Toast mensaje = Toast.makeText(getApplicationContext(), "Debe seleccionar una materia", Toast.LENGTH_LONG);
                 mensaje.show();
             }
@@ -108,6 +118,115 @@ public class EnvioTareas extends AppCompatActivity {
                 cuerpoAviso.append("Fecha de entrega: ").append(fechaEntrega.getText().toString()).append("\n");
                 cuerpoAviso.append(descripcion.getText().toString()).append("\n");
 
+                if(validarFecha()){
+                    ConsultasCursoR consultasCursoR = new ConsultasCursoR(curso);
+                    consultasCursoR.execute(1);
+                }
+            }
+        }
+    }
+
+    private void registraTarea(){
+
+        int index = listaMateria.getSelectedItemPosition();
+        String idmateria = "";
+        if(index>0){
+            idmateria = (mapaMaterias.get(listaMateria.getSelectedItem().toString())).getIdMateria();
+        }
+
+        Tarea tarea = new Tarea(idmateria,titulo.getText().toString(),
+                procesarFecha(),
+                descripcion.getText().toString());
+
+        ConsultasTarea consultasTarea = new ConsultasTarea(tarea);
+        consultasTarea.execute(1);
+    }
+
+    private boolean validarFecha(){
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        Calendar cal = Calendar.getInstance();
+        String fechaActual = dateFormat.format(cal.getTime());
+        Log.i("Fecha actual", fechaActual);
+
+        String  fecha = procesarFecha();
+
+        String [] actualComponentes = fechaActual.split("/");
+        String [] fechaCompoentes = fecha.split("/");
+
+        Integer [] tiempoActual = new Integer [3];
+        Integer [] tiempoEntrega= new Integer [3];
+
+        for(int i=0;i<actualComponentes.length;i++){
+            tiempoActual[i] = new Integer(actualComponentes[i]);
+            tiempoEntrega[i] = new Integer(fechaCompoentes[i]);
+        }
+
+        if(tiempoActual[0]>tiempoEntrega[0]){
+            Toast mensaje = Toast.makeText(getApplicationContext(), "El año de la fecha es incorrecta \n Esta debe ser mayor al año actual", Toast.LENGTH_LONG);
+            mensaje.show();
+            return false;
+        }
+        else{
+            if(tiempoActual[1]>tiempoEntrega[2]){
+                Toast mensaje = Toast.makeText(getApplicationContext(), "El mes de la fecha es incorrecta \n Este debe ser mayor al mes actual", Toast.LENGTH_LONG);
+                mensaje.show();
+                return false;
+            }
+        }
+
+        try {
+            SimpleDateFormat formatoFecha = new SimpleDateFormat("yy/dd/MM");
+            formatoFecha.setLenient(false);
+            formatoFecha.parse(fecha);
+        } catch (ParseException e) {
+            Toast mensaje = Toast.makeText(getApplicationContext(), "La fecha ingresada es incorrecta", Toast.LENGTH_LONG);
+            mensaje.show();
+            return false;
+        }
+        return true;
+
+    }
+
+    private String  procesarFecha(){
+        String fecha = fechaEntrega.getText().toString();
+        String fechaModificada;
+        String [] componentes = fecha.split("/");
+        fechaModificada = componentes[0] + "/"+ componentes[2] + "/" + componentes[1];
+
+        Log.i("fecha", fecha);
+        Log.i("fecha modificada", fechaModificada);
+
+        return fechaModificada;
+
+    }
+
+    private class ConsultasCursoR extends AsyncTask<Integer, Void, String> {
+        private String curso;
+        public ConsultasCursoR(String curso) {
+            this.curso = curso;
+        }
+
+        @Override
+        protected String doInBackground(Integer... params) {
+
+            String idCurso;
+            ResultSet resultado;
+            resultado = GestionAviso.buscarRepresentantesCurso(curso);
+            try {
+                while(resultado.next()){
+                    idCurso = resultado.getString("id_curso");
+                }
+            } catch (SQLException e) {
+                return "Incorrecto";
+            }
+
+            return "Correcto";
+        }
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            if (s.equals("Correcto")) {
 
                 Aviso aviso = new Aviso(curso, titulo.getText().toString(), cuerpoAviso.toString());
                 ConsultasAviso registrarNuevo = new ConsultasAviso(aviso);
@@ -118,20 +237,6 @@ public class EnvioTareas extends AppCompatActivity {
             }
         }
     }
-
-    private void registraTarea(){
-
-        int index = listaMateria.getSelectedItemPosition() - 2 ;
-        String idmateria = materias.get(index).getIdMateria();
-
-        Tarea tarea = new Tarea(idmateria,titulo.getText().toString(),
-                fechaEntrega.getText().toString(),
-                descripcion.getText().toString());
-
-        ConsultasTarea consultasTarea = new ConsultasTarea(tarea);
-        consultasTarea.execute(1);
-    }
-
 
     private class ConsultasAviso extends AsyncTask<Integer, Void, String> {
         private Aviso aviso;
@@ -171,11 +276,13 @@ public class EnvioTareas extends AppCompatActivity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             if (s.equals("Correcto")) {
+                mapaMaterias = new HashMap<>();
                 nombresMateria = new ArrayList<>();
+
                 nombresMateria.add("Seleccione una Materia");
                 for (Materia materia : materias){
                     nombresMateria.add(materia.getNombreMateria());
-                    Log.i("nombre materia",materia.getNombreMateria());
+                    mapaMaterias.put(materia.getNombreMateria(),materia);
                 }
                 ArrayAdapter adapter = new ArrayAdapter(EnvioTareas.this, android.R.layout.simple_spinner_item, nombresMateria);
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
