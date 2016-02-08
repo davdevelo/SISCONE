@@ -33,7 +33,7 @@
                     android:clickable="false" />
 
                 <TextView
-                    android:layout_width="220dp"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:text="Cédula:"
                     android:id="@+id/textView"
@@ -48,16 +48,16 @@
                     android:ems="10"
                     android:id="@+id/editCedulaLogin"
                     android:layout_x="350dp"
-                    android:layout_y="40dp"
+                    android:layout_y="35dp"
                     android:maxLength="10" />
 
                 <TextView
-                    android:layout_width="220dp"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:text="Contraseña:"
                     android:id="@+id/textView2"
                     android:layout_x="150dp"
-                    android:layout_y="80dp"
+                    android:layout_y="85dp"
                     android:textSize="25dp" />
 
                 <EditText
@@ -67,15 +67,15 @@
                     android:ems="10"
                     android:id="@+id/editContraseñaLogin"
                     android:layout_x="350dp"
-                    android:layout_y="70dp" />
+                    android:layout_y="75dp" />
 
                 <TextView
-                    android:layout_width="220dp"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:text="Tipo de Usuario:"
                     android:id="@+id/textView3"
                     android:layout_x="150dp"
-                    android:layout_y="110dp"
+                    android:layout_y="115dp"
                     android:textSize="25dp" />
 
                 <Spinner
@@ -83,7 +83,7 @@
                     android:layout_height="28dp"
                     android:id="@+id/comboBoxTipoUSR"
                     android:layout_x="350dp"
-                    android:layout_y="110dp" />
+                    android:layout_y="115dp" />
 
                 <Button
                     android:layout_width="wrap_content"

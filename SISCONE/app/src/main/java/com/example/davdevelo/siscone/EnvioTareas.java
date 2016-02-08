@@ -178,6 +178,7 @@ public class EnvioTareas extends AppCompatActivity {
                     Log.i("nombre materia",materia.getNombreMateria());
                 }
                 ArrayAdapter adapter = new ArrayAdapter(EnvioTareas.this, android.R.layout.simple_spinner_item, nombresMateria);
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 listaMateria.setAdapter(adapter);
             }
         }
