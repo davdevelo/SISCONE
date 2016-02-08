@@ -54,13 +54,9 @@ public class MenuProfesor extends AppCompatActivity {
         findViewById(R.id.buttonEnvioTareas).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MenuProfesor.this, EnvioTareas.class));
-            }
-        });
-        findViewById(R.id.buttonMenuProfesorSalir).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MenuProfesor.this, MainActivity.class));
+                Intent intent =new Intent(MenuProfesor.this, EnvioTareas.class);
+                intent.putExtra("cursoID", curso);
+                startActivity(intent);
             }
         });
     }

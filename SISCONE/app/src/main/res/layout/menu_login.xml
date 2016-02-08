@@ -6,7 +6,8 @@
     <HorizontalScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/horizontalScrollView" >
+        android:id="@+id/horizontalScrollView"
+        android:layout_centerInParent="true">
 
         <ScrollView
             android:layout_width="wrap_content"
@@ -15,16 +16,16 @@
 
             <AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent" android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentStart="true">
+
+               >
 
                 <TextView
-                    android:layout_width="500dp"
+                    android:layout_width="670dp"
                     android:layout_height="wrap_content"
                     android:text="LOGIN"
                     android:id="@+id/textEncabezado"
-                    android:layout_x="332dp"
-                    android:layout_y="39dp"
+                    android:layout_x="0dp"
+                    android:layout_y="12dp"
                     android:textSize="30dp"
                     android:textStyle="bold"
                     android:textColor="#58adcf"
@@ -32,12 +33,12 @@
                     android:clickable="false" />
 
                 <TextView
-                    android:layout_width="260dp"
+                    android:layout_width="220dp"
                     android:layout_height="wrap_content"
-                    android:text="Cédula :"
+                    android:text="Cédula:"
                     android:id="@+id/textView"
-                    android:layout_x="313dp"
-                    android:layout_y="93dp"
+                    android:layout_x="150dp"
+                    android:layout_y="50dp"
                     android:textSize="25dp" />
 
                 <EditText
@@ -46,16 +47,17 @@
                     android:inputType="number"
                     android:ems="10"
                     android:id="@+id/editCedulaLogin"
-                    android:layout_x="631dp"
-                    android:layout_y="83dp" />
+                    android:layout_x="350dp"
+                    android:layout_y="40dp"
+                    android:maxLength="10" />
 
                 <TextView
-                    android:layout_width="260dp"
+                    android:layout_width="220dp"
                     android:layout_height="wrap_content"
-                    android:text="Contraseña :"
+                    android:text="Contraseña:"
                     android:id="@+id/textView2"
-                    android:layout_x="313dp"
-                    android:layout_y="134dp"
+                    android:layout_x="150dp"
+                    android:layout_y="80dp"
                     android:textSize="25dp" />
 
                 <EditText
@@ -64,32 +66,32 @@
                     android:inputType="textPassword"
                     android:ems="10"
                     android:id="@+id/editContraseñaLogin"
-                    android:layout_x="631dp"
-                    android:layout_y="122dp" />
+                    android:layout_x="350dp"
+                    android:layout_y="70dp" />
 
                 <TextView
-                    android:layout_width="260dp"
+                    android:layout_width="220dp"
                     android:layout_height="wrap_content"
-                    android:text="Tipo de Usuario :"
+                    android:text="Tipo de Usuario:"
                     android:id="@+id/textView3"
-                    android:layout_x="313dp"
-                    android:layout_y="173dp"
+                    android:layout_x="150dp"
+                    android:layout_y="110dp"
                     android:textSize="25dp" />
 
                 <Spinner
                     android:layout_width="250dp"
-                    android:layout_height="39dp"
+                    android:layout_height="28dp"
                     android:id="@+id/comboBoxTipoUSR"
-                    android:layout_x="631dp"
-                    android:layout_y="173dp" />
+                    android:layout_x="350dp"
+                    android:layout_y="110dp" />
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="75dp"
                     android:text="INGRESAR"
                     android:id="@+id/buttonIngresar"
-                    android:layout_x="313dp"
-                    android:layout_y="253dp"
+                    android:layout_x="39dp"
+                    android:layout_y="180dp"
                     android:textSize="18dp"
                     android:background="@drawable/btn_cicle"
                     android:drawableLeft="@mipmap/folder_users" />
@@ -99,8 +101,8 @@
                     android:layout_height="75dp"
                     android:text="LIMPIAR"
                     android:id="@+id/buttonLimpiar"
-                    android:layout_x="544dp"
-                    android:layout_y="253dp"
+                    android:layout_x="269dp"
+                    android:layout_y="180dp"
                     android:textSize="18dp"
                     android:background="@drawable/btn_cicle"
                     android:drawableLeft="@mipmap/trash_empty" />
@@ -110,8 +112,8 @@
                     android:layout_height="75dp"
                     android:text="SALIR"
                     android:id="@+id/buttonSalir"
-                    android:layout_x="763dp"
-                    android:layout_y="253dp"
+                    android:layout_x="463dp"
+                    android:layout_y="180dp"
                     android:textSize="18dp"
                     android:background="@drawable/btn_cicle"
                     android:drawableLeft="@mipmap/homedark"
@@ -122,8 +124,8 @@
                     android:layout_height="wrap_content"
                     android:text="No esta registrado ? Cree su cuenta"
                     android:id="@+id/textRegistro"
-                    android:layout_x="280dp"
-                    android:layout_y="375dp"
+                    android:layout_x="13dp"
+                    android:layout_y="305dp"
                     android:textSize="20dp"
                     android:textColor="#f70b0b" />
 
@@ -132,18 +134,18 @@
                     android:layout_height="65dp"
                     android:text="CREAR CUENTA"
                     android:id="@+id/buttonCrearCuenta"
-                    android:layout_x="628dp"
-                    android:layout_y="363dp"
+                    android:layout_x="343dp"
+                    android:layout_y="283dp"
                     android:textSize="16dp"
                     android:background="@drawable/btn_cicle"
                     android:drawableLeft="@mipmap/documents" />
 
                 <ImageView
-                    android:layout_width="173dp"
-                    android:layout_height="204dp"
+                    android:layout_width="98dp"
+                    android:layout_height="116dp"
                     android:id="@+id/imageView2"
-                    android:layout_x="68dp"
-                    android:layout_y="107dp"
+                    android:layout_x="0dp"
+                    android:layout_y="50dp"
                     android:background="@mipmap/logo" />
 
             </AbsoluteLayout>

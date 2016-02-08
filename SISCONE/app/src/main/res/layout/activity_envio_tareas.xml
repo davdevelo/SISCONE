@@ -21,12 +21,12 @@
             >
 
             <TextView
-                android:layout_width="500dp"
+                android:layout_width="600dp"
                 android:layout_height="wrap_content"
                 android:text="FORMULARIO ENVIO DE TAREAS"
-                android:id="@+id/textEncabezado"
-                android:layout_x="300dp"
-                android:layout_y="39dp"
+                android:id="@+id/textEncabezadoEnvioTareas"
+                android:layout_x="0dp"
+                android:layout_y="0dp"
                 android:textSize="30dp"
                 android:textStyle="bold"
                 android:textColor="#58adcf"
@@ -34,56 +34,45 @@
                 android:clickable="false" />
 
             <ImageView
-                android:layout_width="173dp"
-                android:layout_height="204dp"
+                android:layout_width="100dp"
+                android:layout_height="119dp"
                 android:id="@+id/imageView2"
-                android:layout_x="33dp"
-                android:layout_y="110dp"
+                android:layout_x="0dp"
+                android:layout_y="30dp"
                 android:background="@mipmap/logo" />
 
             <TextView
-                android:layout_width="135dp"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
-                android:text="Materia :"
-                android:id="@+id/textView24"
-                android:layout_x="242dp"
-                android:layout_y="116dp"
+                android:text="Materia:"
+                android:id="@+id/textViewEnvioTareasMateria"
+                android:layout_x="120dp"
+                android:layout_y="40dp"
                 android:textSize="25dp" />
 
             <Spinner
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/spinner3"
-                android:layout_x="356dp"
-                android:layout_y="109dp" />
+                android:layout_width="200dp"
+                android:layout_height="27dp"
+                android:id="@+id/spinnerListaMaterias"
+                android:layout_x="350dp"
+                android:layout_y="40dp"
+                android:spinnerMode="dropdown" />
 
             <TextView
-                android:layout_width="221dp"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
-                android:text="Fecha de entrega :"
-                android:id="@+id/textView25"
-                android:layout_x="504dp"
-                android:layout_y="118dp"
+                android:text="Fecha de entrega:"
+                android:id="@+id/textViewFechaEntregaTarea"
+                android:layout_x="120dp"
+                android:layout_y="70dp"
                 android:textSize="25dp" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="date"
-                android:ems="10"
-                android:id="@+id/editText"
-                android:layout_alignParentTop="true"
-
-                android:layout_marginTop="95dp"
-                android:layout_x="722dp"
-                android:layout_y="113dp" />
 
             <Button
                 android:id="@+id/buttonRegresarMenuEnvioTareas"
                 android:layout_width="wrap_content"
                 android:layout_height="72dp"
-                android:layout_x="550dp"
-                android:layout_y="380dp"
+                android:layout_x="300dp"
+                android:layout_y="300dp"
                 android:text="REGRESAR MENU"
                 android:textSize="18dp"
                 android:background="@drawable/btn_cicle"
@@ -97,8 +86,8 @@
                 android:id="@+id/buttonGuardarTarea"
                 android:layout_width="wrap_content"
                 android:layout_height="72dp"
-                android:layout_x="300dp"
-                android:layout_y="380dp"
+                android:layout_x="100dp"
+                android:layout_y="300dp"
                 android:text="Guardar"
                 android:textSize="18dp"
                 android:background="@drawable/btn_cicle"
@@ -108,11 +97,48 @@
                  />
 
             <EditText
-                android:layout_width="641dp"
+                android:layout_width="575dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/editTextDescripcionTarea"
-                android:layout_x="243dp"
-                android:layout_y="231dp" />
+                android:layout_x="15dp"
+                android:layout_y="174dp"
+                android:inputType="textMultiLine|textImeMultiLine"
+                android:maxLength="500" />
+
+            <EditText
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/editTextFechaEntrega"
+                android:layout_x="350dp"
+                android:layout_y="60dp"
+                android:inputType="date" />
+
+            <TextView
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:text="Titulo:"
+                android:id="@+id/textViewTituloTarea"
+                android:layout_x="120dp"
+                android:layout_y="100dp"
+                android:textSize="25dp"
+                android:maxLength="500" />
+
+            <EditText
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/editTextTituloDeTarea"
+                android:layout_x="350dp"
+                android:layout_y="90dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Descripción"
+                android:id="@+id/textViewDescripciónTarea"
+                android:layout_x="18dp"
+                android:layout_y="158dp" />
 
         </AbsoluteLayout>
 
