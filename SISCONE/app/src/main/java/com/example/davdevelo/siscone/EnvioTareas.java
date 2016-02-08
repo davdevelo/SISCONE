@@ -121,7 +121,7 @@ public class EnvioTareas extends AppCompatActivity {
 
     private void registraTarea(){
 
-        int index = listaMateria.getSelectedItemPosition();
+        int index = listaMateria.getSelectedItemPosition() - 2 ;
         String idmateria = materias.get(index).getIdMateria();
 
         Tarea tarea = new Tarea(idmateria,titulo.getText().toString(),
