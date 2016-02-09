@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -34,6 +35,17 @@ public class BuzonRepresentante extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buzon_representante);
         iniciarEntorno();
+
+        findViewById(R.id.buttonRegresarBuzon).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BuzonRepresentante.this, MenuRepresentante.class);
+                intent.putExtra("usuario", representante);
+                intent.putExtra("persona",usuario);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
 
@@ -92,6 +104,7 @@ public class BuzonRepresentante extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
+            mapaAvisos = new HashMap<>();
             for (int i=0;i<avisos.size();i++){
                 titulos.add(avisos.get(i).getTitulo());
                 mapaAvisos.put(i,avisos.get(i));

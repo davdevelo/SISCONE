@@ -91,7 +91,7 @@ public class Aviso implements Serializable {
             try {
                 Statement sentencia = conexion.createStatement();
                 resultado = sentencia.executeQuery(
-                        Sentencias.consultar("aviso", null, condiciones));
+                        Sentencias.consultar("aviso", null, condiciones) + "order by id_aviso desc");
                 while (resultado.next()) {
                     aviso = new Aviso(resultado.getString("id_curso"),
                             resultado.getString("titulo"),
@@ -115,7 +115,7 @@ public class Aviso implements Serializable {
         try {
             Statement sentencia = conexion.createStatement();
             resultado = sentencia.executeQuery(
-                    Sentencias.consultar("Lista_Avisos", null, condiciones));
+                    Sentencias.consultar("Lista_Avisos", null, condiciones)+ "order by id_aviso desc");
             while (resultado.next()) {
                 avisos.add(resultado.getString("id_aviso"));
             }

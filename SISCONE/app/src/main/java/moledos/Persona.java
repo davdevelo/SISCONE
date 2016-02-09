@@ -178,9 +178,8 @@ public class Persona  implements Serializable{
     }
 
 
-    public ResultSet actualizarDatos(String tabla) {
+    public Boolean actualizarDatos(String tabla) {
 
-        ResultSet resultado = null;
         Connection conexion = DBConnection.getInstace().getConnection();
         Map<String, String> parametros = new HashMap<>();
         parametros.put("correo_"+tabla, this.correo);
@@ -190,13 +189,13 @@ public class Persona  implements Serializable{
         condiciones.put("cedula_"+tabla, this.cedula);
         try {
             Statement sentencia = conexion.createStatement();
-            resultado = sentencia.executeQuery(
+            sentencia.executeQuery(
                     Sentencias.actualizar(tabla, parametros, condiciones));
         } catch (SQLException e) {
-            e.printStackTrace();
+            return false;
         }
 
-        return resultado;
+        return true;
 
     }
 

@@ -71,7 +71,7 @@ public class Sentencias {
         if(parametros == null || parametros.isEmpty())
             sentencia.append("La operación no ha podido ser realizada");
         else{
-            sentencia.append("update ").append(tabla).append(" set");
+            sentencia.append("update ").append(tabla).append(" set ");
 
             for (String  parametro : parametros.keySet()){
                 sentencia.append(parametro).append(" = '").append(parametros.get(parametro)).append("', ");

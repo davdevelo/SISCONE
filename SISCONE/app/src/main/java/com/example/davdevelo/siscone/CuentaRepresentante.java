@@ -90,10 +90,10 @@ public class CuentaRepresentante extends AppCompatActivity {
         recogerParametro();
 
         StringBuilder datos = new StringBuilder();
-        datos.append(usuario.getNombre()).append(" ").append(usuario.getApellido());
-        datos.append("  ").append(usuario.getCedula());
+        datos.append(usuario.getNombre().trim()).append(" ").append(usuario.getApellido().trim());
+        datos.append("  ").append(usuario.getCedula().trim());
         datosPeronales.setText(datos.toString());
-        correo.setText(usuario.getCorreo());
+        correo.setText(usuario.getCorreo().trim());
     }
 
     private void actualizarRepresentante() {
@@ -101,7 +101,7 @@ public class CuentaRepresentante extends AppCompatActivity {
                 confirmarContrasena.getText().toString().trim())){
 
             usuario.setContrasena(contrasenaNueva.getText().toString());
-            usuario.setCorreo(correo.getText().toString());
+            usuario.setCorreo(correo.getText().toString().trim());
             ConsultasRepresentante actualizar = new ConsultasRepresentante(usuario);
             actualizar.execute(1);
         }
@@ -122,20 +122,11 @@ public class CuentaRepresentante extends AppCompatActivity {
 
         @Override
         protected String doInBackground(Integer... params) {
-            ResultSet resultado = representante.actualizarDatos("Representante");
-            String nombre = "";
-            try {
-                while (resultado.next()) {
-                    nombre = resultado.getString("nombre_Representante");
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            if (nombre.equals("")) {
-                return "Incorrecto";
-            } else {
-
+            Boolean resultado = representante.actualizarDatos("Representante");
+            if (resultado) {
                 return "Correcto";
+            } else {
+                return "Incorrecto";
             }
         }
 
@@ -146,10 +137,9 @@ public class CuentaRepresentante extends AppCompatActivity {
                 Toast mensaje = Toast.makeText(getApplicationContext(), "Datos actualizados correctamente", Toast.LENGTH_LONG);
                 mensaje.show();
             }else{
-                Toast mensaje = Toast.makeText(getApplicationContext(), "No se ha podido actualizar losdatos", Toast.LENGTH_LONG);
+                Toast mensaje = Toast.makeText(getApplicationContext(), "No se ha podido actualizar los datos", Toast.LENGTH_LONG);
                 mensaje.show();
             }
-            correo.setText("");
             contrasenaNueva.setText("");
             confirmarContrasena.setText("");
         }
