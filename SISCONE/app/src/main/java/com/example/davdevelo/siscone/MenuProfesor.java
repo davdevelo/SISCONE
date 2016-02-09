@@ -32,7 +32,7 @@ public class MenuProfesor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
-                startActivity(new Intent(MenuProfesor.this, MainActivity.class));
+                startActivity(new Intent(MenuProfesor.this, MenuPrincipalProfesor.class));
             }
         });
         findViewById(R.id.buttonComunicados).setOnClickListener(new View.OnClickListener() {

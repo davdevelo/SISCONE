@@ -39,18 +39,6 @@
                     android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/buttonRegistrarNotas"
-                    android:layout_width="185dp"
-                    android:layout_height="wrap_content"
-                    android:layout_x="425dp"
-                    android:layout_y="225dp"
-                    android:text="Registrar Notas"
-                    android:drawableLeft="@mipmap/folder_documents"
-                    android:background="@drawable/btn_cicle"
-                    android:textStyle="bold"
-                    android:textSize="15dp" />
-
-                <Button
                     android:id="@+id/buttonAdministrarRepresentante"
                     android:layout_width="223dp"
                     android:layout_height="wrap_content"

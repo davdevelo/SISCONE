@@ -26,7 +26,8 @@ public class MenuCurso extends AppCompatActivity {
 
     private ArrayAdapter adaptador;
     private ListView cursos;
-    private String usuario;
+    private String cedula;
+    private Persona usuario;
     private Map<String, String> mapaCursos;
 
     @Override
@@ -46,7 +47,7 @@ public class MenuCurso extends AppCompatActivity {
         });
         cursos = (ListView) findViewById(R.id.listViewCusros);
         cursos.setOnTouchListener(new OnTouchEvent());
-        ConsultasCurso consulta = new ConsultasCurso(usuario);
+        ConsultasCurso consulta = new ConsultasCurso(cedula);
         consulta.execute(1);
 
         cursos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -57,7 +58,8 @@ public class MenuCurso extends AppCompatActivity {
                 String cursoId = mapaCursos.get(nombreCurso);
                 Intent intent = new Intent(MenuCurso.this, MenuProfesor.class);
                 intent.putExtra("cursoID", cursoId);
-                intent.putExtra("usuario",usuario);
+                intent.putExtra("usuario", cedula);
+                intent.putExtra("persona", usuario);
                 startActivity(intent);
             }
         });
@@ -67,17 +69,19 @@ public class MenuCurso extends AppCompatActivity {
     private void redireccionarRegistro() {
         finish();
         Intent intentMF = new Intent(MenuCurso.this, RegistroCurso.class);
-        intentMF.putExtra("cedulaProfesor", usuario);
+        intentMF.putExtra("cedulaProfesor", cedula);
+        intentMF.putExtra("persona", usuario);
         startActivity(intentMF);
     }
 
     private void recogerParametro() {
         Intent intent = getIntent();
         Bundle extra = intent.getExtras();
-        usuario = "";
+        cedula = "";
         if (extra != null) {
-            usuario = (String) extra.get("usuario");
-            Log.i("cedulaProfesor", usuario);
+            cedula = (String) extra.get("usuario");
+            usuario = (Persona) extra.get("persona");
+            Log.i("representante", cedula);
         }
     }
 

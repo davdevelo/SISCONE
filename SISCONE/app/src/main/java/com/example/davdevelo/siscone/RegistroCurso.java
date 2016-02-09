@@ -24,6 +24,7 @@ public class RegistroCurso extends AppCompatActivity {
     private EditText paralelo;
     private EditText elementos[];
     private String cedula;
+    private Persona usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,15 +61,14 @@ public class RegistroCurso extends AppCompatActivity {
         findViewById(R.id.buttonRegresoFormularioCuro).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
                 Intent intent = new Intent(RegistroCurso.this, MenuCurso.class);
                 intent.putExtra("usuario", cedula);
+                intent.putExtra("persona", usuario);
                 startActivity(intent);
+                finish();
             }
         });
-
     }
-
     private void buscarElementos(){
         nombreInstitucion = (EditText) findViewById(R.id.editTextNombreInstitucion);
         nombreCurso = (EditText) findViewById(R.id.editTextNombreCurso);
@@ -87,6 +87,7 @@ public class RegistroCurso extends AppCompatActivity {
         cedula = "";
         if (extra != null) {
             cedula = (String) extra.get("cedulaProfesor");
+            usuario = (Persona) extra.get("persona");
         }
     }
 
