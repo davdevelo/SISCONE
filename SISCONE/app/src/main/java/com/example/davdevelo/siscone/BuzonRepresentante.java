@@ -5,14 +5,18 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import apoyo.OnTouchEvent;
 import moledos.Aviso;
+import moledos.Persona;
 
 public class BuzonRepresentante extends AppCompatActivity {
 
@@ -22,6 +26,8 @@ public class BuzonRepresentante extends AppCompatActivity {
     private List<String> titulos;
     private String representante;
     private ListView listaAvisos;
+    private Map<Integer,Aviso> mapaAvisos;
+    Persona usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +44,20 @@ public class BuzonRepresentante extends AppCompatActivity {
         listaAvisos = (ListView) findViewById(R.id.listViewAvisosBuzon);
         listaAvisos.setOnTouchListener(new OnTouchEvent());
         consultar();
+
+        listaAvisos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Aviso aviso = mapaAvisos.get(position);
+                Intent intent = new Intent(BuzonRepresentante.this, DespliegeAviso.class);
+                intent.putExtra("aviso", aviso);
+                intent.putExtra("usuario",usuario.getCedula());
+                intent.putExtra("persona", usuario);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     private void recogerParametro() {
@@ -46,6 +66,7 @@ public class BuzonRepresentante extends AppCompatActivity {
         representante = "";
         if (extra != null) {
             representante = (String) extra.get("usuario");
+            usuario = (Persona) extra.get("persona");
             Log.i("representante", representante);
         }
     }
@@ -71,8 +92,9 @@ public class BuzonRepresentante extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            for (Aviso aviso : avisos){
-                titulos.add(aviso.getTitulo());
+            for (int i=0;i<avisos.size();i++){
+                titulos.add(avisos.get(i).getTitulo());
+                mapaAvisos.put(i,avisos.get(i));
             }
             adaptador = new ArrayAdapter(
                     BuzonRepresentante.this, android.R.layout.simple_expandable_list_item_1, titulos

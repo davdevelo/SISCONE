@@ -44,8 +44,9 @@ public class RegistroCurso extends AppCompatActivity {
                         //toast
                 else
                 {
-                    registrarCurso();
+
                 }*/
+                registrarCurso();
             }
         });
 

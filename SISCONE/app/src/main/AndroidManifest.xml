@@ -33,7 +33,8 @@
         <activity android:name=".MenuPrincipalProfesor" />
         <activity android:name=".CuentaRepresentante" />
         <activity android:name=".BuzonRepresentante" />
-        <activity android:name=".CuentaProfesor"></activity>
+        <activity android:name=".CuentaProfesor" />
+        <activity android:name=".DespliegeAviso"></activity>
     </application>
 
 </manifest>

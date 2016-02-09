@@ -92,7 +92,6 @@ public class Sentencias {
             }
             sentencia.delete(sentencia.length() - 5, sentencia.length());
         }
-        sentencia.deleteCharAt(sentencia.length() - 2);
         Log.i("sentencia", sentencia.toString());
         return sentencia.toString();
     }

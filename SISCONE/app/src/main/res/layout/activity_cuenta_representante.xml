@@ -112,7 +112,7 @@
                     android:layout_height="72dp"
                     android:layout_x="0dp"
                     android:layout_y="210dp"
-                    android:text="Guradar Datos"
+                    android:text="Guardar Datos"
                     android:textSize="18dp"
                     android:background="@drawable/btn_cicle"
                     android:drawableLeft="@mipmap/documents" />

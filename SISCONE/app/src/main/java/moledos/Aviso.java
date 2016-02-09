@@ -1,5 +1,6 @@
 package moledos;
 
+import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,7 +16,7 @@ import crud.Sentencias;
 /**
  * Created by MVW7 on 31/01/2016.
  */
-public class Aviso {
+public class Aviso implements Serializable {
 
     String idCurso;
     String titulo;

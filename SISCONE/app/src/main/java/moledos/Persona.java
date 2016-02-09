@@ -178,20 +178,25 @@ public class Persona  implements Serializable{
     }
 
 
-    public void actualizarDatos() {
+    public ResultSet actualizarDatos(String tabla) {
 
         ResultSet resultado = null;
         Connection conexion = DBConnection.getInstace().getConnection();
+        Map<String, String> parametros = new HashMap<>();
+        parametros.put("correo_"+tabla, this.correo);
+        parametros.put("contrasena_"+tabla, this.contrasena);
+
         Map<String, String> condiciones = new HashMap<>();
-        condiciones.put("cedula_representante", this.apellido);
+        condiciones.put("cedula_"+tabla, this.cedula);
         try {
             Statement sentencia = conexion.createStatement();
             resultado = sentencia.executeQuery(
-                    Sentencias.consultar("curso_representantes", null, condiciones));
+                    Sentencias.actualizar(tabla, parametros, condiciones));
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
+        return resultado;
 
     }
 
