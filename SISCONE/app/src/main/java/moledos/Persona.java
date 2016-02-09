@@ -1,5 +1,6 @@
 package moledos;
 
+import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,7 +14,7 @@ import crud.Sentencias;
 /**
  * Created by DANIEL on 02/12/2015.
  */
-public class Persona {
+public class Persona  implements Serializable{
 
     private String cedula;
     private String nombre;
@@ -174,6 +175,24 @@ public class Persona {
         }
 
         return resultado;
+    }
+
+
+    public void actualizarDatos() {
+
+        ResultSet resultado = null;
+        Connection conexion = DBConnection.getInstace().getConnection();
+        Map<String, String> condiciones = new HashMap<>();
+        condiciones.put("cedula_representante", this.apellido);
+        try {
+            Statement sentencia = conexion.createStatement();
+            resultado = sentencia.executeQuery(
+                    Sentencias.consultar("curso_representantes", null, condiciones));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
 

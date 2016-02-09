@@ -5,10 +5,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import moledos.Persona;
 
 public class MenuRepresentante extends AppCompatActivity {
 
-    String cedulaRepresentante;
+
+    private Persona usuario;
+    private String cedulaRepresentante;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +27,8 @@ public class MenuRepresentante extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuRepresentante.this, CuentaRepresentante
                         .class);
-                intent.putExtra("usuario", cedulaRepresentante);
+                intent.putExtra("usuario",cedulaRepresentante);
+                intent.putExtra("persona",usuario);
                 startActivity(intent);
             }
         });
@@ -30,6 +38,7 @@ public class MenuRepresentante extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuRepresentante.this, BuzonRepresentante.class);
                 intent.putExtra("usuario", cedulaRepresentante);
+                intent.putExtra("persona",usuario);
                 startActivity(intent);
             }
         });
@@ -42,8 +51,11 @@ public class MenuRepresentante extends AppCompatActivity {
         cedulaRepresentante = "";
         if (extra != null) {
             cedulaRepresentante = (String) extra.get("usuario");
+            usuario = (Persona) extra.get("persona");
             Log.i("representante", cedulaRepresentante);
         }
     }
+
+
 
 }

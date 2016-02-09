@@ -65,4 +65,35 @@ public class Sentencias {
         Log.i("sentencia", sentencia.toString());
         return sentencia.toString();
     }
+
+    public static String actualizar(String tabla,Map<String, String> parametros,Map<String, String> condiciones){
+        StringBuilder sentencia = new StringBuilder();
+        if(parametros == null || parametros.isEmpty())
+            sentencia.append("La operación no ha podido ser realizada");
+        else{
+            sentencia.append("update ").append(tabla).append(" set");
+
+            for (String  parametro : parametros.keySet()){
+                sentencia.append(parametro).append(" = '").append(parametros.get(parametro)).append("', ");
+            }
+            sentencia.deleteCharAt(sentencia.length() - 2);
+
+            if (condiciones == null || condiciones.isEmpty()){
+                Log.i("sentencia", sentencia.toString());
+                return sentencia.toString();
+            }
+            else{
+                sentencia.append(" where ");
+                for (String  condicion : condiciones.keySet()) {
+                    sentencia.append(condicion).append("='").
+                            append(condiciones.get(condicion)).append("'");
+                    sentencia.append(" and ");
+                }
+            }
+            sentencia.delete(sentencia.length() - 5, sentencia.length());
+        }
+        sentencia.deleteCharAt(sentencia.length() - 2);
+        Log.i("sentencia", sentencia.toString());
+        return sentencia.toString();
+    }
 }

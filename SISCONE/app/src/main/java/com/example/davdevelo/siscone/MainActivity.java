@@ -132,9 +132,15 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(ResultSet persona) {
             super.onPostExecute(persona);
             String contrasena="";
+            String nombre = "";
+            String apellido = "";
+            String correo = "";
             try {
                 while(persona.next()) {
                     contrasena=persona.getString("contrasena_"+login.getTipo());
+                    nombre=persona.getString("nombre_"+login.getTipo());
+                    apellido = persona.getString("apellido_"+login.getTipo());
+                    correo = persona.getString("correo_"+login.getTipo());
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -142,14 +148,20 @@ public class MainActivity extends AppCompatActivity {
 
             if (!contrasena.equals("")) {
                 if(login.getContrasena().trim().equals(contrasena.trim())){
+
+                    Persona personaUsuaria = new Persona(login.getCedula(),nombre,
+                            apellido,correo,contrasena);
+
                     finish();
                     if(login.getTipo().equals("Profesor")) {
                         Intent intent = new Intent(MainActivity.this, MenuPrincipalProfesor.class);
                         intent.putExtra("usuario", login.getCedula());
+                        intent.putExtra("persona",personaUsuaria);
                         startActivity(intent);
                     }else{
                         Intent intent = new Intent(MainActivity.this, MenuRepresentante.class);
                         intent.putExtra("usuario", login.getCedula());
+                        intent.putExtra("persona",personaUsuaria);
                         startActivity(intent);
                     }
                 }else {
