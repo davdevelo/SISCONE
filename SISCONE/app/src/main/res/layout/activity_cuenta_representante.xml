@@ -75,16 +75,16 @@
                     android:maxLength="50" />
 
                 <EditText
-                    android:id="@+id/editTextContraseñaAntigua"
+                    android:id="@+id/editTextContraseñaNueva"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_x="360dp"
                     android:layout_y="90dp"
                     android:ems="10"
-                    android:inputType="textPersonName"
                     android:maxLength="50"
                     android:maxLines="1"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:inputType="textPassword" />
 
                 <TextView
                     android:id="@+id/textViewConfirmarContrasenaR"
@@ -96,13 +96,13 @@
                     android:textSize="25dp" />
 
                 <EditText
-                    android:id="@+id/editCorreoRepresentante"
+                    android:id="@+id/editTextConfirmarContrasena"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_x="360dp"
                     android:layout_y="120dp"
                     android:ems="10"
-                    android:inputType="textEmailAddress"
+                    android:inputType="textPassword"
                     android:maxLines="1"
                     android:singleLine="true" />
 

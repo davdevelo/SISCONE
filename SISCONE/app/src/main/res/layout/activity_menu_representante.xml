@@ -45,7 +45,7 @@
                     android:layout_height="wrap_content"
                     android:text="Administrar Cuenta"
                     android:id="@+id/buttonAdministrarCuentaRepresentante"
-                    android:layout_y="80dp"
+                    android:layout_y="60dp"
                     android:layout_x="200dp" />
 
                 <Button
@@ -53,8 +53,16 @@
                     android:layout_height="wrap_content"
                     android:text="Buzon Avisos"
                     android:id="@+id/buttonAdministrarBuzon"
-                    android:layout_y="150dp"
+                    android:layout_y="120dp"
                     android:layout_x="200dp" />
+
+                <Button
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Sailr"
+                    android:id="@+id/buttonSalirMenuR"
+                    android:layout_x="200dp"
+                    android:layout_y="180dp" />
             </AbsoluteLayout>
         </ScrollView>
     </HorizontalScrollView>

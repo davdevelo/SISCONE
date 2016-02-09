@@ -34,7 +34,9 @@
         <activity android:name=".CuentaRepresentante" />
         <activity android:name=".BuzonRepresentante" />
         <activity android:name=".CuentaProfesor" />
-        <activity android:name=".DespliegeAviso"></activity>
+        <activity android:name=".DespliegeAviso" />
+        <activity android:name=".ListaTareas" />
+        <activity android:name=".CalificacionTarea"></activity>
     </application>
 
 </manifest>

@@ -26,8 +26,8 @@ public class MenuRepresentante extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MenuRepresentante.this, CuentaRepresentante.class);
-                intent.putExtra("usuario",cedulaRepresentante);
-                intent.putExtra("persona",usuario);
+                intent.putExtra("usuario", cedulaRepresentante);
+                intent.putExtra("persona", usuario);
                 startActivity(intent);
                 finish();
             }
@@ -39,6 +39,15 @@ public class MenuRepresentante extends AppCompatActivity {
                 Intent intent = new Intent(MenuRepresentante.this, BuzonRepresentante.class);
                 intent.putExtra("usuario", cedulaRepresentante);
                 intent.putExtra("persona",usuario);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        findViewById(R.id.buttonSalirMenuR).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuRepresentante.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }

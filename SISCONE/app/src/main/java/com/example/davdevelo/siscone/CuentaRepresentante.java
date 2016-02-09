@@ -29,6 +29,7 @@ public class CuentaRepresentante extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cuenta_representante);
+
         elementos = new EditText[]{contrasenaNueva, confirmarContrasena};
         iniciarEntorno();
 
@@ -42,16 +43,17 @@ public class CuentaRepresentante extends AppCompatActivity {
         findViewById(R.id.buttonLimpiarCuentaR).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                limpiarFormulario();
+                contrasenaNueva.setText("");
+                confirmarContrasena.setText("");
             }
         });
 
         findViewById(R.id.buttonRegresarCuentaR).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CuentaRepresentante.this,MenuRepresentante.class);
-                intent.putExtra("usuario",cedulaRepresentante);
-                intent.putExtra("persona",usuario);
+                Intent intent = new Intent(CuentaRepresentante.this, MenuRepresentante.class);
+                intent.putExtra("usuario", cedulaRepresentante);
+                intent.putExtra("persona", usuario);
                 startActivity(intent);
                 finish();
             }
@@ -72,7 +74,7 @@ public class CuentaRepresentante extends AppCompatActivity {
         }
     }
 
-    private void limpiarFormulario(){
+    private void limpiarFormulario() {
         for (EditText e : elementos) {
             e.setText("");
         }
@@ -80,12 +82,12 @@ public class CuentaRepresentante extends AppCompatActivity {
 
     private void buscarElementos() {
         correo = (EditText) findViewById(R.id.editTextCorreoRepresentante);
-        contrasenaNueva = (EditText) findViewById(R.id.editTextContraseñaAntigua);
-        confirmarContrasena = (EditText) findViewById(R.id.editCorreoRepresentante);
+        contrasenaNueva = (EditText) findViewById(R.id.editTextContraseñaNueva);
+        confirmarContrasena = (EditText) findViewById(R.id.editTextConfirmarContrasena);
         datosPeronales = (TextView) findViewById(R.id.textViewDatosPerosnales);
     }
 
-    private void iniciarEntorno(){
+    private void iniciarEntorno() {
         buscarElementos();
         recogerParametro();
 
@@ -97,15 +99,14 @@ public class CuentaRepresentante extends AppCompatActivity {
     }
 
     private void actualizarRepresentante() {
-        if(contrasenaNueva.getText().toString().trim().equals(
-                confirmarContrasena.getText().toString().trim())){
+        if (contrasenaNueva.getText().toString().trim().equals(
+                confirmarContrasena.getText().toString().trim())) {
 
             usuario.setContrasena(contrasenaNueva.getText().toString());
             usuario.setCorreo(correo.getText().toString().trim());
             ConsultasRepresentante actualizar = new ConsultasRepresentante(usuario);
             actualizar.execute(1);
-        }
-        else{
+        } else {
             Toast mensaje = Toast.makeText(getApplicationContext(), "Las contraseñas no coinciden", Toast.LENGTH_LONG);
             mensaje.show();
         }
@@ -123,11 +124,7 @@ public class CuentaRepresentante extends AppCompatActivity {
         @Override
         protected String doInBackground(Integer... params) {
             Boolean resultado = representante.actualizarDatos("Representante");
-            if (resultado) {
-                return "Correcto";
-            } else {
-                return "Incorrecto";
-            }
+            return "Correcto";
         }
 
         @Override
@@ -136,7 +133,7 @@ public class CuentaRepresentante extends AppCompatActivity {
             if (s.equals("Correcto")) {
                 Toast mensaje = Toast.makeText(getApplicationContext(), "Datos actualizados correctamente", Toast.LENGTH_LONG);
                 mensaje.show();
-            }else{
+            } else {
                 Toast mensaje = Toast.makeText(getApplicationContext(), "No se ha podido actualizar los datos", Toast.LENGTH_LONG);
                 mensaje.show();
             }

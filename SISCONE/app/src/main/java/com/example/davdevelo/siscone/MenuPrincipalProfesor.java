@@ -6,9 +6,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import moledos.Persona;
+
 public class MenuPrincipalProfesor extends AppCompatActivity {
 
-    String usuario;
+    String cedula;
+    Persona usuario;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,20 +21,43 @@ public class MenuPrincipalProfesor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MenuPrincipalProfesor.this, MenuCurso.class);
-                intent.putExtra("usuario", usuario);
+                intent.putExtra("usuario", cedula);
+                intent.putExtra("persona", usuario);
                 startActivity(intent);
+                finish();
+            }
+        });
+
+        findViewById(R.id.buttonAdministracionCuenta).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuPrincipalProfesor.this, CuentaProfesor.class);
+                intent.putExtra("usuario", cedula);
+                intent.putExtra("persona", usuario);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        findViewById(R.id.buttonSalirMPR).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuPrincipalProfesor.this, MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
     }
 
-    private void recogerParametro(){
+    private void recogerParametro() {
         Intent intent = getIntent();
         Bundle extra = intent.getExtras();
-        usuario = "";
+        cedula = "";
         if (extra != null) {
-            usuario = (String) extra.get("usuario");
-            Log.i("usuario", usuario);
+            cedula = (String) extra.get("usuario");
+            usuario = (Persona) extra.get("persona");
+            Log.i("representante", cedula);
         }
     }
 }

@@ -46,7 +46,7 @@
                     android:layout_height="wrap_content"
                     android:text="Administración Curso"
                     android:id="@+id/buttonAdministracionCurso"
-                    android:layout_y="154dp"
+                    android:layout_y="120dp"
                     android:layout_x="150dp" />
 
                 <Button
@@ -54,8 +54,16 @@
                     android:layout_height="wrap_content"
                     android:text="Administración cuenta"
                     android:id="@+id/buttonAdministracionCuenta"
-                    android:layout_y="76dp"
+                    android:layout_y="60dp"
                     android:layout_x="150dp" />
+
+                <Button
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Salir"
+                    android:id="@+id/buttonSalirMPR"
+                    android:layout_x="150dp"
+                    android:layout_y="180dp" />
             </AbsoluteLayout>
         </ScrollView>
     </HorizontalScrollView>
