@@ -15,124 +15,131 @@
             android:layout_height="wrap_content"
             android:id="@+id/scrollView3" >
 
-            <AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <Button
-                    android:id="@+id/buttonRegresarMenuMateria"
-                    android:layout_width="wrap_content"
-                    android:layout_height="72dp"
-                    android:layout_x="300dp"
-                    android:layout_y="240dp"
-                    android:text="REGRESAR MENU"
-                    android:textSize="18dp"
-                    android:background="@drawable/btn_cicle"
-                    android:drawableLeft="@mipmap/home" />
-
-                <Button
-                    android:id="@+id/buttonGuardarMaterias"
-                    android:layout_width="wrap_content"
-                    android:layout_height="70dp"
-                    android:layout_x="70dp"
-                    android:layout_y="240dp"
-                    android:text="Guardar"
-                    android:textSize="18dp"
-                    android:background="@drawable/btn_cicle"
-                    android:drawableLeft="@mipmap/floppy" />
-
-                <TextView
-                    android:id="@+id/textViewCabeceraRegistroMateria"
-                    android:layout_width="600dp"
-                    android:layout_height="wrap_content"
-                    android:layout_x="10dp"
-                    android:layout_y="18dp"
-                    android:text="FORMULARIO REGISTRO MATERIAS"
-                    android:textAlignment="center"
-                    android:textColor="#58adcf"
-                    android:textSize="30dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="210dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Lista de materias"
-                    android:id="@+id/textView20"
-                    android:layout_x="350dp"
-                    android:layout_y="55dp"
-                    android:textStyle="bold" />
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_x="120dp"
-                    android:layout_y="110dp">
-
-                </LinearLayout>
-
-                <Button
-                    style="?android:attr/buttonStyleSmall"
-                    android:id="@+id/buttonAgregarMateria"
-                    android:layout_width="88dp"
-                    android:layout_height="33dp"
-                    android:layout_x="120dp"
-                    android:layout_y="130dp"
-                    android:background="#8592f6"
-                    android:text="agregar +"
-                    android:textColor="#eef0f5" />
-
-                <Button
-                    style="?android:attr/buttonStyleSmall"
-                    android:id="@+id/buttonQuitarMateria"
-                    android:layout_width="88dp"
-                    android:layout_height="33dp"
-                    android:layout_x="230dp"
-                    android:layout_y="130dp"
-                    android:background="#f2263e"
-                    android:text="QUITAR"
-                    android:textColor="#eef0f5" />
-
-                <ImageView
-                    android:layout_width="85dp"
-                    android:layout_height="101dp"
-                    android:id="@+id/imageView5"
-                    android:layout_x="15dp"
-                    android:layout_y="68dp"
-                    android:background="@mipmap/logo" />
-
-                <TextView
-                    android:layout_width="210dp"
-                    android:layout_height="wrap_content"
-                    android:text="Nombre Materia"
-                    android:id="@+id/textViewNombreMateria"
-                    android:layout_x="120dp"
-                    android:layout_y="55dp"
-                    android:textSize="25dp" />
-
-                <EditText
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/editTextNombreMateria"
-                    android:layout_x="120dp"
-                    android:layout_y="80dp"
-                    android:maxLength="45"
-                    android:maxLines="1"
-                    android:singleLine="true" />
-
-                <ListView
-                    android:id="@+id/listViewMaterias"
-                    android:layout_width="210dp"
-                    android:layout_height="134dp"
-                    android:layout_x="350dp"
-                    android:layout_y="75dp"
-                    android:choiceMode="singleChoice"
-                    android:headerDividersEnabled="false"
-                    android:footerDividersEnabled="false" />
-
-            </AbsoluteLayout>
-    </ScrollView>
+        </ScrollView>
     </HorizontalScrollView>
 
-    </RelativeLayout>
+    <AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:id="@+id/buttonRegresarMenuMateria"
+            android:layout_width="wrap_content"
+            android:layout_height="72dp"
+            android:layout_x="560dp"
+            android:layout_y="340dp"
+            android:text="REGRESAR MENU"
+            android:textSize="18dp"
+            android:background="@drawable/btn_cicle"
+            android:drawableLeft="@mipmap/home" />
+
+        <Button
+            android:id="@+id/buttonGuardarMaterias"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_x="310dp"
+            android:layout_y="340dp"
+            android:text="Guardar"
+            android:textSize="18dp"
+            android:background="@drawable/btn_cicle"
+            android:drawableLeft="@mipmap/floppy" />
+
+        <TextView
+            android:id="@+id/textViewCabeceraRegistroMateria"
+            android:layout_width="600dp"
+            android:layout_height="wrap_content"
+            android:layout_x="240dp"
+            android:layout_y="34dp"
+            android:text="FORMULARIO REGISTRO MATERIAS"
+            android:textAlignment="center"
+            android:textColor="#58adcf"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="212dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Lista de materias"
+            android:id="@+id/textView20"
+            android:layout_x="650dp"
+            android:layout_y="118dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_x="120dp"
+            android:layout_y="110dp">
+
+        </LinearLayout>
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:id="@+id/buttonAgregarMateria"
+            android:layout_width="88dp"
+            android:layout_height="33dp"
+            android:layout_x="282dp"
+            android:layout_y="222dp"
+            android:background="#8592f6"
+            android:text="agregar +"
+            android:textColor="#eef0f5" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:id="@+id/buttonQuitarMateria"
+            android:layout_width="88dp"
+            android:layout_height="33dp"
+            android:layout_x="400dp"
+            android:layout_y="222dp"
+            android:background="#f2263e"
+            android:text="QUITAR"
+            android:textColor="#eef0f5" />
+
+        <TextView
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:text="Nombre Materia"
+            android:id="@+id/textViewNombreMateria"
+            android:layout_x="288dp"
+            android:layout_y="110dp"
+            android:textSize="25dp" />
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTextNombreMateria"
+            android:layout_x="284dp"
+            android:layout_y="155dp"
+            android:maxLength="45"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+        <ListView
+            android:id="@+id/listViewMaterias"
+            android:layout_width="210dp"
+            android:layout_height="138dp"
+            android:layout_x="650dp"
+            android:layout_y="148dp"
+            android:choiceMode="singleChoice"
+            android:headerDividersEnabled="false"
+            android:footerDividersEnabled="false" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="173dp"
+            android:layout_height="204dp"
+            android:layout_x="50dp"
+            android:layout_y="107dp"
+            android:background="@mipmap/logo"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/horizontalScrollMenuProfesor"
+            android:layout_toStartOf="@+id/horizontalScrollMenuProfesor" />
+
+    </AbsoluteLayout>
+
+</RelativeLayout>

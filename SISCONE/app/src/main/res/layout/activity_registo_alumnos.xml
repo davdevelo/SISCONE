@@ -20,117 +20,128 @@
             android:layout_height="wrap_content"
             android:id="@+id/verticalScrollMenuProfesor" >
 
-            <AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
-                tools:context="com.example.davdevelo.siscone.MenuProfesor"
-                android:layout_alignTop="@+id/horizontalScrollMenuProfesor"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true">
-
-
-                <TextView
-                    android:id="@+id/textViewApellidoEstudiante"
-                    android:layout_width="260dp"
-                    android:layout_height="wrap_content"
-                    android:layout_x="40dp"
-                    android:layout_y="80dp"
-                    android:text="Apellido Alumno"
-                    android:textSize="25dp" />
-
-                <TextView
-                    android:id="@+id/textViewNombreEstudiante"
-                    android:layout_width="260dp"
-                    android:layout_height="wrap_content"
-                    android:layout_x="40dp"
-                    android:layout_y="50dp"
-                    android:text="Nombre Alumno"
-                    android:textSize="25dp" />
-
-                <EditText
-                    android:id="@+id/editTextNombreEstudianteAR"
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:layout_x="320dp"
-                    android:layout_y="40dp"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:maxLength="45"
-                    android:maxLines="1"
-                    android:singleLine="true" />
-
-                <EditText
-                    android:id="@+id/editTextApellidoEstudianteAR"
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:layout_x="320dp"
-                    android:layout_y="70dp"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:singleLine="true"
-                    android:maxLines="1"
-                    android:maxLength="45" />
-
-                <TextView
-                    android:layout_width="600dp"
-                    android:layout_height="wrap_content"
-                    android:text="REGISTRO DE ALUMNOS"
-                    android:id="@+id/textViewCabeceraRegistroEstudiante"
-                    android:layout_x="10dp"
-                    android:layout_y="5dp"
-                    android:textStyle="bold"
-                    android:textSize="25dp"
-                    android:textColor="#58adcf"
-                    android:gravity="center" />
-
-                <Button
-                    style="?android:attr/buttonStyleSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Agregar Alumno"
-                    android:id="@+id/buttonAgregarAlumno"
-                    android:layout_y="125dp"
-                    android:layout_x="100dp" />
-
-                <Button
-                    style="?android:attr/buttonStyleSmall"
-                    android:layout_width="170dp"
-                    android:layout_height="wrap_content"
-                    android:text="Terminar Registro"
-                    android:id="@+id/buttonTerminarRegistroAlumnos"
-                    android:layout_x="35dp"
-                    android:layout_y="240dp" />
-
-                <Button
-                    android:layout_width="170dp"
-                    android:layout_height="wrap_content"
-                    android:text="Limpiar"
-                    android:id="@+id/buttonLimpiarFormularioAlummnos"
-                    android:layout_x="215dp"
-                    android:layout_y="240dp" />
-
-                <Button
-                    android:layout_width="170dp"
-                    android:layout_height="wrap_content"
-                    android:text="Cancelar"
-                    android:id="@+id/buttonCancelarRegistroAlumnos"
-                    android:layout_x="395dp"
-                    android:layout_y="240dp" />
-
-                <ListView
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/listViewAlumnos"
-                    android:layout_x="320dp"
-                    android:layout_y="125dp"
-                    android:choiceMode="none" />
-
-            </AbsoluteLayout>
         </ScrollView>
     </HorizontalScrollView>
+
+    <AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.example.davdevelo.siscone.MenuProfesor"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="68dp"
+        android:layout_marginEnd="68dp">
+
+
+        <TextView
+            android:id="@+id/textViewApellidoEstudiante"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_x="189dp"
+            android:layout_y="81dp"
+            android:text="Apellido Alumno"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/textViewNombreEstudiante"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_x="189dp"
+            android:layout_y="42dp"
+            android:text="Nombre Alumno"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/editTextNombreEstudianteAR"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_x="469dp"
+            android:layout_y="32dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:maxLength="45"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/editTextApellidoEstudianteAR"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_x="469dp"
+            android:layout_y="81dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:maxLength="45" />
+
+        <TextView
+            android:layout_width="600dp"
+            android:layout_height="wrap_content"
+            android:text="REGISTRO DE ALUMNOS"
+            android:id="@+id/textViewCabeceraRegistroEstudiante"
+            android:layout_x="80dp"
+            android:layout_y="-3dp"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:textColor="#58adcf"
+            android:gravity="center" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agregar Alumno"
+            android:id="@+id/buttonAgregarAlumno"
+            android:layout_y="152dp"
+            android:layout_x="260dp" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:text="Terminar Registro"
+            android:id="@+id/buttonTerminarRegistroAlumnos"
+            android:layout_x="160dp"
+            android:layout_y="330dp" />
+
+        <Button
+            android:layout_width="143dp"
+            android:layout_height="wrap_content"
+            android:text="Limpiar"
+            android:id="@+id/buttonLimpiarFormularioAlummnos"
+            android:layout_x="340dp"
+            android:layout_y="330dp" />
+
+        <Button
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:text="Cancelar"
+            android:id="@+id/buttonCancelarRegistroAlumnos"
+            android:layout_x="500dp"
+            android:layout_y="330dp" />
+
+        <ListView
+            android:layout_width="250dp"
+            android:layout_height="177dp"
+            android:id="@+id/listViewAlumnos"
+            android:layout_x="469dp"
+            android:layout_y="117dp"
+            android:choiceMode="none" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="153dp"
+            android:layout_height="181dp"
+            android:layout_x="-20dp"
+            android:layout_y="125dp"
+            android:background="@mipmap/logo" />
+
+    </AbsoluteLayout>
 </RelativeLayout>

@@ -19,127 +19,136 @@
             android:layout_height="wrap_content"
             android:id="@+id/verticalScrollMenuProfesor" >
 
-            <AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
-                tools:context="com.example.davdevelo.siscone.MenuProfesor"
-                android:layout_alignTop="@+id/horizontalScrollMenuProfesor"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true">
-
-
-                <TextView
-                    android:layout_width="605dp"
-                    android:layout_height="wrap_content"
-                    android:text="REGISTRO DE CURSO"
-                    android:id="@+id/textView27"
-                    android:layout_alignTop="@+id/horizontalScrollMenuProfesor"
-                    android:layout_toRightOf="@+id/horizontalScrollMenuProfesor"
-                    android:layout_toEndOf="@+id/horizontalScrollMenuProfesor"
-                    android:textSize="30dp"
-                    android:textStyle="bold"
-                    android:gravity="center_horizontal"
-                    android:layout_x="10dp"
-                    android:layout_y="5dp"
-                    android:textColor="#58adcf" />
-
-                <TextView
-                    android:id="@+id/textViewNombreInstitucion"
-                    android:layout_width="260dp"
-                    android:layout_height="wrap_content"
-                    android:layout_x="30dp"
-                    android:layout_y="40dp"
-                    android:text="Nombre Institución:"
-                    android:textSize="25dp" />
-
-                <TextView
-                    android:id="@+id/textViewParalelo"
-                    android:layout_width="260dp"
-                    android:layout_height="wrap_content"
-                    android:layout_x="30dp"
-                    android:layout_y="100dp"
-                    android:text="Paralelo"
-                    android:textSize="25dp" />
-
-                <TextView
-                    android:id="@+id/textViewNombreCusro"
-                    android:layout_width="260dp"
-                    android:layout_height="wrap_content"
-                    android:layout_x="30dp"
-                    android:layout_y="70dp"
-                    android:text="Nombre Curso:"
-                    android:textSize="25dp" />
-
-                <EditText
-                    android:id="@+id/editTextNombreCurso"
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:layout_x="315dp"
-                    android:layout_y="60dp"
-                    android:ems="10"
-                    android:singleLine="true"
-                    android:inputType="text"
-                    android:maxLines="1"
-                    android:maxLength="50" />
-
-                <EditText
-                    android:id="@+id/editTextParallelo"
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:layout_x="315dp"
-                    android:layout_y="90dp"
-                    android:ems="10"
-                    android:singleLine="true"
-                    android:inputType="text"
-                    android:maxLines="1"
-                    android:maxLength="50" />
-
-                <Button
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:text="REGISTRAR"
-                    android:id="@+id/buttonRegistroCusrso"
-                    android:layout_below="@+id/horizontalScrollMenuProfesor"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_x="50dp"
-                    android:layout_y="150dp" />
-
-                <Button
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:text="LIMPIAR"
-                    android:id="@+id/buttonLimpiarRegistroCurso"
-                    android:layout_x="220dp"
-                    android:layout_y="152dp" />
-
-                <Button
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:text="REGRESAR"
-                    android:id="@+id/buttonRegresoFormularioCuro"
-                    android:layout_x="390dp"
-                    android:layout_y="152dp" />
-
-                <EditText
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:id="@+id/editTextNombreInstitucion"
-                    android:layout_x="315dp"
-                    android:layout_y="30dp"
-                    android:maxLength="50"
-                    android:maxLines="1"
-                    android:singleLine="true" />
-
-            </AbsoluteLayout>
         </ScrollView>
     </HorizontalScrollView>
+
+    <AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.example.davdevelo.siscone.MenuProfesor"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+
+        <TextView
+            android:layout_width="605dp"
+            android:layout_height="wrap_content"
+            android:text="REGISTRO DE CURSO"
+            android:id="@+id/textView27"
+            android:layout_alignTop="@+id/horizontalScrollMenuProfesor"
+            android:layout_toRightOf="@+id/horizontalScrollMenuProfesor"
+            android:layout_toEndOf="@+id/horizontalScrollMenuProfesor"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:layout_x="89dp"
+            android:layout_y="47dp"
+            android:textColor="#58adcf" />
+
+        <TextView
+            android:id="@+id/textViewNombreInstitucion"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_x="159dp"
+            android:layout_y="112dp"
+            android:text="Nombre Institución:"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/textViewParalelo"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_x="159dp"
+            android:layout_y="176dp"
+            android:text="Paralelo"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/textViewNombreCusro"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_x="159dp"
+            android:layout_y="140dp"
+            android:text="Nombre Curso:"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/editTextNombreCurso"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_x="444dp"
+            android:layout_y="131dp"
+            android:ems="10"
+            android:singleLine="true"
+            android:inputType="text"
+            android:maxLines="1"
+            android:maxLength="50" />
+
+        <EditText
+            android:id="@+id/editTextParallelo"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_x="444dp"
+            android:layout_y="159dp"
+            android:ems="10"
+            android:singleLine="true"
+            android:inputType="text"
+            android:maxLines="1"
+            android:maxLength="50" />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="REGISTRAR"
+            android:id="@+id/buttonRegistroCusrso"
+            android:layout_below="@+id/horizontalScrollMenuProfesor"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_x="130dp"
+            android:layout_y="270dp" />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="LIMPIAR"
+            android:id="@+id/buttonLimpiarRegistroCurso"
+            android:layout_x="320dp"
+            android:layout_y="270dp" />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="REGRESAR"
+            android:id="@+id/buttonRegresoFormularioCuro"
+            android:layout_x="500dp"
+            android:layout_y="270dp" />
+
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/editTextNombreInstitucion"
+            android:layout_x="444dp"
+            android:layout_y="106dp"
+            android:maxLength="50"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="146dp"
+            android:layout_height="173dp"
+            android:layout_x="-2dp"
+            android:layout_y="85dp"
+            android:background="@mipmap/logo" />
+
+    </AbsoluteLayout>
 
 </RelativeLayout>
