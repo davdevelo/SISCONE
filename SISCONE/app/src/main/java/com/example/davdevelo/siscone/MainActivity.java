@@ -43,14 +43,6 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.tipoUsuario, android.R.layout.simple_spinner_item);
         sistemas.setAdapter(adapter);
 
-        findViewById(R.id.buttonCrearCuenta).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-                startActivity(new Intent(MainActivity.this, RegistroProfesor.class));
-            }
-        });
-
         findViewById(R.id.buttonLimpiar).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
