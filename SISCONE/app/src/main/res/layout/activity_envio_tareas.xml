@@ -26,20 +26,12 @@
                 android:text="FORMULARIO ENVIO DE TAREAS"
                 android:id="@+id/textEncabezadoEnvioTareas"
                 android:layout_x="0dp"
-                android:layout_y="0dp"
+                android:layout_y="44dp"
                 android:textSize="30dp"
                 android:textStyle="bold"
                 android:textColor="#58adcf"
                 android:textAlignment="center"
                 android:clickable="false" />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="119dp"
-                android:id="@+id/imageView2"
-                android:layout_x="0dp"
-                android:layout_y="30dp"
-                android:background="@mipmap/logo" />
 
             <TextView
                 android:layout_width="220dp"
@@ -47,7 +39,7 @@
                 android:text="Materia:"
                 android:id="@+id/textViewEnvioTareasMateria"
                 android:layout_x="120dp"
-                android:layout_y="40dp"
+                android:layout_y="111dp"
                 android:textSize="25dp" />
 
             <Spinner
@@ -55,7 +47,7 @@
                 android:layout_height="27dp"
                 android:id="@+id/spinnerListaMaterias"
                 android:layout_x="350dp"
-                android:layout_y="40dp"
+                android:layout_y="114dp"
                 android:spinnerMode="dropdown" />
 
             <TextView
@@ -64,7 +56,7 @@
                 android:text="Fecha de entrega:"
                 android:id="@+id/textViewFechaEntregaTarea"
                 android:layout_x="120dp"
-                android:layout_y="70dp"
+                android:layout_y="150dp"
                 android:textSize="25dp" />
 
             <Button
@@ -72,7 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="72dp"
                 android:layout_x="300dp"
-                android:layout_y="300dp"
+                android:layout_y="355dp"
                 android:text="REGRESAR MENU"
                 android:textSize="18dp"
                 android:background="@drawable/btn_cicle"
@@ -87,7 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="72dp"
                 android:layout_x="100dp"
-                android:layout_y="300dp"
+                android:layout_y="355dp"
                 android:text="Guardar"
                 android:textSize="18dp"
                 android:background="@drawable/btn_cicle"
@@ -101,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/editTextDescripcionTarea"
                 android:layout_x="15dp"
-                android:layout_y="174dp"
+                android:layout_y="264dp"
                 android:inputType="textMultiLine|textImeMultiLine"
                 android:maxLength="500"
                 android:maxLines="4" />
@@ -112,7 +104,7 @@
                 android:ems="10"
                 android:id="@+id/editTextFechaEntrega"
                 android:layout_x="350dp"
-                android:layout_y="60dp"
+                android:layout_y="141dp"
                 android:inputType="date"
                 android:hint="yyyy/mm/dd" />
 
@@ -122,7 +114,7 @@
                 android:text="Titulo:"
                 android:id="@+id/textViewTituloTarea"
                 android:layout_x="120dp"
-                android:layout_y="105dp"
+                android:layout_y="185dp"
                 android:textSize="25dp"
                 android:maxLength="500" />
 
@@ -131,7 +123,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/editTextTituloDeTarea"
                 android:layout_x="350dp"
-                android:layout_y="95dp"
+                android:layout_y="175dp"
                 android:maxLines="1"
                 android:maxLength="50"
                 android:maxHeight="1dp"
@@ -143,14 +135,25 @@
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Descripción"
                 android:id="@+id/textViewDescripciónTarea"
-                android:layout_x="18dp"
-                android:layout_y="158dp" />
+                android:layout_x="20dp"
+                android:layout_y="233dp" />
 
         </AbsoluteLayout>
 
 
     </ScrollView>
     </HorizontalScrollView>
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="173dp"
+        android:layout_height="204dp"
+        android:layout_x="-83dp"
+        android:layout_y="70dp"
+        android:background="@mipmap/logo"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/horizontalScrollMenuProfesor"
+        android:layout_toStartOf="@+id/horizontalScrollMenuProfesor" />
 
 </RelativeLayout>
 

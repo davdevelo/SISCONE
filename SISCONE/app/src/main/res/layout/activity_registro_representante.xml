@@ -14,147 +14,152 @@
             android:layout_height="wrap_content"
             android:id="@+id/scrollView2" >
 
-            <AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/textView11"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_x="269dp"
-                    android:layout_y="75dp"
-                    android:text="Cédula :"
-                    android:textSize="25dp" />
-
-                <EditText
-                    android:id="@+id/editCedulaRepresentante"
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:layout_x="540dp"
-                    android:layout_y="65dp"
-                    android:ems="10"
-                    android:inputType="number"
-                    android:maxLength="10"
-                    android:maxLines="1"
-                    android:singleLine="true" />
-
-                <TextView
-                    android:id="@+id/textView12"
-                    android:layout_width="500dp"
-                    android:layout_height="wrap_content"
-                    android:layout_x="283dp"
-                    android:layout_y="14dp"
-                    android:text="FORMULARIO REGISTRO"
-                    android:textAlignment="center"
-                    android:textColor="#58adcf"
-                    android:textSize="30dp" />
-
-                <TextView
-                    android:id="@+id/textView13"
-                    android:layout_width="260dp"
-                    android:layout_height="wrap_content"
-                    android:layout_x="269dp"
-                    android:layout_y="155dp"
-                    android:text="Apellido :"
-                    android:textSize="25dp" />
-
-                <TextView
-                    android:id="@+id/textView14"
-                    android:layout_width="260dp"
-                    android:layout_height="wrap_content"
-                    android:layout_x="269dp"
-                    android:layout_y="115dp"
-                    android:text="Nombre :"
-                    android:textSize="25dp" />
-
-                <EditText
-                    android:id="@+id/editNombreRepresentante"
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:layout_x="540dp"
-                    android:layout_y="105dp"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:singleLine="true"
-                    android:maxLines="1"
-                    android:maxLength="50" />
-
-                <EditText
-                    android:id="@+id/editApellidoRepresentante"
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:layout_x="540dp"
-                    android:layout_y="146dp"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:maxLength="50"
-                    android:maxLines="1"
-                    android:singleLine="true" />
-
-                <TextView
-                    android:id="@+id/textView15"
-                    android:layout_width="260dp"
-                    android:layout_height="wrap_content"
-                    android:layout_x="269dp"
-                    android:layout_y="195dp"
-                    android:text="Correo :"
-                    android:textSize="25dp" />
-
-                <EditText
-                    android:id="@+id/editCorreoRepresentante"
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:layout_x="540dp"
-                    android:layout_y="185dp"
-                    android:ems="10"
-                    android:inputType="textEmailAddress"
-                    android:maxLines="1"
-                    android:singleLine="true" />
-
-                <Button
-                    android:id="@+id/buttonRegistrarRepr"
-                    android:layout_width="wrap_content"
-                    android:layout_height="72dp"
-                    android:layout_x="228dp"
-                    android:layout_y="267dp"
-                    android:text="REGISTRAR"
-                    android:textSize="18dp"
-                    android:background="@drawable/btn_cicle"
-                    android:drawableLeft="@mipmap/documents" />
-
-                <Button
-                    android:id="@+id/buttonLimpiarForRegisRepr"
-                    android:layout_width="wrap_content"
-                    android:layout_height="72dp"
-                    android:layout_x="467dp"
-                    android:layout_y="267dp"
-                    android:text="LIMPIAR"
-                    android:textSize="18dp"
-                    android:background="@drawable/btn_cicle"
-                    android:drawableLeft="@mipmap/trash_empty" />
-
-                <Button
-                    android:id="@+id/buttonRegresarMenuProf"
-                    android:layout_width="wrap_content"
-                    android:layout_height="72dp"
-                    android:layout_x="657dp"
-                    android:layout_y="267dp"
-                    android:text="REGRESAR MENU"
-                    android:textSize="18dp"
-                    android:background="@drawable/btn_cicle"
-                    android:drawableLeft="@mipmap/home" />
-
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="173dp"
-                    android:layout_height="204dp"
-                    android:layout_x="54dp"
-                    android:layout_y="65dp"
-                    android:background="@mipmap/logo" />
-
-            </AbsoluteLayout>
         </ScrollView>
     </HorizontalScrollView>
+
+    <AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/horizontalScrollView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="57dp">
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_x="269dp"
+            android:layout_y="75dp"
+            android:text="Cédula :"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/editCedulaRepresentante"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_x="540dp"
+            android:layout_y="65dp"
+            android:ems="10"
+            android:inputType="number"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_x="283dp"
+            android:layout_y="14dp"
+            android:text="FORMULARIO REGISTRO"
+            android:textAlignment="center"
+            android:textColor="#58adcf"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_x="269dp"
+            android:layout_y="155dp"
+            android:text="Apellido :"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_x="269dp"
+            android:layout_y="115dp"
+            android:text="Nombre :"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/editNombreRepresentante"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_x="540dp"
+            android:layout_y="105dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:maxLength="50" />
+
+        <EditText
+            android:id="@+id/editApellidoRepresentante"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_x="540dp"
+            android:layout_y="146dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:maxLength="50"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_x="269dp"
+            android:layout_y="195dp"
+            android:text="Correo :"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/editCorreoRepresentante"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_x="540dp"
+            android:layout_y="185dp"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/buttonRegistrarRepr"
+            android:layout_width="wrap_content"
+            android:layout_height="72dp"
+            android:layout_x="228dp"
+            android:layout_y="267dp"
+            android:text="REGISTRAR"
+            android:textSize="18dp"
+            android:background="@drawable/btn_cicle"
+            android:drawableLeft="@mipmap/documents" />
+
+        <Button
+            android:id="@+id/buttonLimpiarForRegisRepr"
+            android:layout_width="wrap_content"
+            android:layout_height="72dp"
+            android:layout_x="467dp"
+            android:layout_y="267dp"
+            android:text="LIMPIAR"
+            android:textSize="18dp"
+            android:background="@drawable/btn_cicle"
+            android:drawableLeft="@mipmap/trash_empty" />
+
+        <Button
+            android:id="@+id/buttonRegresarMenuProf"
+            android:layout_width="wrap_content"
+            android:layout_height="72dp"
+            android:layout_x="657dp"
+            android:layout_y="267dp"
+            android:text="REGRESAR MENU"
+            android:textSize="18dp"
+            android:background="@drawable/btn_cicle"
+            android:drawableLeft="@mipmap/home" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="173dp"
+            android:layout_height="204dp"
+            android:layout_x="54dp"
+            android:layout_y="65dp"
+            android:background="@mipmap/logo" />
+
+    </AbsoluteLayout>
 
 </RelativeLayout>

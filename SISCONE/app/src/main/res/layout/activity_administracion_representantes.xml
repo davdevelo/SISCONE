@@ -45,8 +45,8 @@
                     android:textSize="25dp"
                     android:textStyle="bold"
                     android:gravity="center_horizontal"
-                    android:layout_x="0dp"
-                    android:layout_y="5dp"
+                    android:layout_x="00dp"
+                    android:layout_y="33dp"
                     android:textColor="#58adcf" />
 
                 <Button
@@ -58,7 +58,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_x="210dp"
-                    android:layout_y="120dp" />
+                    android:layout_y="210dp" />
 
                 <Button
                     android:layout_width="152dp"
@@ -66,7 +66,7 @@
                     android:text="REGRESAR"
                     android:id="@+id/buttonRegresoFormularioAR"
                     android:layout_x="435dp"
-                    android:layout_y="200dp" />
+                    android:layout_y="300dp" />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -74,15 +74,15 @@
                     android:text="Registrar Nuevo "
                     android:id="@+id/buttonRegitrarNuevoRepresentante"
                     android:layout_x="25dp"
-                    android:layout_y="200dp" />
+                    android:layout_y="300dp" />
 
 
                 <TextView
                     android:id="@+id/textViewCedulaRepresentane"
                     android:layout_width="260dp"
                     android:layout_height="wrap_content"
-                    android:layout_x="40dp"
-                    android:layout_y="60dp"
+                    android:layout_x="55dp"
+                    android:layout_y="120dp"
                     android:text="Cedula Representante"
                     android:textSize="25dp" />
 
@@ -94,7 +94,7 @@
                     android:text="LIMPIAR"
                     android:id="@+id/buttonLimpiarRegistroAR"
                     android:layout_x="230dp"
-                    android:layout_y="200dp" />
+                    android:layout_y="300dp" />
 
                 <EditText
                     android:layout_width="250dp"
@@ -103,12 +103,23 @@
                     android:ems="10"
                     android:id="@+id/editTextCedulaRepresentanteAR"
                     android:layout_x="320dp"
-                    android:layout_y="50dp"
+                    android:layout_y="110dp"
                     android:singleLine="true"
                     android:maxLength="10" />
 
             </AbsoluteLayout>
         </ScrollView>
     </HorizontalScrollView>
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="173dp"
+        android:layout_height="204dp"
+        android:layout_x="-83dp"
+        android:layout_y="70dp"
+        android:background="@mipmap/logo"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

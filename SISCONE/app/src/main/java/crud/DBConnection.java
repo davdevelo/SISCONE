@@ -13,7 +13,7 @@ import java.sql.SQLException;
 public class DBConnection {
 
 
-    private static  final String URL = "jdbc:jtds:sqlserver://192.168.94.2:1433/SISCONE";
+    private static  final String URL = "jdbc:jtds:sqlserver://192.168.0.3:1433/SISCONE";
     //private static  final String URL = "jdbc:jtds:sqlserver://172.31.104.16:1433/SISCONE";
     private static  final String PASSSWORD = "sa";
     private static  final String USER = "sa";
