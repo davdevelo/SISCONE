@@ -42,28 +42,34 @@
                     android:textStyle="bold" />
 
                 <Button
-                    android:layout_width="200dp"
+                    android:layout_width="219dp"
                     android:layout_height="wrap_content"
                     android:text="Administración Curso"
                     android:id="@+id/buttonAdministracionCurso"
-                    android:layout_y="120dp"
-                    android:layout_x="150dp" />
+                    android:layout_y="104dp"
+                    android:layout_x="26dp"
+                    android:background="@drawable/btn_cicle"
+                    android:drawableLeft="@mipmap/desktop" />
 
                 <Button
-                    android:layout_width="200dp"
+                    android:layout_width="234dp"
                     android:layout_height="wrap_content"
                     android:text="Administración cuenta"
                     android:id="@+id/buttonAdministracionCuenta"
-                    android:layout_y="60dp"
-                    android:layout_x="150dp" />
+                    android:layout_y="106dp"
+                    android:layout_x="280dp"
+                    android:background="@drawable/btn_cicle"
+                    android:drawableLeft="@mipmap/folder_users" />
 
                 <Button
-                    android:layout_width="200dp"
+                    android:layout_width="180dp"
                     android:layout_height="wrap_content"
                     android:text="Salir"
                     android:id="@+id/buttonSalirMPR"
-                    android:layout_x="150dp"
-                    android:layout_y="180dp" />
+                    android:layout_x="188dp"
+                    android:layout_y="224dp"
+                    android:background="@drawable/btn_cicle"
+                    android:drawableLeft="@mipmap/homedark" />
             </AbsoluteLayout>
         </ScrollView>
     </HorizontalScrollView>

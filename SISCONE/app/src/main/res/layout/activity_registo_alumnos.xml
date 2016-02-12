@@ -53,7 +53,7 @@
             android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:layout_x="189dp"
-            android:layout_y="42dp"
+            android:layout_y="40dp"
             android:text="Nombre Alumno"
             android:textSize="25dp" />
 
@@ -87,7 +87,7 @@
             android:text="REGISTRO DE ALUMNOS"
             android:id="@+id/textViewCabeceraRegistroEstudiante"
             android:layout_x="80dp"
-            android:layout_y="-3dp"
+            android:layout_y="-5dp"
             android:textStyle="bold"
             android:textSize="25dp"
             android:textColor="#58adcf"
@@ -95,37 +95,45 @@
 
         <Button
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="170dp"
+            android:layout_height="74dp"
             android:text="Agregar Alumno"
             android:id="@+id/buttonAgregarAlumno"
             android:layout_y="152dp"
-            android:layout_x="260dp" />
+            android:layout_x="260dp"
+            android:background="@drawable/btn_cicle"
+            android:drawableLeft="@mipmap/document" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="170dp"
-            android:layout_height="wrap_content"
+            android:layout_height="79dp"
             android:text="Terminar Registro"
             android:id="@+id/buttonTerminarRegistroAlumnos"
-            android:layout_x="160dp"
-            android:layout_y="330dp" />
+            android:layout_x="150dp"
+            android:layout_y="320dp"
+            android:background="@drawable/btn_cicle"
+            android:drawableLeft="@mipmap/documents" />
 
         <Button
-            android:layout_width="143dp"
-            android:layout_height="wrap_content"
+            android:layout_width="140dp"
+            android:layout_height="79dp"
             android:text="Limpiar"
             android:id="@+id/buttonLimpiarFormularioAlummnos"
             android:layout_x="340dp"
-            android:layout_y="330dp" />
+            android:layout_y="320dp"
+            android:background="@drawable/btn_cicle"
+            android:drawableLeft="@mipmap/trash_empty" />
 
         <Button
             android:layout_width="170dp"
-            android:layout_height="wrap_content"
+            android:layout_height="79dp"
             android:text="Cancelar"
             android:id="@+id/buttonCancelarRegistroAlumnos"
             android:layout_x="500dp"
-            android:layout_y="330dp" />
+            android:layout_y="320dp"
+            android:background="@drawable/btn_cicle"
+            android:drawableLeft="@mipmap/homedark" />
 
         <ListView
             android:layout_width="250dp"

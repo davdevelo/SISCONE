@@ -40,11 +40,6 @@
                     android:id="@+id/linearLayout"
                     android:layout_centerHorizontal="true">
 
-                    <ListView
-                        android:layout_width="match_parent"
-                        android:layout_height="139dp"
-                        android:id="@+id/listViewCusros"
-                        android:choiceMode="singleChoice" />
                 </LinearLayout>
 
                 <TextView
@@ -62,14 +57,16 @@
                     android:textStyle="bold" />
 
                 <Button
-                    android:layout_width="159dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="75dp"
                     android:text="REGISTRAR CURSO"
                     android:id="@+id/buttonRegistrarCurso"
                     android:layout_below="@+id/horizontalScrollMenuProfesor"
                     android:layout_centerHorizontal="true"
-                    android:layout_x="125dp"
-                    android:layout_y="55dp" />
+                    android:layout_x="197dp"
+                    android:layout_y="53dp"
+                    android:background="@drawable/btn_cicle"
+                    android:drawableLeft="@mipmap/documents" />
 
                 <TextView
                     android:layout_width="350dp"
@@ -77,17 +74,28 @@
                     android:text="Lista de Cursos"
                     android:id="@+id/textViewListaCursos"
                     android:layout_x="125dp"
-                    android:layout_y="112dp"
+                    android:layout_y="135dp"
                     android:gravity="center_horizontal"
-                    android:textSize="20dp" />
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <ListView
+                    android:layout_width="448dp"
+                    android:layout_height="231dp"
+                    android:id="@+id/listViewCusros"
+                    android:choiceMode="singleChoice"
+                    android:layout_x="128dp"
+                    android:layout_y="159dp" />
 
                 <Button
                     android:layout_width="159dp"
                     android:layout_height="wrap_content"
                     android:text="Regresar"
                     android:id="@+id/buttonRegresarAC"
-                    android:layout_x="289dp"
-                    android:layout_y="45dp" />
+                    android:layout_x="510dp"
+                    android:layout_y="187dp"
+                    android:background="@drawable/btn_cicle"
+                    android:drawableLeft="@mipmap/homedark" />
 
             </AbsoluteLayout>
         </ScrollView>

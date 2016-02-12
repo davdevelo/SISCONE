@@ -103,7 +103,7 @@
             android:maxLength="50" />
 
         <Button
-            android:layout_width="150dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:text="REGISTRAR"
             android:id="@+id/buttonRegistroCusrso"
@@ -111,7 +111,9 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_x="130dp"
-            android:layout_y="270dp" />
+            android:layout_y="270dp"
+            android:background="@drawable/btn_cicle"
+            android:drawableLeft="@mipmap/documents" />
 
         <Button
             android:layout_width="150dp"
@@ -119,15 +121,19 @@
             android:text="LIMPIAR"
             android:id="@+id/buttonLimpiarRegistroCurso"
             android:layout_x="320dp"
-            android:layout_y="270dp" />
+            android:layout_y="270dp"
+            android:background="@drawable/btn_cicle"
+            android:drawableLeft="@mipmap/trash_empty" />
 
         <Button
-            android:layout_width="150dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:text="REGRESAR"
             android:id="@+id/buttonRegresoFormularioCuro"
             android:layout_x="500dp"
-            android:layout_y="270dp" />
+            android:layout_y="270dp"
+            android:background="@drawable/btn_cicle"
+            android:drawableLeft="@mipmap/homedark" />
 
         <EditText
             android:layout_width="250dp"

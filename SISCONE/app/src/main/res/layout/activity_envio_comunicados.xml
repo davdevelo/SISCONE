@@ -90,7 +90,7 @@
 
                 <EditText
                     android:layout_width="440dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="92dp"
                     android:id="@+id/editTextDescripcionComunicado"
                     android:layout_x="140dp"
                     android:layout_y="210dp"
