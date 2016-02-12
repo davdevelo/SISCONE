@@ -83,17 +83,6 @@
                     android:text="agregar +"
                     android:textColor="#eef0f5" />
 
-                <Button
-                    style="?android:attr/buttonStyleSmall"
-                    android:id="@+id/buttonQuitarMateria"
-                    android:layout_width="88dp"
-                    android:layout_height="33dp"
-                    android:layout_x="230dp"
-                    android:layout_y="130dp"
-                    android:background="#f2263e"
-                    android:text="QUITAR"
-                    android:textColor="#eef0f5" />
-
                 <ImageView
                     android:layout_width="85dp"
                     android:layout_height="101dp"

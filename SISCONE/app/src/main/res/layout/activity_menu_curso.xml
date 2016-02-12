@@ -62,7 +62,7 @@
                     android:textStyle="bold" />
 
                 <Button
-                    android:layout_width="350dp"
+                    android:layout_width="159dp"
                     android:layout_height="wrap_content"
                     android:text="REGISTRAR CURSO"
                     android:id="@+id/buttonRegistrarCurso"
@@ -80,6 +80,14 @@
                     android:layout_y="105dp"
                     android:gravity="center_horizontal"
                     android:textSize="20dp" />
+
+                <Button
+                    android:layout_width="159dp"
+                    android:layout_height="wrap_content"
+                    android:text="Regresar"
+                    android:id="@+id/buttonRegresarAC"
+                    android:layout_x="289dp"
+                    android:layout_y="45dp" />
 
             </AbsoluteLayout>
         </ScrollView>

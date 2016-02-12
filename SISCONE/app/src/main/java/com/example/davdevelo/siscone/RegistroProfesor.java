@@ -99,13 +99,22 @@ public class RegistroProfesor extends AppCompatActivity {
         Persona profesor = (Persona) datos[0];
         Login login = (Login) datos[1];
 
-        if (contraseñaProf.getText().toString().equals(confContraseñaProf.getText().toString())) {
-            Consulta registrar = new Consulta(profesor);
-            registrar.execute(1);
-        } else {
-            Toast registroIncorrecto = Toast.makeText(getApplicationContext(), "Las contrasenas deben ser iguales", Toast.LENGTH_LONG);
+        if (cedulaProf.getText().toString().equals("") || nombreProf.getText().toString().equals("") ||
+                apellidoProf.getText().toString().equals("") || correoProf.getText().toString().equals("") ||
+                contraseñaProf.getText().toString().equals("")) {
+            Toast registroIncorrecto = Toast.makeText(getApplicationContext(), "Todos los campos del formulario deben ser llenados", Toast.LENGTH_LONG);
             registroIncorrecto.show();
+
+        } else {
+            if (contraseñaProf.getText().toString().equals(confContraseñaProf.getText().toString())) {
+                Consulta registrar = new Consulta(profesor);
+                registrar.execute(1);
+            } else {
+                Toast registroIncorrecto = Toast.makeText(getApplicationContext(), "Las contrasenas deben ser iguales", Toast.LENGTH_LONG);
+                registroIncorrecto.show();
+            }
         }
+
 
     }
 
@@ -126,10 +135,10 @@ public class RegistroProfesor extends AppCompatActivity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
 
-            finish();
+
             Intent intent = new Intent(RegistroProfesor.this, MainActivity.class);
             startActivity(intent);
-
+            finish();
             Toast registroCorrecto = Toast.makeText(getApplicationContext(), "Usted se ha registrado correctamente", Toast.LENGTH_LONG);
             registroCorrecto.show();
         }

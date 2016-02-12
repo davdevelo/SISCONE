@@ -35,6 +35,17 @@ public class MenuCurso extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_curso);
         iniciarEntorno();
+
+        findViewById(R.id.buttonRegresarAC).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuCurso.this, MenuPrincipalProfesor.class);
+                intent.putExtra("usuario", cedula);
+                intent.putExtra("persona", usuario);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     private void iniciarEntorno() {
@@ -61,6 +72,7 @@ public class MenuCurso extends AppCompatActivity {
                 intent.putExtra("usuario", cedula);
                 intent.putExtra("persona", usuario);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -69,7 +81,7 @@ public class MenuCurso extends AppCompatActivity {
     private void redireccionarRegistro() {
         finish();
         Intent intentMF = new Intent(MenuCurso.this, RegistroCurso.class);
-        intentMF.putExtra("cedulaProfesor", cedula);
+        intentMF.putExtra("usuario", cedula);
         intentMF.putExtra("persona", usuario);
         startActivity(intentMF);
     }

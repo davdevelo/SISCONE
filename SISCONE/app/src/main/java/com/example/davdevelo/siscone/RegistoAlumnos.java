@@ -32,6 +32,9 @@ public class RegistoAlumnos extends AppCompatActivity {
     private ListView listaAlumnos;
     private EditText elementos[];
 
+    private String cedulaP;
+    private Persona usuario;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +70,8 @@ public class RegistoAlumnos extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(RegistoAlumnos.this, AdministracionRepresentantes.class);
                 intent.putExtra("cursoID", curso);
+                intent.putExtra("usuario", cedulaP);
+                intent.putExtra("persona", usuario);
                 startActivity(intent);
                 finish();
             }
@@ -75,8 +80,14 @@ public class RegistoAlumnos extends AppCompatActivity {
         findViewById(R.id.buttonTerminarRegistroAlumnos).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ConsultasBase consulta = new ConsultasBase();
-                consulta.execute(1);
+
+                if(listaAlumnos.getCount()<1){
+                    Toast mensaje = Toast.makeText(getApplicationContext(), "Debe agregar al menos un alumno ", Toast.LENGTH_LONG);
+                    mensaje.show();
+                }else {
+                    ConsultasBase consulta = new ConsultasBase();
+                    consulta.execute(1);
+                }
             }
         });
     }
@@ -105,6 +116,8 @@ public class RegistoAlumnos extends AppCompatActivity {
         if (extra != null) {
             curso = (String) extra.get("cursoID");
             representante = (String) extra.get("representante");
+            cedulaP = (String) extra.get("usuario");
+            usuario = (Persona) extra.get("persona");
             Log.i("cursoID", curso);
             Log.i("representante", representante);
         }
@@ -143,6 +156,8 @@ public class RegistoAlumnos extends AppCompatActivity {
             finish();
             Intent intent = new Intent(RegistoAlumnos.this, AdministracionRepresentantes.class);
             intent.putExtra("cursoID", curso);
+            intent.putExtra("usuario", cedulaP);
+            intent.putExtra("persona", usuario);
             startActivity(intent);
         }
     }

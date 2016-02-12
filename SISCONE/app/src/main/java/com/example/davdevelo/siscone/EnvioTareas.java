@@ -24,6 +24,7 @@ import java.util.Map;
 import apoyo.GestionAviso;
 import moledos.Aviso;
 import moledos.Materia;
+import moledos.Persona;
 import moledos.Tarea;
 
 /**
@@ -36,6 +37,8 @@ public class EnvioTareas extends AppCompatActivity {
     private EditText fechaEntrega;
     private Spinner listaMateria;
     private String curso;
+    private String cedulaP;
+    private Persona usuario;
     private StringBuilder cuerpoAviso;
     private EditText elementos[];
     private List<Materia> materias;
@@ -53,10 +56,12 @@ public class EnvioTareas extends AppCompatActivity {
         findViewById(R.id.buttonRegresarMenuEnvioTareas).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
                 Intent intent = new Intent(EnvioTareas.this, MenuProfesor.class);
                 intent.putExtra("cursoID", curso);
+                intent.putExtra("usuario", cedulaP);
+                intent.putExtra("persona", usuario);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -81,6 +86,8 @@ public class EnvioTareas extends AppCompatActivity {
         curso = "";
         if (extra != null) {
             curso = (String) extra.get("cursoID");
+            cedulaP = (String) extra.get("usuario");
+            usuario = (Persona) extra.get("persona");
             Log.i("cursoID", curso);
         }
     }

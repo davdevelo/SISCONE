@@ -87,16 +87,25 @@ public class CuentaProfesor extends AppCompatActivity {
     }
 
     private void actualizarRepresentante() {
-        if (contrasenaNueva.getText().toString().trim().equals(
-                confirmarContrasena.getText().toString().trim())) {
 
-            usuario.setContrasena(contrasenaNueva.getText().toString());
-            usuario.setCorreo(correo.getText().toString().trim());
-            ConsultasRepresentante actualizar = new ConsultasRepresentante(usuario);
-            actualizar.execute(1);
-        } else {
-            Toast mensaje = Toast.makeText(getApplicationContext(), "Las contraseñas no coinciden", Toast.LENGTH_LONG);
+        if (correo.getText().toString().equals("") || contrasenaNueva.getText().toString().equals("") ||
+                confirmarContrasena.getText().toString().equals("")) {
+            Toast mensaje = Toast.makeText(getApplicationContext(), "Ni el correo, ni la contrseña pueden estar vacias", Toast.LENGTH_LONG);
             mensaje.show();
+
+        } else {
+            if (contrasenaNueva.getText().toString().trim().equals(
+                    confirmarContrasena.getText().toString().trim())) {
+
+                usuario.setContrasena(contrasenaNueva.getText().toString());
+                usuario.setCorreo(correo.getText().toString().trim());
+                ConsultasRepresentante actualizar = new ConsultasRepresentante(usuario);
+                actualizar.execute(1);
+            } else {
+                Toast mensaje = Toast.makeText(getApplicationContext(), "Las contraseñas no coinciden", Toast.LENGTH_LONG);
+                mensaje.show();
+            }
+
         }
 
 

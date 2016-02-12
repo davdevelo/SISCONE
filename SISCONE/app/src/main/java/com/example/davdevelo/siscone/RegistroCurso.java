@@ -41,12 +41,6 @@ public class RegistroCurso extends AppCompatActivity {
         findViewById(R.id.buttonRegistroCusrso).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*if(nombreInstitucion.getText().toString().equals("") ooo  )
-                        //toast
-                else
-                {
-
-                }*/
                 registrarCurso();
             }
         });
@@ -86,7 +80,7 @@ public class RegistroCurso extends AppCompatActivity {
         Bundle extra = intent.getExtras();
         cedula = "";
         if (extra != null) {
-            cedula = (String) extra.get("cedulaProfesor");
+            cedula = (String) extra.get("usuario");
             usuario = (Persona) extra.get("persona");
         }
     }
@@ -98,7 +92,7 @@ public class RegistroCurso extends AppCompatActivity {
         String paralel = paralelo.getText().toString();
 
         if(institucion.equals("") || curso.equals("") || paralel.equals("") ){
-            Toast mensaje = Toast.makeText(getApplicationContext(), "Faltan Campos Por Llenar", Toast.LENGTH_LONG);
+            Toast mensaje = Toast.makeText(getApplicationContext(), "Faltan Campos Por Llenar \n Todos los campos de formulario debe estar llenos", Toast.LENGTH_LONG);
             mensaje.show();
         }else{
             Curso cursoNuevo = new Curso(institucion,curso,paralel,new Integer(cedula));
@@ -122,13 +116,15 @@ public class RegistroCurso extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            Log.i("Estado", s);
+
             Toast registroCorrecto = Toast.makeText(getApplicationContext(), "El Curso ha sido registrado Correctamente", Toast.LENGTH_LONG);
             registroCorrecto.show();
-            finish();
+
             Intent intent = new Intent(RegistroCurso.this, MenuCurso.class);
             intent.putExtra("usuario", cedula);
+            intent.putExtra("persona", usuario);
             startActivity(intent);
+            finish();
 
         }
     }

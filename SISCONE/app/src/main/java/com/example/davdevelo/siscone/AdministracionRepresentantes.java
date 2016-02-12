@@ -22,6 +22,8 @@ public class AdministracionRepresentantes extends AppCompatActivity {
 
     private EditText cedulaRepresentante;
     private String curso;
+    private String cedulaP;
+    private Persona usuario;
     private EditText elementos[];
 
 
@@ -39,8 +41,13 @@ public class AdministracionRepresentantes extends AppCompatActivity {
         findViewById(R.id.buttonAgregarRepresentante).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ConsultasBase consulta = new ConsultasBase(cedulaRepresentante.getText().toString());
-                consulta.execute(1);
+                if (cedulaRepresentante.getText().toString().equals("")){
+                    Toast mensajeError = Toast.makeText(getApplicationContext(), "Debe llenar el campo de Cedula", Toast.LENGTH_LONG);
+                    mensajeError.show();
+                }else {
+                    ConsultasBase consulta = new ConsultasBase(cedulaRepresentante.getText().toString());
+                    consulta.execute(1);
+                }
             }
         });
         findViewById(R.id.buttonRegresoFormularioAR).setOnClickListener(new View.OnClickListener() {
@@ -48,7 +55,10 @@ public class AdministracionRepresentantes extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(AdministracionRepresentantes.this, MenuProfesor.class);
                 intent.putExtra("cursoID", curso);
+                intent.putExtra("usuario", cedulaP);
+                intent.putExtra("persona", usuario);
                 startActivity(intent);
+                finish();
             }
         });
         findViewById(R.id.buttonRegitrarNuevoRepresentante).setOnClickListener(new View.OnClickListener() {
@@ -56,6 +66,8 @@ public class AdministracionRepresentantes extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(AdministracionRepresentantes.this, RegistroRepresentante.class);
                 intent.putExtra("cursoID", curso);
+                intent.putExtra("usuario", cedulaP);
+                intent.putExtra("persona", usuario);
                 startActivity(intent);
             }
         });
@@ -71,6 +83,8 @@ public class AdministracionRepresentantes extends AppCompatActivity {
         curso = "";
         if (extra != null) {
             curso = (String) extra.get("cursoID");
+            cedulaP = (String) extra.get("usuario");
+            usuario = (Persona) extra.get("persona");
             Log.i("cursoID", curso);
         }
     }
@@ -126,6 +140,8 @@ public class AdministracionRepresentantes extends AppCompatActivity {
                 Intent intent = new Intent(AdministracionRepresentantes.this, RegistoAlumnos.class);
                 intent.putExtra("cursoID", curso);
                 intent.putExtra("representante", cedula);
+                intent.putExtra("usuario", cedulaP);
+                intent.putExtra("persona", usuario);
                 startActivity(intent);
             }
             if (s.equals("Incorrecto1")) {

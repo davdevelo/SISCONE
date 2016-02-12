@@ -25,6 +25,8 @@ public class RegistroRepresentante extends AppCompatActivity {
     private EditText correo;
     private EditText elementos[];
     private String curso;
+    private String cedulaP;
+    private Persona usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,8 @@ public class RegistroRepresentante extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(new Intent(RegistroRepresentante.this, AdministracionRepresentantes.class));
                 intent.putExtra("cursoID", curso);
+                intent.putExtra("usuario", cedulaP);
+                intent.putExtra("persona", usuario);
                 startActivity(intent);
                 finish();
             }
@@ -81,6 +85,8 @@ public class RegistroRepresentante extends AppCompatActivity {
         curso = "";
         if (extra != null) {
             curso = (String) extra.get("cursoID");
+            cedulaP = (String) extra.get("usuario");
+            usuario = (Persona) extra.get("persona");
         }
     }
 
@@ -91,9 +97,17 @@ public class RegistroRepresentante extends AppCompatActivity {
     }
 
     private void registrarRepresentante() {
-        ConsultasRepresentante registrarNuevo = new ConsultasRepresentante(recuperarDatos());
-        registrarNuevo.execute(1);
-        limpiar();
+
+        if (cedula.getText().toString().equals("") || nombre.getText().toString().equals("") ||
+                apellido.getText().toString().equals("") || correo.getText().toString().equals("")){
+            Toast mensaje = Toast.makeText(getApplicationContext(), "Debe llenar todos los campos del formulario", Toast.LENGTH_LONG);
+            mensaje.show();
+
+        }else {
+            ConsultasRepresentante registrarNuevo = new ConsultasRepresentante(recuperarDatos());
+            registrarNuevo.execute(1);
+            limpiar();
+        }
     }
 
     private class ConsultasRepresentante extends AsyncTask<Integer, Void, String> {

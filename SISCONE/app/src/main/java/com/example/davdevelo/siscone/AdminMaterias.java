@@ -17,6 +17,7 @@ import java.util.List;
 import apoyo.OnTouchEvent;
 import moledos.Estudiante;
 import moledos.Materia;
+import moledos.Persona;
 
 /**
  * Created by davdevelo on 14/12/2015.
@@ -29,6 +30,8 @@ public class AdminMaterias extends AppCompatActivity {
     private List<Materia> materias;
     private ArrayAdapter adaptador;
     private String curso;
+    private String cedulaP;
+    private Persona usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,17 +54,16 @@ public class AdminMaterias extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.buttonQuitarMateria).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
-
         findViewById(R.id.buttonGuardarMaterias).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ConsultasBase consulta = new ConsultasBase();
-                consulta.execute(1);
+                if (listaMaterias.getCount()<1) {
+                    Toast mensaje = Toast.makeText(getApplicationContext(), "Debe agregar al menos una materia", Toast.LENGTH_LONG);
+                    mensaje.show();
+                } else {
+                    ConsultasBase consulta = new ConsultasBase();
+                    consulta.execute(1);
+                }
             }
         });
 
@@ -70,6 +72,8 @@ public class AdminMaterias extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(AdminMaterias.this, MenuProfesor.class);
                 intent.putExtra("cursoID", curso);
+                intent.putExtra("usuario", cedulaP);
+                intent.putExtra("persona", usuario);
                 startActivity(intent);
             }
         });
@@ -104,6 +108,8 @@ public class AdminMaterias extends AppCompatActivity {
         curso = "";
         if (extra != null) {
             curso = (String) extra.get("cursoID");
+            cedulaP = (String) extra.get("usuario");
+            usuario = (Persona) extra.get("persona");
             Log.i("cursoID", curso);
         }
     }
@@ -131,6 +137,8 @@ public class AdminMaterias extends AppCompatActivity {
             finish();
             Intent intent = new Intent(AdminMaterias.this, MenuProfesor.class);
             intent.putExtra("cursoID", curso);
+            intent.putExtra("usuario", cedulaP);
+            intent.putExtra("persona", usuario);
             startActivity(intent);
             Toast mensaje = Toast.makeText(getApplicationContext(), "Las Materias han sido registradas", Toast.LENGTH_LONG);
             mensaje.show();

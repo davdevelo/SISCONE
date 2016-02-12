@@ -27,6 +27,8 @@ public class EnvioComunicados extends AppCompatActivity {
     private EditText titulo;
     private EditText descripcion;
     private String curso;
+    private String cedulaP;
+    private Persona usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,8 @@ public class EnvioComunicados extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(EnvioComunicados.this, MenuProfesor.class);
                 intent.putExtra("cursoID", curso);
+                intent.putExtra("usuario", cedulaP);
+                intent.putExtra("persona", usuario);
                 startActivity(intent);
             }
         });
@@ -63,6 +67,8 @@ public class EnvioComunicados extends AppCompatActivity {
         curso = "";
         if (extra != null) {
             curso = (String) extra.get("cursoID");
+            cedulaP = (String) extra.get("usuario");
+            usuario = (Persona) extra.get("persona");
             Log.i("cursoID", curso);
         }
     }
@@ -73,9 +79,16 @@ public class EnvioComunicados extends AppCompatActivity {
     }
 
     private void registrarAviso() {
-        ConsultasCursoR consultasCursoR = new ConsultasCursoR(curso,
-                titulo.getText().toString(),descripcion.getText().toString());
-        consultasCursoR.execute(1);
+
+        if(titulo.getText().toString().equals("") || descripcion.getText().toString().equals("") ){
+            Toast mensaje = Toast.makeText(getApplicationContext(), "Debe dar un titulo y una descripción al aviso ", Toast.LENGTH_LONG);
+            mensaje.show();
+        }else{
+            ConsultasCursoR consultasCursoR = new ConsultasCursoR(curso,
+                    titulo.getText().toString(),descripcion.getText().toString());
+            consultasCursoR.execute(1);
+        }
+
     }
 
     private class ConsultasCursoR extends AsyncTask<Integer, Void, String> {

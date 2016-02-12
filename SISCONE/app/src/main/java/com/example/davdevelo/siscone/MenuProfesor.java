@@ -7,10 +7,13 @@ import android.util.Log;
 import android.view.View;
 
 import moledos.Login;
+import moledos.Persona;
 
 public class MenuProfesor extends AppCompatActivity {
 
     private String curso;
+    private String cedula;
+    private Persona usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,8 @@ public class MenuProfesor extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuProfesor.this, AdministracionRepresentantes.class);
                 intent.putExtra("cursoID", curso);
+                intent.putExtra("usuario", cedula);
+                intent.putExtra("persona", usuario);
                 startActivity(intent);
             }
         });
@@ -32,7 +37,11 @@ public class MenuProfesor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
-                startActivity(new Intent(MenuProfesor.this, MenuPrincipalProfesor.class));
+                Intent intent = new Intent(MenuProfesor.this, MenuPrincipalProfesor.class);
+                intent.putExtra("usuario", cedula);
+                intent.putExtra("persona", usuario);
+                startActivity(intent);
+
             }
         });
         findViewById(R.id.buttonComunicados).setOnClickListener(new View.OnClickListener() {
@@ -40,7 +49,11 @@ public class MenuProfesor extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuProfesor.this, EnvioComunicados.class);
                 intent.putExtra("cursoID", curso);
+                intent.putExtra("usuario", cedula);
+                intent.putExtra("persona", usuario);
                 startActivity(intent);
+                finish();
+
             }
         });
         findViewById(R.id.buttonAdministracionMaterias).setOnClickListener(new View.OnClickListener() {
@@ -48,7 +61,10 @@ public class MenuProfesor extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuProfesor.this, AdminMaterias.class);
                 intent.putExtra("cursoID", curso);
+                intent.putExtra("usuario", cedula);
+                intent.putExtra("persona", usuario);
                 startActivity(intent);
+                finish();
             }
         });
         findViewById(R.id.buttonEnvioTareas).setOnClickListener(new View.OnClickListener() {
@@ -56,7 +72,10 @@ public class MenuProfesor extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent =new Intent(MenuProfesor.this, EnvioTareas.class);
                 intent.putExtra("cursoID", curso);
+                intent.putExtra("usuario", cedula);
+                intent.putExtra("persona", usuario);
                 startActivity(intent);
+                finish();
             }
         });
     }
@@ -67,6 +86,8 @@ public class MenuProfesor extends AppCompatActivity {
         curso = "";
         if (extra != null) {
             curso = (String) extra.get("cursoID");
+            cedula = (String) extra.get("usuario");
+            usuario = (Persona) extra.get("persona");
             Log.i("CursoID", curso);
         }
     }

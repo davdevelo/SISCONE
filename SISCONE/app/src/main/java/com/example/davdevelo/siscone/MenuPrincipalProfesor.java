@@ -43,6 +43,8 @@ public class MenuPrincipalProfesor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MenuPrincipalProfesor.this, MainActivity.class);
+                intent.putExtra("usuario", cedula);
+                intent.putExtra("persona", usuario);
                 startActivity(intent);
                 finish();
             }
